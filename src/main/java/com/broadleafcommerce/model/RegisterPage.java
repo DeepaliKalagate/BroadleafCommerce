@@ -20,7 +20,7 @@ public class RegisterPage
     private WebElement lastName;
 
 
-    @FindBy(id = "password")
+    @FindBy(xpath = "//div[@class='label-floating form-group error-group is-empty']//input[@id='password']")
     private WebElement password;
 
     @FindBy(id="passwordConfirm")
