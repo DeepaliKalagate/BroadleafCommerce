@@ -1,24 +1,24 @@
 package com.broadleafcommerce.script;
 
-import com.broadleafcommerce.base.Browser;
-import com.broadleafcommerce.model.GiftCard;
-import com.broadleafcommerce.model.LoginPage;
-import org.testng.annotations.Listeners;
+import com.broadleafcommerce.base.BaseClass;
+import com.broadleafcommerce.model.GiftCardPage;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-@Listeners(com.broadleafcommerce.base.CustomListener.class)
-public class GiftCardTest extends Browser
+public class GiftCardTest extends BaseClass
 {
+    public GiftCardPage giftCardPage;
+    @BeforeMethod
+    public void setUp()
+    {
+        initiation();
+        giftCardPage = new GiftCardPage(driver);
+    }
+
     @Test
     public void giftCardTest() throws InterruptedException
     {
-        LoginPage loginPage=new LoginPage(driver);
-        Thread.sleep(1000);
-        loginPage.setClickLogin();
-        loginPage.setEmail("dipakalagate1991@gmail.com");
-        loginPage.setPassword("Mysweetfamily@333");
-        loginPage.setLogin();
-        GiftCard giftCard=new GiftCard(driver);
+        GiftCardPage giftCard=new GiftCardPage(driver);
         giftCard.setGiftCard();
     }
 }

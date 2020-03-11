@@ -24,21 +24,10 @@ public class LoginPage
         PageFactory.initElements(driver,this);
     }
 
-    public void setLogin()
-    {
-        login.click();
-    }
-    public void setEmail(String username)
+    public void login(String username,String password1)
     {
         email.sendKeys(username);
-    }
-    public void setPassword(String password1)
-    {
         password.sendKeys(password1);
-    }
-
-    public void setClickLogin()
-    {
         clickLogin.click();
     }
 }

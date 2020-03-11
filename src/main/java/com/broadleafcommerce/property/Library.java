@@ -1,11 +1,11 @@
 package com.broadleafcommerce.property;
 
-import com.broadleafcommerce.base.Browser;
+import com.broadleafcommerce.base.BaseClass;
 
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class Library extends Browser
+public class Library extends BaseClass
 {
     public static String getProperty(String CONFIG_PATH, String key)
     {

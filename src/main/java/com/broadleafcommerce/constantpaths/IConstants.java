@@ -6,5 +6,5 @@ public interface IConstants
     String CHROMEKEY = "webdriver.chrome.driver";
     String CHROMEVALUE = "Driver/chromedriver";
     String FIREFOXKEY="webdriver.gecko.driver";
-    String FIREFOXVALUE="";
+    String FIREFOXVALUE="Drivers/geckodriver";
 }

@@ -5,7 +5,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class CustomListener extends Browser implements ITestListener
+public class CustomListener extends BaseClass implements ITestListener
 {
     Screenshots utility=new Screenshots();
     public CustomListener(WebDriver driver)
