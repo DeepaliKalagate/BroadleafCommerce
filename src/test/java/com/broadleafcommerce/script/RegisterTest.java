@@ -1,9 +1,7 @@
 package com.broadleafcommerce.script;
 import com.broadleafcommerce.base.BaseClass;
-import com.broadleafcommerce.model.LoginPage;
-import com.broadleafcommerce.model.RegisterPage;
+import com.broadleafcommerce.pages.RegisterPage;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 public class RegisterTest extends BaseClass

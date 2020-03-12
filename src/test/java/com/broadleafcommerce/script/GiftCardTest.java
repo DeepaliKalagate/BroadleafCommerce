@@ -1,7 +1,7 @@
 package com.broadleafcommerce.script;
 
 import com.broadleafcommerce.base.BaseClass;
-import com.broadleafcommerce.model.GiftCardPage;
+import com.broadleafcommerce.pages.GiftCardPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

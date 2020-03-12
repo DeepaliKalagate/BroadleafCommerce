@@ -1,6 +1,5 @@
 package com.broadleafcommerce.base;
 
-import com.broadleafcommerce.constantpaths.IConstants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class BaseClass implements IConstants
+public class BaseClass
 {
     public static WebDriver driver;
     public static Properties property;
@@ -21,7 +20,7 @@ public class BaseClass implements IConstants
         property = new Properties();
         try
         {
-            fileInputStream = new FileInputStream("Config/config.properties");
+            fileInputStream = new FileInputStream("java/com/broadleafcommerce/config/config.properties");
             property.load(fileInputStream);
         }
         catch (IOException e)
@@ -36,9 +35,8 @@ public class BaseClass implements IConstants
         {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-
         }
-        else
+        else if(property.getProperty("browser").equalsIgnoreCase("firefox"))
         {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
