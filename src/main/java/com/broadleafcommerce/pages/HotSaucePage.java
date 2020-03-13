@@ -14,6 +14,15 @@ public class HotSaucePage extends TestBase
     @FindBy(xpath = "//body[@class='locale-en_US index-page']/div[@class='main']/div[@class='container']/div[@id='category']/div[@id='category-search-content']/div[@id='right_column']/div[@id='products']/div[1]/div[1]/a[1]/div[1]")
     private WebElement viewHotSuace;
 
+    @FindBy(xpath = "//button[@class='btn btn-primary js-addToCart']")
+    private WebElement addToCart;
+
+    @FindBy(xpath = "//a[@class='btn btn-secondary']")
+    private WebElement viewInCart;
+
+    @FindBy(xpath = "//a[@class='btn btn-primary']")
+    private WebElement clickOnCheckout;
+
     public HotSaucePage()
     {
         PageFactory.initElements(driver,this);
@@ -29,10 +38,12 @@ public class HotSaucePage extends TestBase
         return driver.getTitle();
     }
 
-    public void setGetHotSauses()
+    public ShippingPage verifyToShowHotSauses()
     {
         viewHotSuace.click();
+        //addToCart.click();
+        viewInCart.click();
+        clickOnCheckout.click();
+        return new ShippingPage();
     }
-
-
 }

@@ -9,6 +9,9 @@ import org.openqa.selenium.support.ui.Select;
 
 public class ShippingPage extends TestBase
 {
+    @FindBy(id = "checkout")
+    private WebElement shippingPageText;
+
     @FindBy(id = "fullName")
     private WebElement fullName;
 
@@ -53,69 +56,32 @@ public class ShippingPage extends TestBase
         PageFactory.initElements(driver,this);
     }
 
-    public void setFullName(String name)
+    public String verifyShippingPageTitle()
+    {
+        return driver.getTitle();
+    }
+
+    public boolean verifyShippingPageText()
+    {
+        return shippingPageText.isDisplayed();
+    }
+
+    public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo)
     {
         fullName.sendKeys(name);
-    }
-
-    public void setAddress1(String addressFirst)
-    {
         address1.sendKeys(addressFirst);
-    }
-
-    public void setAddress2(String addressTwo)
-    {
         address2.sendKeys(addressTwo);
-    }
-
-    public void setCity(String cityName)
-    {
         city.sendKeys(cityName);
-    }
-
-    public void setState(String selectState)
-    {
         Select select = new Select(state);
         select.selectByVisibleText(selectState);
-    }
-
-    public void setPostal(String postalCode)
-    {
         postal.sendKeys(postalCode);
-    }
-
-    public void setPhoneNumber(String phoneNo)
-    {
         phoneNumber.sendKeys(phoneNo);
-    }
-
-    public void setShippingMethod()
-    {
         shippingMethod.click();
-    }
-
-    public void setClickToContinue()
-    {
         clickToContinue.click();
-    }
-
-    public void setDefineCard()
-    {
         cashOnDelivery.click();
-    }
-
-    public void setSameAddress()
-    {
         sameAddress.click();
-    }
-
-    public void setContinueShopping()
-    {
         continueShopping.click();
-    }
-
-    public void setPlaceOrder()
-    {
         placeOrder.click();
+        return new HomePage();
     }
 }

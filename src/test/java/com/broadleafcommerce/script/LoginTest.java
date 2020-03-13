@@ -25,23 +25,19 @@ public class LoginTest extends TestBase
     }
 
     @Test(priority = 1)
-    public void testLoginPageTitle() throws InterruptedException
-    {
-        Thread.sleep(2000);
-        String title=loginPage.validateLoginPageTitle();
-        Assert.assertEquals(title,"Broadleaf Commerce Demo Store - Heat Clinic - Login");
-    }
-
-    @Test(priority = 2)
     public void broadleafLogoImageTest()
     {
         boolean flag=loginPage.validateBroadleafLogoImage();
         Assert.assertTrue(flag);
     }
 
-    @Test(priority = 3)
-    public void loginTest()
+    @Test(priority = 2)
+    public void loginTest() throws InterruptedException
     {
+        Thread.sleep(2000);
+        String title=loginPage.validateLoginPageTitle();
+        Assert.assertEquals(title,"Broadleaf Commerce Demo Store - Heat Clinic - Login");
+        Thread.sleep(2000);
         homePage=loginPage.login(property.getProperty("email"),property.getProperty("password"));
     }
 }

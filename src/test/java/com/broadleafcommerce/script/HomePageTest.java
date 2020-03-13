@@ -39,6 +39,4 @@ public class HomePageTest extends TestBase
     {
        hotSaucePage = homePage.clickOnHotsauce();
     }
-
-
 }

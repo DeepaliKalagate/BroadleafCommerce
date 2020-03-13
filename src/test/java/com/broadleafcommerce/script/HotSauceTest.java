@@ -28,24 +28,22 @@ public class HotSauceTest extends TestBase
         homePage=loginPage.login(property.getProperty("email"),property.getProperty("password"));
         hotSausPage=homePage.clickOnHotsauce();
     }
-    @Test(priority = 1)
-    public void verifyHomePageTitle()
-    {
-        String hotSaucePageTitle=hotSausPage.verifyHotSaucePageTitle();
-        Assert.assertEquals(hotSaucePageTitle,"Hot Sauces - Test Site","Home page title not matched");
-    }
 
-    @Test(priority = 2)
+    @Test(priority = 1)
     public void verifyHotSaucePageLable()
     {
         boolean hotSaucePageLable=hotSausPage.verifyHotSaucePageLable();
         Assert.assertTrue(hotSaucePageLable);
     }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void selectHotSauceTest() throws InterruptedException
     {
-        hotSausPage.setGetHotSauses();
         Thread.sleep(1000);
+        hotSausPage.verifyToShowHotSauses();
+        Thread.sleep(1000);
+        String hotSaucePageTitle=hotSausPage.verifyHotSaucePageTitle();
+        Assert.assertEquals(hotSaucePageTitle,"Hot Sauces - Test Site","Home page title not matched");
+        Thread.sleep(2000);
     }
 }
