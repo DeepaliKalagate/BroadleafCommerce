@@ -1,10 +1,10 @@
 package com.broadleafcommerce.script;
-import com.broadleafcommerce.base.BaseClass;
+import com.broadleafcommerce.base.TestBase;
 import com.broadleafcommerce.pages.RegisterPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class RegisterTest extends BaseClass
+public class RegisterTest extends TestBase
 {
     public RegisterPage registerPage;
     @BeforeMethod

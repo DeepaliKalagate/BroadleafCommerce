@@ -1,11 +1,11 @@
 package com.broadleafcommerce.script;
 
-import com.broadleafcommerce.base.BaseClass;
+import com.broadleafcommerce.base.TestBase;
 import com.broadleafcommerce.pages.GiftCardPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class GiftCardTest extends BaseClass
+public class GiftCardTest extends TestBase
 {
     public GiftCardPage giftCardPage;
     @BeforeMethod

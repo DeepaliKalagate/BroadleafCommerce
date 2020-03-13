@@ -1,13 +1,13 @@
 package com.broadleafcommerce.pages;
 
-import com.broadleafcommerce.base.BaseClass;
+import com.broadleafcommerce.base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class Shipping extends BaseClass
+public class Shipping extends TestBase
 {
     @FindBy(id = "fullName")
     private WebElement fullName;

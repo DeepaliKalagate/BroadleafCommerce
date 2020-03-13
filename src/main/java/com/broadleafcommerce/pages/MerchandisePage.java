@@ -1,13 +1,13 @@
 package com.broadleafcommerce.pages;
 
 
-import com.broadleafcommerce.base.BaseClass;
+import com.broadleafcommerce.base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MerchandisePage extends BaseClass
+public class MerchandisePage extends TestBase
 {
     @FindBy(xpath = "//div[@id='left-nav']//span[contains(text(),'Merchandise')]")
     private WebElement merchandise;

@@ -1,12 +1,12 @@
 package com.broadleafcommerce.pages;
 
-import com.broadleafcommerce.base.BaseClass;
+import com.broadleafcommerce.base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class GiftCardPage extends BaseClass
+public class GiftCardPage extends TestBase
 {
     @FindBy(xpath = "//div[@id='left-nav']//span[contains(text(),'Gift Cards')]")
     private WebElement giftCard;

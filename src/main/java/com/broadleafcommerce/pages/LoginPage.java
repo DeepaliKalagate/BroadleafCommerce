@@ -1,13 +1,14 @@
 package com.broadleafcommerce.pages;
 
-import com.broadleafcommerce.base.BaseClass;
+import com.broadleafcommerce.base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends BaseClass
+public class LoginPage extends TestBase
 {
+    //PageFactory-Object Repository
     @FindBy(xpath = "//a[contains(text(),'Login')]")
     private WebElement login;
 
@@ -20,15 +21,31 @@ public class LoginPage extends BaseClass
     @FindBy(xpath = "//button[contains(text(),'Login')]")
     private WebElement clickLogin;
 
+    @FindBy(xpath = "//img[contains(@class,'brand-logo')]")
+    private WebElement broadleafLogo;
+
+    //Initializing the page Objects
     public LoginPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
 
-    public void login(String username,String password1)
+    //Actions
+    public String validateLoginPageTitle()
     {
-        email.sendKeys(username);
+        return driver.getTitle();
+    }
+
+    public boolean validateBroadleafLogoImage()
+    {
+        return broadleafLogo.isDisplayed();
+    }
+
+    public HomePage login(String userName,String password1)
+    {
+        email.sendKeys(userName);
         password.sendKeys(password1);
         clickLogin.click();
+        return new HomePage(driver);
     }
 }

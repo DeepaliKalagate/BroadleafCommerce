@@ -1,12 +1,12 @@
 package com.broadleafcommerce.utility;
 
-import com.broadleafcommerce.base.BaseClass;
+import com.broadleafcommerce.base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class CustomListener extends BaseClass implements ITestListener
+public class CustomListener extends TestBase implements ITestListener
 {
     Screenshots utility=new Screenshots();
     public CustomListener(WebDriver driver)
