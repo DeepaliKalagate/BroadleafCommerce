@@ -51,7 +51,7 @@ public class MerchandisePage extends TestBase
     @FindBy(xpath = "")
     private WebElement checkout;
 
-    public MerchandisePage(WebDriver driver)
+    public MerchandisePage()
     {
         PageFactory.initElements(driver,this);
     }

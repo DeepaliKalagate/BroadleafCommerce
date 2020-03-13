@@ -1,15 +1,14 @@
 package com.broadleafcommerce.pages;
 
+import com.broadleafcommerce.base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RegisterPage
+public class RegisterPage extends TestBase
 {
-    @FindBy(xpath = "//a[contains(text(),'Login')]")
-    private WebElement login;
-
+    //Page Factory-Object Repository
     @FindBy(id="customer.emailAddress")
     private WebElement email;
 
@@ -29,43 +28,34 @@ public class RegisterPage
     @FindBy(xpath = "//button[contains(text(),'Register')]")
     private WebElement clickRegister;
 
-    public RegisterPage(WebDriver driver)
+    @FindBy(xpath = "//img[contains(@class,'brand-logo')]")
+    private WebElement broadleafLogo;
+
+    //Initializing the page Objects
+    public RegisterPage()
     {
         PageFactory.initElements(driver,this);
     }
 
-    public void setLogin()
+    //Actions
+    public String validateRegisterPageTitle()
     {
-        login.click();
+        return driver.getTitle();
     }
 
-    public void setEmail(String username)
+    public boolean validateBroadleafLogoImage()
     {
-        email.sendKeys(username);
+        return broadleafLogo.isDisplayed();
     }
 
-    public void setFirstName(String firstname)
+    public HomePage verifyRegisterPage(String userName,String fName,String lName,String password1,String confirmPass)
     {
-        firstName.sendKeys(firstname);
-    }
-
-    public void setLastName(String lastname)
-    {
-        lastName.sendKeys(lastname);
-    }
-
-    public void setPassword(String password1)
-    {
+        email.sendKeys(userName);
+        firstName.sendKeys(fName);
+        lastName.sendKeys(lName);
         password.sendKeys(password1);
-    }
-
-    public void setConfirmPassword(String confirmPass)
-    {
         confirmPassword.sendKeys(confirmPass);
-    }
-
-    public void setClickRegister()
-    {
         clickRegister.click();
+        return new HomePage();
     }
 }

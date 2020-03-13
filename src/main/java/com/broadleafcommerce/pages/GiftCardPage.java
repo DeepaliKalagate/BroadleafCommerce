@@ -11,7 +11,7 @@ public class GiftCardPage extends TestBase
     @FindBy(xpath = "//div[@id='left-nav']//span[contains(text(),'Gift Cards')]")
     private WebElement giftCard;
 
-    public GiftCardPage(WebDriver driver)
+    public GiftCardPage()
     {
         PageFactory.initElements(driver,this);
     }

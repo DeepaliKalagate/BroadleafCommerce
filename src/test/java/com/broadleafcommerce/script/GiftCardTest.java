@@ -12,13 +12,13 @@ public class GiftCardTest extends TestBase
     public void setUp()
     {
         initiation();
-        giftCardPage = new GiftCardPage(driver);
+        giftCardPage = new GiftCardPage();
     }
 
     @Test
     public void giftCardTest() throws InterruptedException
     {
-        GiftCardPage giftCard=new GiftCardPage(driver);
+        GiftCardPage giftCard=new GiftCardPage();
         giftCard.setGiftCard();
     }
 }

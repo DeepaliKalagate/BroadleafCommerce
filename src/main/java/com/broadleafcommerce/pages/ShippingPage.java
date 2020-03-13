@@ -48,7 +48,7 @@ public class ShippingPage extends TestBase
     @FindBy(xpath = "//div[@class='col-sm-4 checkout-stage-action']//span[contains(text(),'Place Your Order')]")
     private WebElement placeOrder;
 
-    public ShippingPage(WebDriver driver)
+    public ShippingPage()
     {
         PageFactory.initElements(driver,this);
     }

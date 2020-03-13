@@ -21,7 +21,7 @@ public class LoginTest extends TestBase
     public void setUp()
     {
         initiation();
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
     }
 
     @Test(priority = 1)

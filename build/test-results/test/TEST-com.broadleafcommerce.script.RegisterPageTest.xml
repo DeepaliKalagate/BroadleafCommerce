@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.broadleafcommerce.script.RegisterPageTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-03-13T11:18:55" hostname="Deepalis-MacBook-Pro.local" time="17.028">
+  <properties/>
+  <testcase name="broadleafLogoImageTest" classname="com.broadleafcommerce.script.RegisterPageTest" time="0.047"/>
+  <testcase name="loginTest" classname="com.broadleafcommerce.script.RegisterPageTest" time="4.271"/>
+  <testcase name="testRegisterPageTitle" classname="com.broadleafcommerce.script.RegisterPageTest" time="2.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 37717
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Mar 13, 2020 4:48:50 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1584098331.354][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098331.456][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098331.558][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098331.660][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098331.761][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098331.863][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098331.965][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098332.067][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098332.168][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098332.270][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098332.372][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098332.816][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098332.918][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098333.019][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098333.121][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098333.223][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098333.325][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098333.428][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098333.530][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098333.633][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098333.735][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098333.838][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098333.940][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098334.042][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098334.144][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098334.247][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098334.429][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098334.531][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098334.709][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098334.812][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098334.914][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098335.016][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098335.119][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098335.221][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098335.323][SEVERE]: Timed out receiving message from renderer: 0.100
+Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 7690
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Mar 13, 2020 4:48:56 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1584098337.424][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098337.527][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098337.629][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098337.730][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098337.831][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098337.933][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098338.034][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098338.304][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098338.406][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098338.511][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098338.613][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098338.773][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098338.875][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098338.977][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098339.078][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098339.180][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098339.283][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098339.386][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098339.488][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098339.589][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098339.691][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098339.792][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098339.894][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098340.041][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098340.143][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098340.322][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098340.425][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098340.527][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098340.629][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098340.731][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098340.833][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098344.194][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098344.308][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098344.410][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098344.511][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098344.695][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098344.797][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098344.900][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098345.003][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098345.105][SEVERE]: Timed out receiving message from renderer: 0.100
+Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 46343
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+log4j:WARN No appenders could be found for logger (org.apache.http.impl.conn.PoolingHttpClientConnectionManager).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Mar 13, 2020 4:49:06 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1584098346.848][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098346.950][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098347.052][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098347.154][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098347.257][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098347.358][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098347.459][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098347.561][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098347.663][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098347.765][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098348.184][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098348.286][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098348.388][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098348.489][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098348.591][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098348.693][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098348.796][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098348.899][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098349.001][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098349.103][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098349.205][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098349.307][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098349.408][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098349.510][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098349.684][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098349.786][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098349.966][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098350.069][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098350.171][SEVERE]: Timed out receiving message from renderer: 0.100
+[1584098350.274][SEVERE]: Timed out receiving message from renderer: 0.100
+]]></system-err>
+</testsuite>

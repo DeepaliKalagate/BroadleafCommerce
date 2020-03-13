@@ -9,9 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends TestBase
 {
     //PageFactory-Object Repository
-    @FindBy(xpath = "//a[contains(text(),'Login')]")
-    private WebElement login;
-
     @FindBy(id="username")
     private WebElement email;
 
@@ -25,7 +22,7 @@ public class LoginPage extends TestBase
     private WebElement broadleafLogo;
 
     //Initializing the page Objects
-    public LoginPage(WebDriver driver)
+    public LoginPage()
     {
         PageFactory.initElements(driver,this);
     }
@@ -46,6 +43,6 @@ public class LoginPage extends TestBase
         email.sendKeys(userName);
         password.sendKeys(password1);
         clickLogin.click();
-        return new HomePage(driver);
+        return new HomePage();
     }
 }

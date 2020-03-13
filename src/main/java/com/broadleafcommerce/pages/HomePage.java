@@ -9,12 +9,53 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends TestBase
 {
-    @FindBy(css = "body.locale-en_US:nth-child(2) nav.navbar.navbar-default.navbar-top.navbar-fixed-top:nth-child(5) div.container-fluid div.left-nav.hidden-xs.collapse.main-menu-wrapper ul.nav.navbar-nav.main-menu li:nth-child(1) a:nth-child(1) > span:nth-child(1)")
-    private WebElement home;
+    @FindBy(className = "material-icons")
+    private WebElement userNameLable;
 
-    public HomePage(WebDriver driver)
+    @FindBy(xpath = "//div[@id='left-nav']//span[contains(text(),'Hot Sauces')]")
+    private WebElement hotSauses;
+
+    @FindBy(xpath="//div[@id='left-nav']//span[contains(text(),'Merchandise')]")
+    private WebElement clickOnMerchandise;
+
+    @FindBy(xpath = "//div[@id='left-nav']//span[contains(text(),'Clearance')]")
+    private WebElement clickOnClearance;
+
+    @FindBy(xpath = "//div[@id='left-nav']//span[contains(text(),'Gift Cards')]")
+    private WebElement clickOnGiftCard;
+
+    //Initializing the Page Objects
+    public HomePage()
     {
         PageFactory.initElements(driver,this);
     }
 
+    public boolean verifyUserName()
+    {
+        return userNameLable.isDisplayed();
+    }
+
+    public HotSaucePage clickOnHotsauce()
+    {
+        hotSauses.click();
+        return new HotSaucePage();
+    }
+
+    public MerchandisePage clickOnMerchandise()
+    {
+        clickOnMerchandise.click();
+        return new MerchandisePage();
+    }
+
+    public ClearancePage clickOnClearance()
+    {
+        clickOnClearance.click();
+        return new ClearancePage();
+    }
+
+    public GiftCardPage clickOnGiftCard()
+    {
+        clickOnGiftCard.click();
+        return new GiftCardPage();
+    }
 }

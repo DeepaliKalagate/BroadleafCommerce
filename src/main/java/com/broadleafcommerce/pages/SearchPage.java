@@ -33,7 +33,7 @@ public class SearchPage extends TestBase
     @FindBy(xpath = "//a[@class='btn btn-primary']")
     private WebElement clickOnContinue;
 
-    public SearchPage(WebDriver driver)
+    public SearchPage()
     {
         PageFactory.initElements(driver,this);
     }
