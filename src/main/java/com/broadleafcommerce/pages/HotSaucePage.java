@@ -20,9 +20,6 @@ public class HotSaucePage extends TestBase
     @FindBy(xpath = "//a[@class='btn btn-secondary']")
     private WebElement viewInCart;
 
-    @FindBy(xpath = "//a[@class='btn btn-primary']")
-    private WebElement clickOnCheckout;
-
     public HotSaucePage()
     {
         PageFactory.initElements(driver,this);
@@ -43,7 +40,6 @@ public class HotSaucePage extends TestBase
         viewHotSuace.click();
         //addToCart.click();
         viewInCart.click();
-        clickOnCheckout.click();
         return new ShippingPage();
     }
 }

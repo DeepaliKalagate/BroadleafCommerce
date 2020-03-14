@@ -30,9 +30,6 @@ public class SearchPage extends TestBase
     @FindBy(xpath = "//a[@class='btn btn-secondary']")
     private WebElement viewInCart;
 
-    @FindBy(xpath = "//a[@class='btn btn-primary']")
-    private WebElement clickOnContinue;
-
     public SearchPage()
     {
         PageFactory.initElements(driver,this);
@@ -66,10 +63,5 @@ public class SearchPage extends TestBase
     public void setViewInCart()
     {
         viewInCart.click();
-    }
-
-    public void setClickOnContinue()
-    {
-        clickOnContinue.click();
     }
 }

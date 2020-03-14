@@ -1,19 +1,17 @@
 package com.broadleafcommerce.pages;
 
-
 import com.broadleafcommerce.base.TestBase;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class MerchandisePage extends TestBase
 {
-    @FindBy(xpath = "//div[@id='left-nav']//span[contains(text(),'Merchandise')]")
-    private WebElement merchandise;
+    @FindBy(className = "section-title")
+    private WebElement marchandisePageText;
 
-    @FindBy(xpath = "//div[@id='left-nav']//ul[@class='nav navbar-nav main-menu']//li[@class='dropdown']//ul[@class='dropdown-menu dropdown-with-icons']//li//a[contains(text(),'Womens')]")
-    private WebElement women;
+    @FindBy(xpath = "//img[@class='brand-logo']")
+    private WebElement marchandisePageLogo;
 
     @FindBy(xpath = "//div[@class='dropdown']//a[@class='dropdown-toggle']")
     private WebElement sortBy;
@@ -48,67 +46,46 @@ public class MerchandisePage extends TestBase
     @FindBy(xpath = "")
     private WebElement viewInCart;
 
-    @FindBy(xpath = "")
-    private WebElement checkout;
-
     public MerchandisePage()
     {
         PageFactory.initElements(driver,this);
     }
 
-    public void setMerchandise()
+    public String verifyMerchandisePageTitle()
     {
-        merchandise.click();
+        return driver.getTitle();
     }
 
-    public void setWomen()
+    public boolean verifyMarchandisePageLogo()
     {
-        women.click();
+        return marchandisePageLogo.isDisplayed();
     }
 
-    public void setSortBy()
+    public boolean verifyMarchandisePageText()
+    {
+        return marchandisePageText.isDisplayed();
+    }
+
+    public ShippingPage setMerchandisePageFields(String size) throws InterruptedException
     {
         sortBy.click();
-    }
-
-    public void setPrice()
-    {
+        Thread.sleep(1000);
         price.click();
-    }
-
-    public void setFilter()
-    {
+        Thread.sleep(1000);
         filter.click();
-    }
-
-    public void setSilver()
-    {
+        Thread.sleep(1000);
         silver.click();
-    }
-
-    public void setSortByPrice()
-    {
+        Thread.sleep(1000);
         sortByPrice.click();
-    }
-
-    public void setSilverPrice()
-    {
+        Thread.sleep(1000);
         silverPrice.click();
-    }
-
-    public void setShirtImage()
-    {
+        Thread.sleep(2000);
         shirtImage.click();
-    }
-
-    public void setSelectSilver(String size)
-    {
+        Thread.sleep(1000);
         shirtSize.sendKeys(size);
-    }
-
-    public void setAddToCart()
-    {
+        Thread.sleep(1000);
         addToCart.click();
+        Thread.sleep(1000);
+        return new ShippingPage();
     }
-
 }

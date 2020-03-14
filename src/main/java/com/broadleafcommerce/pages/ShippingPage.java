@@ -12,6 +12,9 @@ public class ShippingPage extends TestBase
     @FindBy(id = "checkout")
     private WebElement shippingPageText;
 
+    @FindBy(xpath = "//a[@class='btn btn-primary']")
+    private WebElement clickOnCheckout;
+
     @FindBy(id = "fullName")
     private WebElement fullName;
 
@@ -68,6 +71,7 @@ public class ShippingPage extends TestBase
 
     public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo)
     {
+        clickOnCheckout.click();
         fullName.sendKeys(name);
         address1.sendKeys(addressFirst);
         address2.sendKeys(addressTwo);
