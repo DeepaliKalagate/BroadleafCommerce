@@ -38,11 +38,14 @@ public class LoginPage extends TestBase
         return broadleafLogo.isDisplayed();
     }
 
-    public HomePage login(String userName,String password1)
+    public HomePage login(String userName,String password1) throws InterruptedException
     {
         email.sendKeys(userName);
+        Thread.sleep(1000);
         password.sendKeys(password1);
+        Thread.sleep(1000);
         clickLogin.click();
+        Thread.sleep(1000);
         return new HomePage();
     }
 }

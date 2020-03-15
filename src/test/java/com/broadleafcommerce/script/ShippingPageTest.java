@@ -22,14 +22,14 @@ public class ShippingPageTest extends TestBase
     }
 
     @BeforeMethod()
-    public void setUp()
+    public void setUp() throws InterruptedException
     {
         initiation();
         hotSausPage=new HotSaucePage();
         loginPage = new LoginPage();
         homePage=loginPage.login(property.getProperty("email"),property.getProperty("password"));
         hotSausPage=homePage.clickOnHotsauce();
-        shippingPage=hotSausPage.verifyToShowHotSauses();
+        shippingPage=hotSausPage.verifyToShowHotSauses("Green Ghost");
     }
 
     @Test

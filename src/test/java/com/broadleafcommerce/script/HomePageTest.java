@@ -19,7 +19,7 @@ public class HomePageTest extends TestBase
     }
 
     @BeforeMethod()
-    public void setUp()
+    public void setUp() throws InterruptedException
     {
         initiation();
         hotSaucePage =new HotSaucePage();

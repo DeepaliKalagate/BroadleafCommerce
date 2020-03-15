@@ -12,7 +12,7 @@ public class ShippingPage extends TestBase
     @FindBy(id = "checkout")
     private WebElement shippingPageText;
 
-    @FindBy(xpath = "//a[@class='btn btn-primary']")
+    @FindBy(xpath = "//span[contains(text(),'Checkout')]")
     private WebElement clickOnCheckout;
 
     @FindBy(id = "fullName")
@@ -69,23 +69,35 @@ public class ShippingPage extends TestBase
         return shippingPageText.isDisplayed();
     }
 
-    public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo)
-    {
+    public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo) throws InterruptedException {
         clickOnCheckout.click();
         fullName.sendKeys(name);
+        Thread.sleep(1000);
         address1.sendKeys(addressFirst);
+        Thread.sleep(1000);
         address2.sendKeys(addressTwo);
+        Thread.sleep(1000);
         city.sendKeys(cityName);
+        Thread.sleep(1000);
         Select select = new Select(state);
         select.selectByVisibleText(selectState);
+        Thread.sleep(1000);
         postal.sendKeys(postalCode);
+        Thread.sleep(1000);
         phoneNumber.sendKeys(phoneNo);
+        Thread.sleep(1000);
         shippingMethod.click();
+        Thread.sleep(1000);
         clickToContinue.click();
+        Thread.sleep(1000);
         cashOnDelivery.click();
-        sameAddress.click();
+        Thread.sleep(1000);
+       // sameAddress.click();
+        Thread.sleep(1000);
         continueShopping.click();
+        Thread.sleep(1000);
         placeOrder.click();
+        Thread.sleep(1000);
         return new HomePage();
     }
 }

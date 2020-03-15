@@ -43,7 +43,7 @@ public class MerchandisePage extends TestBase
     @FindBy(xpath = "//span[contains(text(),'Add to Cart')]")
     private WebElement addToCart;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//li[@class='dropdown js-miniCart open']//a[@class='btn btn-primary goto-full-cart'][contains(text(),'View Your Cart')]")
     private WebElement viewInCart;
 
     public MerchandisePage()
@@ -82,10 +82,13 @@ public class MerchandisePage extends TestBase
         Thread.sleep(2000);
         shirtImage.click();
         Thread.sleep(1000);
+        selectSilver.click();
+        Thread.sleep(1000);
         shirtSize.sendKeys(size);
         Thread.sleep(1000);
         addToCart.click();
         Thread.sleep(1000);
+        viewInCart.click();
         return new ShippingPage();
     }
 }
