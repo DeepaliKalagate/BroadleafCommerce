@@ -54,6 +54,12 @@ public class ShippingPage extends TestBase
     @FindBy(xpath = "//div[@class='col-sm-4 checkout-stage-action']//span[contains(text(),'Place Your Order')]")
     private WebElement placeOrder;
 
+    @FindBy(xpath = "//body[@class='locale-en_US index-page']/nav[@id='sectionsNav']/div[@class='container-fluid']/div[@class='collapse navbar-collapse nav-wrapper']/ul[@class='nav navbar-nav navbar-right']/li[@class='dropdown']/a[1]")
+    private WebElement clickOnDropDown;
+
+    @FindBy(xpath = "//a[contains(text(),'Logout')]")
+    private WebElement clickOnLogout;
+
     public ShippingPage()
     {
         PageFactory.initElements(driver,this);
@@ -98,6 +104,9 @@ public class ShippingPage extends TestBase
         Thread.sleep(1000);
         placeOrder.click();
         Thread.sleep(1000);
+        clickOnDropDown.click();
+        Thread.sleep(1000);
+        clickOnLogout.click();
         return new HomePage();
     }
 }
