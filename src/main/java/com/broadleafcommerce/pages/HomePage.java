@@ -1,6 +1,7 @@
 package com.broadleafcommerce.pages;
 
 import com.broadleafcommerce.base.TestBase;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -27,7 +28,7 @@ public class HomePage extends TestBase
     private WebElement clickOnGiftCard;
 
     //Initializing the Page Objects
-    public HomePage()
+    public HomePage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
@@ -40,13 +41,13 @@ public class HomePage extends TestBase
     public HotSaucePage clickOnHotsauce()
     {
         hotSauses.click();
-        return new HotSaucePage();
+        return new HotSaucePage(driver);
     }
 
     public MerchandisePage clickOnMerchandise()
     {
         clickOnMerchandise.click();
-        return new MerchandisePage();
+        return new MerchandisePage(driver);
     }
 
     public void clickOnWomensMerchandise()
@@ -59,12 +60,12 @@ public class HomePage extends TestBase
     public ClearancePage clickOnClearance()
     {
         clickOnClearance.click();
-        return new ClearancePage();
+        return new ClearancePage(driver);
     }
 
     public GiftCardPage clickOnGiftCard()
     {
         clickOnGiftCard.click();
-        return new GiftCardPage();
+        return new GiftCardPage(driver);
     }
 }

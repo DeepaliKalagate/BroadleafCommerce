@@ -2,6 +2,7 @@ package com.broadleafcommerce.script;
 
 import com.broadleafcommerce.base.TestBase;
 import com.broadleafcommerce.pages.HomePage;
+import com.broadleafcommerce.pages.LoginPage;
 import com.broadleafcommerce.pages.RegisterPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -9,37 +10,25 @@ import org.testng.annotations.Test;
 
 public class RegisterPageTest extends TestBase
 {
-    public RegisterPage registerPage;
-    public HomePage homePage;
-
-    public RegisterPageTest()
-    {
-        super();//Initialize super class constructor
-    }
-
-    @BeforeMethod
-    public void setUp()
-    {
-        initiation();
-        registerPage = new RegisterPage();
-    }
-
     @Test(priority = 1)
-    public void broadleafLogoImageTest()
+    public void broadleafLogoImageAndTitleTest() throws InterruptedException
     {
+        RegisterPage registerPage=new RegisterPage(driver);
         boolean flag=registerPage.validateBroadleafLogoImage();
         Assert.assertTrue(flag);
-    }
-
-    @Test(priority = 2)
-    public void loginTest() throws InterruptedException
-    {
-        Thread.sleep(2000);
         String title=registerPage.validateRegisterPageTitle();
         Assert.assertEquals(title,"Broadleaf Commerce Demo Store - Heat Clinic - Login");
         Thread.sleep(2000);
-        homePage=registerPage.verifyRegisterPage(property.getProperty("email"),property.getProperty("firstName"),property.getProperty("lastName"),
-                                                property.getProperty("password"),property.getProperty("confirmPassword"));
+    }
+
+    @Test(priority = 2)
+    public void verifyRegisterPageTest() throws InterruptedException
+    {
+        Thread.sleep(2000);
+        RegisterPage registerPage=new RegisterPage(driver);
+        HomePage homePage=new HomePage(driver);
+        homePage=registerPage.verifyRegisterPage("deepali.kalagate@thoughtworks.com","Deepali","Patil",
+                "Mysweetfamily@333","Mysweetfamily@333");
         Thread.sleep(2000);
     }
 }

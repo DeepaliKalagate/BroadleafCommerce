@@ -8,48 +8,35 @@ import org.testng.annotations.Test;
 
 public class ClearancePageTest extends TestBase
 {
-    public LoginPage loginPage;
-    public HomePage homePage;
-    public ClearancePage clearancePage;
-    public ShippingPage shippingPage;
-
-    public ClearancePageTest()
+    @BeforeMethod
+    public void setLoginPage() throws InterruptedException
     {
-        super();//Initialize super class constructor
-    }
-
-    @BeforeMethod()
-    public void setUp() throws InterruptedException
-    {
-        initiation();
-        clearancePage=new ClearancePage();
-        loginPage = new LoginPage();
-        shippingPage=new ShippingPage();
-        homePage=loginPage.login(property.getProperty("email"),property.getProperty("password"));
+        LoginPage loginPage= new LoginPage(driver);
+        loginPage.login("dipakalagate1991@gmail.com","Mysweetfamily@333");
+        ClearancePage clearancePage=new ClearancePage(driver);
+        HomePage homePage=new HomePage(driver);
         clearancePage=homePage.clickOnClearance();
     }
 
     @Test(priority = 1)
-    public void verifyClearancePageText()
+    public void verifyClearancePageTextAndTitle() throws InterruptedException
     {
+        ClearancePage clearancePage=new ClearancePage(driver);
         boolean clearancePageText=clearancePage.verifyClearancePageText();
         Assert.assertTrue(clearancePageText);
+        Thread.sleep(1000);
+        String clearancePageTitle=clearancePage.verifyClearancePageTitle();
+        Assert.assertEquals(clearancePageTitle,"Clearance - Test Site","Clearance page title not matched");
     }
 
-   @Test(priority = 2)
-   public void testTitle() throws InterruptedException
-   {
-       Thread.sleep(1000);
-       String clearancePageTitle=clearancePage.verifyClearancePageTitle();
-       Assert.assertEquals(clearancePageTitle,"Clearance - Test Site","Clearance page title not matched");
-   }
-
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void verifyClearancePageTest() throws InterruptedException
     {
         Thread.sleep(1000);
+        ClearancePage clearancePage=new ClearancePage(driver);
         clearancePage.verifyClearancePageFields();
         Thread.sleep(2000);
+        ShippingPage shippingPage=new ShippingPage(driver);
         shippingPage.VerifyShippingPage("Deepali Lokesh Patil","MG Road","Ramnagar","Thane","MH","45050","9870675890");
         Thread.sleep(1000);
     }

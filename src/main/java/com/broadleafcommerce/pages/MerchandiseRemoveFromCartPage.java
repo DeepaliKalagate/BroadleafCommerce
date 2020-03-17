@@ -1,6 +1,7 @@
 package com.broadleafcommerce.pages;
 
 import com.broadleafcommerce.base.TestBase;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -52,7 +53,7 @@ public class MerchandiseRemoveFromCartPage extends TestBase
     @FindBy(xpath = "//a[@class='btn btn-primary btn-lg']")
     private WebElement  clickOnContinueShopping;
 
-    public MerchandiseRemoveFromCartPage()
+    public MerchandiseRemoveFromCartPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
@@ -100,6 +101,6 @@ public class MerchandiseRemoveFromCartPage extends TestBase
         Thread.sleep(1000);
         clickOnContinueShopping.click();
         Thread.sleep(1000);
-        return new HomePage();
+        return new HomePage(driver);
     }
 }

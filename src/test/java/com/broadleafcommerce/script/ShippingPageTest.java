@@ -1,51 +1,31 @@
 package com.broadleafcommerce.script;
 
 import com.broadleafcommerce.base.TestBase;
-import com.broadleafcommerce.pages.HomePage;
-import com.broadleafcommerce.pages.HotSaucePage;
-import com.broadleafcommerce.pages.LoginPage;
-import com.broadleafcommerce.pages.ShippingPage;
+import com.broadleafcommerce.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ShippingPageTest extends TestBase
 {
-    public LoginPage loginPage;
-    public HomePage homePage;
-    public HotSaucePage hotSausPage;
-    public ShippingPage shippingPage;
-
-    public ShippingPageTest()
+   @BeforeMethod
+    public void setLoginPage() throws InterruptedException
     {
-        super();//Initialize super class constructor
-    }
-
-    @BeforeMethod()
-    public void setUp() throws InterruptedException
-    {
-        initiation();
-        hotSausPage=new HotSaucePage();
-        loginPage = new LoginPage();
-        homePage=loginPage.login(property.getProperty("email"),property.getProperty("password"));
-        hotSausPage=homePage.clickOnHotsauce();
-        shippingPage=hotSausPage.verifyToShowHotSauses("Green Ghost");
+        LoginPage loginPage= new LoginPage(driver);
+        loginPage.login("dipakalagate1991@gmail.com","Mysweetfamily@333");
+        HotSaucePage hotSaucePage=new HotSaucePage(driver);
+        HomePage homePage=new HomePage(driver);
+        hotSaucePage=homePage.clickOnHotsauce();
+        ShippingPage shippingPage=new ShippingPage(driver);
+        shippingPage=hotSaucePage.verifyToShowHotSauses("Green Ghost");
     }
 
     @Test
-    public void verifyShippingPageTest()
-    {
-        boolean shippingPageText=shippingPage.verifyShippingPageText();
-        Assert.assertTrue(shippingPageText);
-    }
-
-    public void verifyShippingPage() throws InterruptedException
+    public void verifyShippingPageTest() throws InterruptedException
     {
         Thread.sleep(2000);
+        ShippingPage shippingPage=new ShippingPage(driver);
         shippingPage.VerifyShippingPage("Deepali Lokesh Patil","MG Road","Ramnagar","Thane","MH","45050","9870675890");
-        Thread.sleep(1000);
-        String shippingPageTitle=hotSausPage.verifyHotSaucePageTitle();
-        Assert.assertEquals(shippingPageTitle,"Broadleaf Commerce Demo Store - Heat Clinic - Checkout","Home page title not matched");
-        Thread.sleep(1000);
+
     }
 }

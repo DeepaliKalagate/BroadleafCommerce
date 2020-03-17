@@ -32,13 +32,14 @@ public class GiftCardPage extends TestBase
     @FindBy(xpath = "//span[contains(text(),'Add to Cart')]")
     private WebElement clickAddToCart;
 
-    @FindBy(xpath = "//ul[@class='nav navbar-nav navbar-right']//i[@class='material-icons'][contains(text(),'shopping_cart')]")
+    @FindBy(xpath = "//li[@class='dropdown js-miniCart open']//i[@class='material-icons'][contains(text(),'shopping_cart')]")
     private WebElement clickOnCart;
 
-    @FindBy(xpath = "//a[@class='btn btn-primary goto-full-cart']")
+    @FindBy(className = "//a[@class='btn btn-primary goto-full-cart']")
+    //@FindBy(xpath="//li[@class='dropdown js-miniCart open']//a[@class='btn btn-primary goto-full-cart'][contains(text(),'View Your Cart')]")
     private WebElement viewInCart;
 
-    public GiftCardPage()
+    public GiftCardPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
@@ -63,11 +64,11 @@ public class GiftCardPage extends TestBase
         selectColor.click();
         Thread.sleep(1000);
         clickAddToCart.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         clickOnCart.click();
         Thread.sleep(1000);
         viewInCart.click();
         Thread.sleep(1000);
-        return new ShippingPage();
+        return new ShippingPage(driver);
     }
 }

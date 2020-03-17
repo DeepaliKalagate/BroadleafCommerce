@@ -18,11 +18,9 @@ public class LoginPage extends TestBase
     @FindBy(xpath = "//button[contains(text(),'Login')]")
     private WebElement clickLogin;
 
-    @FindBy(xpath = "//img[contains(@class,'brand-logo')]")
-    private WebElement broadleafLogo;
 
     //Initializing the page Objects
-    public LoginPage()
+    public LoginPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
@@ -33,10 +31,6 @@ public class LoginPage extends TestBase
         return driver.getTitle();
     }
 
-    public boolean validateBroadleafLogoImage()
-    {
-        return broadleafLogo.isDisplayed();
-    }
 
     public HomePage login(String userName,String password1) throws InterruptedException
     {
@@ -46,6 +40,6 @@ public class LoginPage extends TestBase
         Thread.sleep(1000);
         clickLogin.click();
         Thread.sleep(1000);
-        return new HomePage();
+        return new HomePage(driver);
     }
 }

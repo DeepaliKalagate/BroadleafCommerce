@@ -8,47 +8,34 @@ import org.testng.annotations.Test;
 
 public class MarchandiseRemoveFromCartPageTest extends TestBase
 {
-    public LoginPage loginPage;
-    public HomePage homePage;
-    public MerchandisePage merchandisePage;
-    public MerchandiseRemoveFromCartPage removeFromCartPage;
-
-
-    public MarchandiseRemoveFromCartPageTest()
+    @BeforeMethod
+    public void setLoginPage() throws InterruptedException
     {
-        super();//Initialize super class constructor
-    }
-
-    @BeforeMethod()
-    public void setUp() throws InterruptedException
-    {
-        initiation();
-        removeFromCartPage=new MerchandiseRemoveFromCartPage();
-        loginPage = new LoginPage();
-        homePage=loginPage.login(property.getProperty("email"),property.getProperty("password"));
+        LoginPage loginPage= new LoginPage(driver);
+        loginPage.login("dipakalagate1991@gmail.com","Mysweetfamily@333");
+        MerchandisePage merchandisePage=new MerchandisePage(driver);
+        HomePage homePage=new HomePage(driver);
         merchandisePage=homePage.clickOnMerchandise();
     }
 
     @Test(priority = 1)
-    public void verifyMerchandisePageText()
+    public void verifyMerchandisePageTextAndTitle() throws InterruptedException
     {
+        MerchandiseRemoveFromCartPage removeFromCartPage=new MerchandiseRemoveFromCartPage(driver);
         boolean merchandisePageText=removeFromCartPage.verifyMarchandisePageText();
         Assert.assertTrue(merchandisePageText);
-    }
-
-    @Test(priority = 2)
-    public void testTitle() throws InterruptedException
-    {
         Thread.sleep(1000);
         String merchandisePageTitle=removeFromCartPage.verifyMerchandisePageTitle();
         Assert.assertEquals(merchandisePageTitle,"Merchandise - Test Site","Merchandise page title not matched");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void verifyMerchandiseTest() throws InterruptedException
     {
         Thread.sleep(1000);
+        HomePage homePage=new HomePage(driver);
         homePage.clickOnWomensMerchandise();
+        MerchandiseRemoveFromCartPage removeFromCartPage=new MerchandiseRemoveFromCartPage(driver);
         removeFromCartPage.setMerchandisePageFields("M");
         Thread.sleep(2000);
     }

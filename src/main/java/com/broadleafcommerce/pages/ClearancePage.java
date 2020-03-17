@@ -1,6 +1,7 @@
 package com.broadleafcommerce.pages;
 
 import com.broadleafcommerce.base.TestBase;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -19,7 +20,7 @@ public class ClearancePage extends TestBase
     @FindBy(xpath = "//a[@class='btn btn-secondary']")
     private WebElement viewInCart;
 
-    public ClearancePage()
+    public ClearancePage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
@@ -34,12 +35,15 @@ public class ClearancePage extends TestBase
         return clearancePageText.isDisplayed();
     }
 
-    public ShippingPage verifyClearancePageFields()
+    public ShippingPage verifyClearancePageFields() throws InterruptedException
     {
         clearanceItem.click();
-        //addToCart.click();
+        Thread.sleep(1000);
+        addToCart.click();
+        Thread.sleep(1000);
         viewInCart.click();
-        return new ShippingPage();
+        Thread.sleep(1000);
+        return new ShippingPage(driver);
     }
 
 

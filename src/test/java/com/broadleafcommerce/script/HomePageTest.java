@@ -10,26 +10,17 @@ import org.testng.annotations.Test;
 
 public class HomePageTest extends TestBase
 {
-    public LoginPage loginPage;
-    public HomePage homePage;
-    public HotSaucePage hotSaucePage;
-    public HomePageTest()
+    @BeforeMethod
+    public void setLoginPage() throws InterruptedException
     {
-        super();//Initialize super class constructor
-    }
-
-    @BeforeMethod()
-    public void setUp() throws InterruptedException
-    {
-        initiation();
-        hotSaucePage =new HotSaucePage();
-        loginPage = new LoginPage();
-        homePage=loginPage.login(property.getProperty("email"),property.getProperty("password"));
+        LoginPage loginPage= new LoginPage(driver);
+        loginPage.login("dipakalagate1991@gmail.com","Mysweetfamily@333");
     }
 
     @Test(priority = 1)
     public void verifyUserNameTest()
     {
+        HomePage homePage=new HomePage(driver);
         boolean userName=homePage.verifyUserName();
         Assert.assertTrue(userName);
     }
@@ -37,6 +28,8 @@ public class HomePageTest extends TestBase
     @Test(priority = 2)
     public void verifyHotSauceLinkTest()
     {
+        HomePage homePage=new HomePage(driver);
+        HotSaucePage hotSaucePage =new HotSaucePage(driver);
        hotSaucePage = homePage.clickOnHotsauce();
     }
 }

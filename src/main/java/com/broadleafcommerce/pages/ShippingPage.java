@@ -45,9 +45,6 @@ public class ShippingPage extends TestBase
     @FindBy(xpath = "//a[contains(text(),'Collect On Delivery')]")
     private WebElement cashOnDelivery;
 
-    @FindBy(xpath = "//div[@class='checkbox use-shipping-address-wrapper']//span[@class='check']")
-    private WebElement sameAddress;
-
     @FindBy(xpath = "//span[contains(text(),'Continue')]")
     private WebElement continueShopping;
 
@@ -60,22 +57,13 @@ public class ShippingPage extends TestBase
     @FindBy(xpath = "//a[contains(text(),'Logout')]")
     private WebElement clickOnLogout;
 
-    public ShippingPage()
+    public ShippingPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
 
-    public String verifyShippingPageTitle()
+    public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo) throws InterruptedException
     {
-        return driver.getTitle();
-    }
-
-    public boolean verifyShippingPageText()
-    {
-        return shippingPageText.isDisplayed();
-    }
-
-    public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo) throws InterruptedException {
         clickOnCheckout.click();
         fullName.sendKeys(name);
         Thread.sleep(1000);
@@ -98,8 +86,6 @@ public class ShippingPage extends TestBase
         Thread.sleep(1000);
         cashOnDelivery.click();
         Thread.sleep(1000);
-       // sameAddress.click();
-        Thread.sleep(1000);
         continueShopping.click();
         Thread.sleep(1000);
         placeOrder.click();
@@ -107,6 +93,6 @@ public class ShippingPage extends TestBase
         clickOnDropDown.click();
         Thread.sleep(1000);
         clickOnLogout.click();
-        return new HomePage();
+        return new HomePage(driver);
     }
 }

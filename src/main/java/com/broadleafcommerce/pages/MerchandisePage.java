@@ -1,6 +1,7 @@
 package com.broadleafcommerce.pages;
 
 import com.broadleafcommerce.base.TestBase;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -46,7 +47,7 @@ public class MerchandisePage extends TestBase
     @FindBy(xpath = "//li[@class='dropdown js-miniCart open']//a[@class='btn btn-primary goto-full-cart'][contains(text(),'View Your Cart')]")
     private WebElement viewInCart;
 
-    public MerchandisePage()
+    public MerchandisePage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
@@ -89,6 +90,6 @@ public class MerchandisePage extends TestBase
         addToCart.click();
         Thread.sleep(1000);
         viewInCart.click();
-        return new ShippingPage();
+        return new ShippingPage(driver);
     }
 }

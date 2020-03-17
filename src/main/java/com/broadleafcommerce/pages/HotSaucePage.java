@@ -2,6 +2,7 @@ package com.broadleafcommerce.pages;
 
 
 import com.broadleafcommerce.base.TestBase;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -26,7 +27,7 @@ public class HotSaucePage extends TestBase
     @FindBy(xpath = "//a[@class='btn btn-secondary']")
     private WebElement viewInCart;
 
-    public HotSaucePage()
+    public HotSaucePage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
@@ -53,6 +54,6 @@ public class HotSaucePage extends TestBase
         Thread.sleep(1000);
         viewInCart.click();
         Thread.sleep(1000);
-        return new ShippingPage();
+        return new ShippingPage(driver);
     }
 }

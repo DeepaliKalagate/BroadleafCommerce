@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/deepalikalagate/Desktop/BroadleafCommerce">
+        <classes>
+            <!--<class name="com.broadleafcommerce.script.ClearancePageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyClearancePageTextAndTitle"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.ClearancePageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyClearancePageTest"/>
+                </methods>
+            </class>-->
+            <class name="com.broadleafcommerce.script.GiftCardTest">
+               <methods>
+                   <parameter name="browserName" value="chrome"></parameter>
+                   <include name="verifyHotSaucePageLable"/>
+               </methods>
+           </class>
+           <class name="com.broadleafcommerce.script.GiftCardTest">
+               <methods>
+                   <parameter name="browserName" value="chrome"></parameter>
+                   <include name="selectHotSauceTest"/>
+               </methods>
+           </class>
+         <!-- <class name="com.broadleafcommerce.script.HomePageTest">
+               <methods>
+                   <parameter name="browserName" value="firefox"></parameter>
+                   <include name="verifyUserNameTest"/>
+               </methods>
+           </class>
+           <class name="com.broadleafcommerce.script.HomePageTest">
+               <methods>
+                   <parameter name="browserName" value="firefox"></parameter>
+                   <include name="verifyHotSauceLinkTest"/>
+               </methods>
+           </class>
+           <class name="com.broadleafcommerce.script.HotSauceTest">
+               <methods>
+                   <parameter name="browserName" value="chrome"></parameter>
+                   <include name="verifyHotSaucePageLableAndTitle"/>
+               </methods>
+           </class>
+           <class name="com.broadleafcommerce.script.HotSauceTest">
+               <methods>
+                   <parameter name="browserName" value="chrome"></parameter>
+                   <include name="selectHotSauceTest"/>
+               </methods>
+           </class>
+           <class name="com.broadleafcommerce.script.LoginTest">
+               <methods>
+                   <parameter name="browserName" value="chrome"></parameter>
+                   <include name="broadleafLogoImageTest"/>
+               </methods>
+           </class>
+           <class name="com.broadleafcommerce.script.LoginTest">
+               <methods>
+                   <parameter name="browserName" value="chrome"></parameter>
+                   <include name="loginTest"/>
+               </methods>
+           </class>
+            <class name="com.broadleafcommerce.script.MarchandisePageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyMerchandisePageTextAndTitle"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.MarchandisePageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyMerchandiseTest"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.MarchandiseRemoveFromCartPageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyMerchandisePageTextAndTitle"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.MarchandiseRemoveFromCartPageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyMerchandiseTest"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.RegisterPageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="broadleafLogoImageAndTitleTest"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.RegisterPageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyRegisterPageTest"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.ShippingPageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyShippingPageTest"/>
+                </methods>
+            </class>-->
+        </classes>
+    </test>
+</suite>

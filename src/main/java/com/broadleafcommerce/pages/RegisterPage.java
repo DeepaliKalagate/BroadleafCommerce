@@ -32,7 +32,7 @@ public class RegisterPage extends TestBase
     private WebElement broadleafLogo;
 
     //Initializing the page Objects
-    public RegisterPage()
+    public RegisterPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
@@ -56,6 +56,6 @@ public class RegisterPage extends TestBase
         password.sendKeys(password1);
         confirmPassword.sendKeys(confirmPass);
         clickRegister.click();
-        return new HomePage();
+        return new HomePage(driver);
     }
 }
