@@ -1,13 +1,16 @@
 package com.broadleafcommerce.script;
 
+import com.broadleafcommerce.base.Listener;
 import com.broadleafcommerce.base.TestBase;
 import com.broadleafcommerce.pages.HomePage;
 import com.broadleafcommerce.pages.LoginPage;
 import com.broadleafcommerce.properties.Library;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(Listener.class)
 public class LoginTest extends TestBase
 {
     @Test

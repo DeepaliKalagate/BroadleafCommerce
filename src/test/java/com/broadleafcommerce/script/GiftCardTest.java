@@ -1,13 +1,14 @@
 package com.broadleafcommerce.script;
 
+import com.broadleafcommerce.base.Listener;
 import com.broadleafcommerce.base.TestBase;
 import com.broadleafcommerce.pages.*;
-import com.broadleafcommerce.utility.CustomListener;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(Listener.class)
 public class GiftCardTest extends TestBase
 {
    @BeforeMethod

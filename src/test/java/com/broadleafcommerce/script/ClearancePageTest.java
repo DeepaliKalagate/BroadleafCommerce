@@ -1,11 +1,14 @@
 package com.broadleafcommerce.script;
 
+import com.broadleafcommerce.base.Listener;
 import com.broadleafcommerce.base.TestBase;
 import com.broadleafcommerce.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(Listener.class)
 public class ClearancePageTest extends TestBase
 {
     @BeforeMethod
