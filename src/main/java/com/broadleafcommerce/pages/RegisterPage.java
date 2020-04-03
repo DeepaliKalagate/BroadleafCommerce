@@ -38,11 +38,6 @@ public class RegisterPage extends TestBase
     }
 
     //Actions
-    public String validateRegisterPageTitle()
-    {
-        return driver.getTitle();
-    }
-
     public boolean validateBroadleafLogoImage()
     {
         return broadleafLogo.isDisplayed();

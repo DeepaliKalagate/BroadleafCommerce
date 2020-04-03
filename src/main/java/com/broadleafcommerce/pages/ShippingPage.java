@@ -62,9 +62,14 @@ public class ShippingPage extends TestBase
         PageFactory.initElements(driver,this);
     }
 
-    public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo) throws InterruptedException
+    public void setClickOnCheckout() throws InterruptedException
     {
         clickOnCheckout.click();
+        Thread.sleep(1000);
+    }
+
+    public HomePage verifyShippingPage(String name, String addressFirst, String addressTwo, String cityName, String selectState, String postalCode, String phoneNo) throws InterruptedException
+    {
         fullName.sendKeys(name);
         Thread.sleep(1000);
         address1.sendKeys(addressFirst);

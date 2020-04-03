@@ -17,8 +17,7 @@ public class RegisterPageTest extends TestBase
         RegisterPage registerPage=new RegisterPage(driver);
         boolean flag=registerPage.validateBroadleafLogoImage();
         Assert.assertTrue(flag);
-        String title=registerPage.validateRegisterPageTitle();
-        Assert.assertEquals(title,"Broadleaf Commerce Demo Store - Heat Clinic - Login");
+        Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Login"));
         Thread.sleep(2000);
     }
 

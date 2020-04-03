@@ -37,11 +37,6 @@ public class HotSaucePage extends TestBase
         return hotsauceLable.isDisplayed();
     }
 
-    public String verifyHotSaucePageTitle()
-    {
-        return driver.getTitle();
-    }
-
     public ShippingPage verifyToShowHotSauses(String suace1) throws InterruptedException
     {
         searchSauce.sendKeys(suace1);

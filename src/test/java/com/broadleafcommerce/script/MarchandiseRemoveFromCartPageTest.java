@@ -15,7 +15,7 @@ public class MarchandiseRemoveFromCartPageTest extends TestBase
     public void setLoginPage() throws InterruptedException
     {
         LoginPage loginPage= new LoginPage(driver);
-        loginPage.login("dipakalagate1991@gmail.com","Mysweetfamily@333");
+        loginPage.login("deepali.kalagate@thoughtworks.com","Mysweetfamily@333");
         MerchandisePage merchandisePage=new MerchandisePage(driver);
         HomePage homePage=new HomePage(driver);
         merchandisePage=homePage.clickOnMerchandise();
@@ -28,8 +28,7 @@ public class MarchandiseRemoveFromCartPageTest extends TestBase
         boolean merchandisePageText=removeFromCartPage.verifyMarchandisePageText();
         Assert.assertTrue(merchandisePageText);
         Thread.sleep(1000);
-        String merchandisePageTitle=removeFromCartPage.verifyMerchandisePageTitle();
-        Assert.assertEquals(merchandisePageTitle,"Merchandise - Test Site","Merchandise page title not matched");
+        Assert.assertTrue(driver.getTitle().equals("Merchandise - Test Site"));
     }
 
     @Test(priority = 2)

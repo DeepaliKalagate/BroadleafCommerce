@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/Users/deepalikalagate/Desktop/BroadleafCommerce">
         <classes>
-            <class name="com.broadleafcommerce.script.ClearancePageTest">
+            <!--<class name="com.broadleafcommerce.script.ClearancePageTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
                     <include name="verifyClearancePageTextAndTitle"/>
@@ -98,7 +98,7 @@
                     <parameter name="browserName" value="chrome"></parameter>
                     <include name="verifyRegisterPageTest"/>
                 </methods>
-            </class>
+            </class>-->
             <class name="com.broadleafcommerce.script.ShippingPageTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>

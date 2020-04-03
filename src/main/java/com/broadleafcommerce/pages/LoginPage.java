@@ -26,12 +26,6 @@ public class LoginPage extends TestBase
     }
 
     //Actions
-    public String validateLoginPageTitle()
-    {
-        return driver.getTitle();
-    }
-
-
     public HomePage login(String userName,String password1) throws InterruptedException
     {
         email.sendKeys(userName);

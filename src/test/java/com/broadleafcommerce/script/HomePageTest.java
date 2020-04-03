@@ -17,7 +17,7 @@ public class HomePageTest extends TestBase
     public void setLoginPage() throws InterruptedException
     {
         LoginPage loginPage= new LoginPage(driver);
-        loginPage.login("dipakalagate1991@gmail.com","Mysweetfamily@333");
+        loginPage.login("deepali.kalagate@thoughtworks.com","Mysweetfamily@333");
     }
 
     @Test(priority = 1)

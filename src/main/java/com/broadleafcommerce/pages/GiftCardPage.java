@@ -44,11 +44,6 @@ public class GiftCardPage extends TestBase
         PageFactory.initElements(driver,this);
     }
 
-    public String verifyGiftCardPageTitle()
-    {
-        return driver.getTitle();
-    }
-
     public ShippingPage setGiftCard(String message,String senderName,String recipientEmail,String recipientName) throws InterruptedException
     {
         selectGiftCard.click();

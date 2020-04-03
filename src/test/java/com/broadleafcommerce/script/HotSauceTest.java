@@ -18,7 +18,7 @@ public class HotSauceTest extends TestBase
     public void setLoginPage() throws InterruptedException
     {
         LoginPage loginPage= new LoginPage(driver);
-        loginPage.login("dipakalagate1991@gmail.com","Mysweetfamily@333");
+        loginPage.login("deepali.kalagate@thoughtworks.com","Mysweetfamily@333");
         HotSaucePage hotSausPage=new HotSaucePage(driver);
         HomePage homePage=new HomePage(driver);
         hotSausPage=homePage.clickOnHotsauce();
@@ -32,8 +32,7 @@ public class HotSauceTest extends TestBase
         boolean hotSaucePageLable=hotSausPage.verifyHotSaucePageLable();
         Assert.assertTrue(hotSaucePageLable);
         Thread.sleep(1000);
-        String hotSaucePageTitle=hotSausPage.verifyHotSaucePageTitle();
-        Assert.assertEquals(hotSaucePageTitle,"Hot Sauces - Test Site","Home page title not matched");
+        Assert.assertTrue(driver.getTitle().equals("Hot Sauces - Test Site"));
     }
 
     @Test(priority = 2)
@@ -43,9 +42,12 @@ public class HotSauceTest extends TestBase
         HomePage homePage=new HomePage(driver);
         HotSaucePage hotSausPage=homePage.clickOnHotsauce();
         hotSausPage.verifyToShowHotSauses("Green Ghost");
+        Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Cart"));
         Thread.sleep(2000);
         ShippingPage shippingPage=new ShippingPage(driver);
-        shippingPage.VerifyShippingPage("Deepali Lokesh Patil","MG Road","Ramnagar","Thane","MH","45050","9870675890");
+        shippingPage.setClickOnCheckout();
+        Thread.sleep(500);
+        shippingPage.verifyShippingPage("Deepali Lokesh Patil","MG Road","Ramnagar","Thane","MH","45050","9870675890");
         Thread.sleep(1000);
     }
 }

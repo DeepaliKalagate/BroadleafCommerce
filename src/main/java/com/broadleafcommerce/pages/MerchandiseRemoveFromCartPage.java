@@ -11,9 +11,6 @@ public class MerchandiseRemoveFromCartPage extends TestBase
     @FindBy(className = "section-title")
     private WebElement marchandisePageText;
 
-    @FindBy(xpath = "//img[@class='brand-logo']")
-    private WebElement marchandisePageLogo;
-
     @FindBy(xpath = "//div[@class='dropdown']//a[@class='dropdown-toggle']")
     private WebElement sortBy;
 
@@ -56,16 +53,6 @@ public class MerchandiseRemoveFromCartPage extends TestBase
     public MerchandiseRemoveFromCartPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
-    }
-
-    public String verifyMerchandisePageTitle()
-    {
-        return driver.getTitle();
-    }
-
-    public boolean verifyMarchandisePageLogo()
-    {
-        return marchandisePageLogo.isDisplayed();
     }
 
     public boolean verifyMarchandisePageText()

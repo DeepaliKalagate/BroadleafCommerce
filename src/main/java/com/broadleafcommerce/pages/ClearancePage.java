@@ -25,11 +25,6 @@ public class ClearancePage extends TestBase
         PageFactory.initElements(driver,this);
     }
 
-    public String verifyClearancePageTitle()
-    {
-        return driver.getTitle();
-    }
-
     public boolean verifyClearancePageText()
     {
         return clearancePageText.isDisplayed();
@@ -45,6 +40,4 @@ public class ClearancePage extends TestBase
         Thread.sleep(1000);
         return new ShippingPage(driver);
     }
-
-
 }

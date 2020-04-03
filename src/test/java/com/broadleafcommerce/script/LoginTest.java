@@ -13,20 +13,19 @@ import org.testng.annotations.Test;
 @Listeners(Listener.class)
 public class LoginTest extends TestBase
 {
-    @Test
+    @Test(priority = 1)
     public void broadleafLogoImageTest() throws InterruptedException
     {
         LoginPage loginPage = new LoginPage(driver);
-        String title=loginPage.validateLoginPageTitle();
-        Assert.assertEquals(title,"Broadleaf Commerce Demo Store - Heat Clinic - Login");
+        Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Login"));
         Thread.sleep(2000);
     }
 
-    @Test
+    @Test(priority = 2)
     public void loginTest() throws InterruptedException
     {
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage=new HomePage(driver);
-        homePage=loginPage.login("dipakalagate1991@gmail.com","Mysweetfamily@333");
+        homePage=loginPage.login("deepali.kalagate@thoughtworks.com","Mysweetfamily@333");
     }
 }
