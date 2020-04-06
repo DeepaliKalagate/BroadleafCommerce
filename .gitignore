@@ -3,4 +3,4 @@ Screenshot/
 /build/*
 build/*
 .gradle*
-
+settings.gradle/
