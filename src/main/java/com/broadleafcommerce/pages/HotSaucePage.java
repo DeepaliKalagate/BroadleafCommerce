@@ -12,9 +12,6 @@ public class HotSaucePage extends TestBase
     @FindBy(className = "section-title")
     private WebElement hotsauceLable;
 
-    @FindBy(xpath = "//input[@placeholder='search']")
-    private WebElement searchSauce;
-
     @FindBy(xpath = "//ul[@class='js-typeahead--keyword']//a")
     private WebElement viewHotSuace;
 
@@ -37,10 +34,6 @@ public class HotSaucePage extends TestBase
         return hotsauceLable.isDisplayed();
     }
 
-    public void setSearchSauce(String suace1)
-    {
-        searchSauce.sendKeys(suace1);
-    }
 
     public void setViewHotSuace()
     {

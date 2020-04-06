@@ -44,7 +44,7 @@ public class LoginPage extends TestBase
         password.sendKeys(password1);
     }
 
-    public HomePage login()
+    public HomePage clickOnLogin()
     {
         clickLogin.click();
         return new HomePage(driver);

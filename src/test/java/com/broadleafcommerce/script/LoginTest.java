@@ -25,9 +25,9 @@ public class LoginTest extends TestBase
     {
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage=new HomePage(driver);
-        loginPage.setEmail("deepali.kalagate@thoughtworks.com");
-        loginPage.setPassword("Mysweetfamily@333");
-        homePage=loginPage.login();
+        loginPage.setEmail(property.getProperty("email"));
+        loginPage.setPassword(property.getProperty("password"));
+        homePage=loginPage.clickOnLogin();
         Assert.assertTrue(homePage.verifyUserName());
     }
 }

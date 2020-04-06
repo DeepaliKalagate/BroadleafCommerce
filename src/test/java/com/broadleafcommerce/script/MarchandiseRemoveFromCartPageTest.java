@@ -22,7 +22,7 @@ public class MarchandiseRemoveFromCartPageTest extends TestBase
         LoginPage loginPage= new LoginPage(driver);
         loginPage.setEmail("deepali.kalagate@thoughtworks.com");
         loginPage.setPassword("Mysweetfamily@333");
-        loginPage.login();
+        loginPage.clickOnLogin();
         MerchandisePage merchandisePage=new MerchandisePage(driver);
         HomePage homePage=new HomePage(driver);
         merchandisePage=homePage.clickOnMerchandise();

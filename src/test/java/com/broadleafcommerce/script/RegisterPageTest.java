@@ -25,11 +25,11 @@ public class RegisterPageTest extends TestBase
     {
         RegisterPage registerPage=new RegisterPage(driver);
         HomePage homePage=new HomePage(driver);
-        registerPage.setEmail("deepali.patil@thoughtworks.com");
-        registerPage.setFirstName("Deepali");
-        registerPage.setLastName("Patil");
-        registerPage.setPassword("Mysweetfamily@333");
-        registerPage.setConfirmPassword("Mysweetfamily@333");
+        registerPage.setEmail(property.getProperty("email"));
+        registerPage.setFirstName(property.getProperty("name"));
+        registerPage.setLastName(property.getProperty("lastName"));
+        registerPage.setPassword(property.getProperty("password"));
+        registerPage.setConfirmPassword(property.getProperty("confirmPassword"));
         homePage=registerPage.verifyRegisterPage();
         Assert.assertTrue(homePage.verifyUserName());
     }

@@ -23,15 +23,15 @@ public class HotSauceTest extends TestBase
     public void setLoginPage() throws InterruptedException
     {
         LoginPage loginPage= new LoginPage(driver);
-        loginPage.setEmail("deepali.kalagate@thoughtworks.com");
-        loginPage.setPassword("Mysweetfamily@333");
-        loginPage.login();
+        loginPage.setEmail(property.getProperty("email"));
+        loginPage.setPassword(property.getProperty("password"));
+        loginPage.clickOnLogin();
         HotSaucePage hotSausPage=new HotSaucePage(driver);
         HomePage homePage=new HomePage(driver);
         hotSausPage=homePage.clickOnHotsauce();
     }
 
-    @Test(priority = 1)
+    /*@Test(priority = 1)
     public void verifyHotSaucePageLableAndTitle() throws InterruptedException
     {
         HomePage homePage=new HomePage(driver);
@@ -40,7 +40,7 @@ public class HotSauceTest extends TestBase
         Assert.assertTrue(hotSaucePageLable);
         Thread.sleep(1000);
         Assert.assertTrue(driver.getTitle().equals("Hot Sauces - Test Site"));
-    }
+    }*/
 
     @Test(priority = 2)
     public void selectHotSauceTest() throws InterruptedException
@@ -48,26 +48,46 @@ public class HotSauceTest extends TestBase
         List<String> list=new ArrayList<>();
         HomePage homePage=new HomePage(driver);
         HotSaucePage hotSaucePage=homePage.clickOnHotsauce();
-        hotSaucePage.setSearchSauce("Green Ghost");
+
         Thread.sleep(1000);
         hotSaucePage.setViewHotSuace();
-        hotSaucePage.setQuickViewOfHotSauce();
-        //hotSaucePage.setAddToCart();
-        hotSaucePage.verifyToShowHotSauses();
-
-        List<WebElement> productName =driver.findElements(By.xpath("//div[@class='col-sm-7']"));
-        for (WebElement webElement:productName)
+        String item_status=driver.findElement(By.xpath("//div[@data-id='2']")).getText();
+        if(item_status.equals("Out of Stock"))
         {
-            System.out.println(webElement.getText());
-            list.add(webElement.getText());
+            driver.navigate().back();
         }
-        System.out.println(list);
-        Assert.assertTrue(productName.contains("GREEN GHOST"),"Product name is incorrect");
+        else
+        {
+            hotSaucePage.setQuickViewOfHotSauce();
+            hotSaucePage.setAddToCart();
+            hotSaucePage.verifyToShowHotSauses();
 
-        ShippingPage shippingPage=new ShippingPage(driver);
-        shippingPage.setClickOnCheckout();
-        Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
-        homePage= shippingPage.verifyShippingPage("Deepali Lokesh Patil","MG Road","Ramnagar","Thane","MH","45050","9870675890");
-        Assert.assertTrue(homePage.verifyUserName());
+            List<WebElement> productName =driver.findElements(By.xpath("//div[@id='cart']"));
+            for (WebElement webElement:productName)
+            {
+                System.out.println(webElement.getText());
+                list.add(webElement.getText());
+            }
+            System.out.println(list);
+            Assert.assertTrue(productName.contains("GREEN GHOST"),"Product name is incorrect");
+
+            ShippingPage shippingPage=new ShippingPage(driver);
+            shippingPage.setClickOnCheckout();
+            Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
+            shippingPage.setFullName("fullName");
+            shippingPage.setAddress1("address1");
+            shippingPage.setAddress2("address2");
+            shippingPage.setCity("city");
+            shippingPage.setState("state");
+            shippingPage.setPostal("postal");
+            shippingPage.setPhoneNumber("mobileno");
+            shippingPage.setShippingMethod();
+            shippingPage.setClickToContinue();
+            shippingPage.setCashOnDelivery();
+            shippingPage.setContinueShopping();
+            shippingPage.setPlaceOrder();
+            homePage=shippingPage.verifyShippingPage();
+            Assert.assertTrue(homePage.verifyUserName());
+        }
     }
 }

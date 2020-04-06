@@ -22,7 +22,7 @@ public class ClearancePageTest extends TestBase
         LoginPage loginPage= new LoginPage(driver);
         loginPage.setEmail("deepali.kalagate@thoughtworks.com");
         loginPage.setPassword("Mysweetfamily@333");
-        loginPage.login();
+        loginPage.clickOnLogin();
         ClearancePage clearancePage=new ClearancePage(driver);
         HomePage homePage=new HomePage(driver);
         clearancePage=homePage.clickOnClearance();
@@ -57,12 +57,22 @@ public class ClearancePageTest extends TestBase
         System.out.println(list);
         Assert.assertTrue(productName.contains("BLAZIN' SADDLE XXX HOT HABANERO PEPPER SAUCE"),"Product name is incorrect");
         ShippingPage shippingPage=new ShippingPage(driver);
-        HomePage homePage;
+        HomePage homePage=new HomePage(driver);
         shippingPage.setClickOnCheckout();
-        Thread.sleep(1000);
         Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
-        homePage=shippingPage.verifyShippingPage("Deepali Lokesh Patil","MG Road","Ramnagar","Thane","MH","45050","9870675890");
-        Thread.sleep(1000);
+        shippingPage.setFullName("fullName");
+        shippingPage.setAddress1("address1");
+        shippingPage.setAddress2("address2");
+        shippingPage.setCity("city");
+        shippingPage.setState("state");
+        shippingPage.setPostal("postal");
+        shippingPage.setPhoneNumber("mobileno");
+        shippingPage.setShippingMethod();
+        shippingPage.setClickToContinue();
+        shippingPage.setCashOnDelivery();
+        shippingPage.setContinueShopping();
+        shippingPage.setPlaceOrder();
+        homePage=shippingPage.verifyShippingPage();
         Assert.assertTrue(homePage.verifyUserName());
     }
 }
