@@ -8,6 +8,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
+import java.util.concurrent.TimeUnit;
+
 public class TestBase implements IAutoConstants
 {
     public static WebDriver driver;
@@ -27,9 +29,11 @@ public class TestBase implements IAutoConstants
         {
             System.setProperty(CHROME_KEY,CHROME_VALUE);
             driver = new ChromeDriver();
+            String url= Library.getProperty(CONFIG_PATH,"URL");
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
-            String url= Library.getProperty(CONFIG_PATH,"URL");
+            driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
             driver.get(url);
 
         }
@@ -40,6 +44,8 @@ public class TestBase implements IAutoConstants
             String url=Library.getProperty(CONFIG_PATH,"URL");
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
+            driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
             driver.get(url);
         }
     }

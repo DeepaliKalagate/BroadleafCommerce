@@ -6,10 +6,15 @@ import com.broadleafcommerce.pages.HomePage;
 import com.broadleafcommerce.pages.HotSaucePage;
 import com.broadleafcommerce.pages.LoginPage;
 import com.broadleafcommerce.pages.ShippingPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Listeners(Listener.class)
 public class HotSauceTest extends TestBase
@@ -18,7 +23,9 @@ public class HotSauceTest extends TestBase
     public void setLoginPage() throws InterruptedException
     {
         LoginPage loginPage= new LoginPage(driver);
-        loginPage.login("deepali.kalagate@thoughtworks.com","Mysweetfamily@333");
+        loginPage.setEmail("deepali.kalagate@thoughtworks.com");
+        loginPage.setPassword("Mysweetfamily@333");
+        loginPage.login();
         HotSaucePage hotSausPage=new HotSaucePage(driver);
         HomePage homePage=new HomePage(driver);
         hotSausPage=homePage.clickOnHotsauce();
@@ -38,16 +45,29 @@ public class HotSauceTest extends TestBase
     @Test(priority = 2)
     public void selectHotSauceTest() throws InterruptedException
     {
-        Thread.sleep(1000);
+        List<String> list=new ArrayList<>();
         HomePage homePage=new HomePage(driver);
-        HotSaucePage hotSausPage=homePage.clickOnHotsauce();
-        hotSausPage.verifyToShowHotSauses("Green Ghost");
-        Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Cart"));
-        Thread.sleep(2000);
+        HotSaucePage hotSaucePage=homePage.clickOnHotsauce();
+        hotSaucePage.setSearchSauce("Green Ghost");
+        Thread.sleep(1000);
+        hotSaucePage.setViewHotSuace();
+        hotSaucePage.setQuickViewOfHotSauce();
+        //hotSaucePage.setAddToCart();
+        hotSaucePage.verifyToShowHotSauses();
+
+        List<WebElement> productName =driver.findElements(By.xpath("//div[@class='col-sm-7']"));
+        for (WebElement webElement:productName)
+        {
+            System.out.println(webElement.getText());
+            list.add(webElement.getText());
+        }
+        System.out.println(list);
+        Assert.assertTrue(productName.contains("GREEN GHOST"),"Product name is incorrect");
+
         ShippingPage shippingPage=new ShippingPage(driver);
         shippingPage.setClickOnCheckout();
-        Thread.sleep(500);
-        shippingPage.verifyShippingPage("Deepali Lokesh Patil","MG Road","Ramnagar","Thane","MH","45050","9870675890");
-        Thread.sleep(1000);
+        Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
+        homePage= shippingPage.verifyShippingPage("Deepali Lokesh Patil","MG Road","Ramnagar","Thane","MH","45050","9870675890");
+        Assert.assertTrue(homePage.verifyUserName());
     }
 }

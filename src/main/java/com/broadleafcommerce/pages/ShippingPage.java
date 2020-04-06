@@ -65,38 +65,24 @@ public class ShippingPage extends TestBase
     public void setClickOnCheckout() throws InterruptedException
     {
         clickOnCheckout.click();
-        Thread.sleep(1000);
     }
 
-    public HomePage verifyShippingPage(String name, String addressFirst, String addressTwo, String cityName, String selectState, String postalCode, String phoneNo) throws InterruptedException
-    {
+    public HomePage verifyShippingPage(String name, String addressFirst, String addressTwo, String cityName, String selectState, String postalCode, String phoneNo) throws InterruptedException {
         fullName.sendKeys(name);
-        Thread.sleep(1000);
         address1.sendKeys(addressFirst);
-        Thread.sleep(1000);
         address2.sendKeys(addressTwo);
-        Thread.sleep(1000);
         city.sendKeys(cityName);
-        Thread.sleep(1000);
         Select select = new Select(state);
         select.selectByVisibleText(selectState);
-        Thread.sleep(1000);
         postal.sendKeys(postalCode);
-        Thread.sleep(1000);
         phoneNumber.sendKeys(phoneNo);
-        Thread.sleep(1000);
         shippingMethod.click();
-        Thread.sleep(1000);
         clickToContinue.click();
         Thread.sleep(1000);
         cashOnDelivery.click();
-        Thread.sleep(1000);
         continueShopping.click();
-        Thread.sleep(1000);
         placeOrder.click();
-        Thread.sleep(1000);
         clickOnDropDown.click();
-        Thread.sleep(1000);
         clickOnLogout.click();
         return new HomePage(driver);
     }

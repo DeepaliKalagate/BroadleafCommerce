@@ -44,26 +44,49 @@ public class GiftCardPage extends TestBase
         PageFactory.initElements(driver,this);
     }
 
-    public ShippingPage setGiftCard(String message,String senderName,String recipientEmail,String recipientName) throws InterruptedException
+    public void setSelectGiftCard()
     {
         selectGiftCard.click();
-        Thread.sleep(1000);
+    }
+
+    public void setPersonalMessage(String message)
+    {
         personalMessage.sendKeys(message);
-        Thread.sleep(1000);
+    }
+
+    public void setSender(String senderName)
+    {
         sender.sendKeys(senderName);
-        Thread.sleep(1000);
+    }
+
+    public void setEmail(String recipientEmail)
+    {
         email.sendKeys(recipientEmail);
-        Thread.sleep(1000);
+    }
+
+    public void setName(String recipientName)
+    {
         name.sendKeys(recipientName);
-        Thread.sleep(1000);
+    }
+
+    public void setSelectColor()
+    {
         selectColor.click();
-        Thread.sleep(1000);
+    }
+
+    public void setClickAddToCart()
+    {
         clickAddToCart.click();
-        Thread.sleep(2000);
+    }
+
+    public void setClickOnCart()
+    {
         clickOnCart.click();
-        Thread.sleep(1000);
+    }
+
+    public ShippingPage setGiftCard()
+    {
         viewInCart.click();
-        Thread.sleep(1000);
         return new ShippingPage(driver);
     }
 }

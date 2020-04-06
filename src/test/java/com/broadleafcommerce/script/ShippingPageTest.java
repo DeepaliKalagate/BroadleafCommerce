@@ -18,22 +18,26 @@ public class ShippingPageTest extends TestBase
     public void setLoginPage() throws InterruptedException
     {
         LoginPage loginPage= new LoginPage(driver);
-        loginPage.login("deepali.kalagate@thoughtworks.com","Mysweetfamily@333");
+        loginPage.setEmail("deepali.kalagate@thoughtworks.com");
+        loginPage.setPassword("Mysweetfamily@333");
+        loginPage.login();
         HotSaucePage hotSaucePage=new HotSaucePage(driver);
-        HomePage homePage=new HomePage(driver);
-        hotSaucePage=homePage.clickOnHotsauce();
         ShippingPage shippingPage=new ShippingPage(driver);
-        shippingPage=hotSaucePage.verifyToShowHotSauses("Green Ghost");
+        hotSaucePage.setSearchSauce("Green Ghost");
+        hotSaucePage.setViewHotSuace();
+        hotSaucePage.setQuickViewOfHotSauce();
+        hotSaucePage.setAddToCart();
+        shippingPage=hotSaucePage.verifyToShowHotSauses();
     }
 
-    @Test(priority = 2)
+    @Test()
     public void verifyShippingPageTest() throws InterruptedException
     {
-        Thread.sleep(2000);
         ShippingPage shippingPage=new ShippingPage(driver);
+        HomePage homePage=new HomePage(driver);
         shippingPage.setClickOnCheckout();
-        Thread.sleep(1000);
         Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
-        shippingPage.verifyShippingPage("Deepali Lokesh Patil","MG Road","Ramnagar","Thane","MH","45050","9870675890");
+        homePage=shippingPage.verifyShippingPage("Deepali Lokesh Patil","MG Road","Ramnagar","Thane","MH","45050","9870675890");
+        Assert.assertTrue(homePage.verifyUserName());
     }
 }

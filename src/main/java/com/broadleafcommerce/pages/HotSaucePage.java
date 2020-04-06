@@ -37,18 +37,29 @@ public class HotSaucePage extends TestBase
         return hotsauceLable.isDisplayed();
     }
 
-    public ShippingPage verifyToShowHotSauses(String suace1) throws InterruptedException
+    public void setSearchSauce(String suace1)
     {
         searchSauce.sendKeys(suace1);
-        Thread.sleep(1000);
+    }
+
+    public void setViewHotSuace()
+    {
         viewHotSuace.click();
-        Thread.sleep(1000);
+    }
+
+    public void setQuickViewOfHotSauce()
+    {
         quickViewOfHotSauce.click();
-        Thread.sleep(1000);
+    }
+
+    public void setAddToCart()
+    {
         addToCart.click();
-        Thread.sleep(1000);
+    }
+
+    public ShippingPage verifyToShowHotSauses()
+    {
         viewInCart.click();
-        Thread.sleep(1000);
         return new ShippingPage(driver);
     }
 }

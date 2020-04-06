@@ -60,34 +60,61 @@ public class MerchandiseRemoveFromCartPage extends TestBase
         return marchandisePageText.isDisplayed();
     }
 
-    public HomePage setMerchandisePageFields(String size) throws InterruptedException
+    public void setSortBy()
     {
         sortBy.click();
-        Thread.sleep(1000);
+    }
+
+    public void setPrice()
+    {
         price.click();
-        Thread.sleep(1000);
+    }
+    public void setFilter()
+    {
         filter.click();
-        Thread.sleep(1000);
+    }
+
+    public void setSilver()
+    {
         silver.click();
-        Thread.sleep(1000);
+    }
+    public void setSortByPrice() throws InterruptedException
+    {
         sortByPrice.click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
+    }
+    public void setSilverPrice()
+    {
         silverPrice.click();
-        Thread.sleep(2000);
+    }
+    public void setShirtImage()
+    {
         shirtImage.click();
-        Thread.sleep(1000);
+    }
+    public void setSelectSilver()
+    {
         selectSilver.click();
-        Thread.sleep(1000);
+    }
+    public void setShirtSize(String size)
+    {
         shirtSize.sendKeys(size);
-        Thread.sleep(1000);
+    }
+    public void setAddToCart()
+    {
         addToCart.click();
-        Thread.sleep(1000);
+    }
+    public void setViewInCart()
+    {
         viewInCart.click();
-        Thread.sleep(1000);
+    }
+    public void setRemoveFromCart()
+    {
         removeFromCart.click();
-        Thread.sleep(1000);
+    }
+
+    public HomePage verifyMerchandisePage()
+    {
         clickOnContinueShopping.click();
-        Thread.sleep(1000);
         return new HomePage(driver);
     }
 }

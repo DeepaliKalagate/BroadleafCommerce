@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MerchandisePage extends TestBase
 {
@@ -26,7 +29,7 @@ public class MerchandisePage extends TestBase
     @FindBy(xpath = "//div[@id='heading1']//i[@class='material-icons'][contains(text(),'keyboard_arrow_down')]")
     private WebElement sortByPrice;
 
-    @FindBy(xpath = "//div[@id='collapse1']//div[@class='panel-body']//div[1]//label[1]//span[1]//span[1]")
+    @FindBy(xpath = "price-range%5B10.00000%3A15.00000%5D")
     private WebElement silverPrice;
 
     @FindBy(xpath = "//div[@class='js-image image card-image']")
@@ -41,7 +44,7 @@ public class MerchandisePage extends TestBase
     @FindBy(xpath = "//span[contains(text(),'Add to Cart')]")
     private WebElement addToCart;
 
-    @FindBy(xpath = "//li[@class='dropdown js-miniCart open']//a[@class='btn btn-primary goto-full-cart'][contains(text(),'View Your Cart')]")
+    @FindBy(xpath = "//a[@class='btn btn-primary goto-full-cart']")
     private WebElement viewInCart;
 
     public MerchandisePage(WebDriver driver)
@@ -54,28 +57,42 @@ public class MerchandisePage extends TestBase
         return marchandisePageText.isDisplayed();
     }
 
-    public ShippingPage setMerchandisePageFields(String size) throws InterruptedException
+    public void setSortBy() throws InterruptedException
     {
         sortBy.click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
+    }
+
+    public void setPrice()
+    {
         price.click();
-        Thread.sleep(1000);
+    }
+    public void setFilter()
+    {
         filter.click();
-        Thread.sleep(1000);
+    }
+    public void setSilver()
+    {
         silver.click();
-        Thread.sleep(1000);
-        sortByPrice.click();
-        Thread.sleep(1000);
-        silverPrice.click();
-        Thread.sleep(2000);
+    }
+    public void setShirtImage()
+    {
         shirtImage.click();
-        Thread.sleep(1000);
+    }
+    public void setSelectSilver()
+    {
         selectSilver.click();
-        Thread.sleep(1000);
+    }
+    public void setShirtSize(String size)
+    {
         shirtSize.sendKeys(size);
-        Thread.sleep(1000);
+    }
+    public void setAddToCart()
+    {
         addToCart.click();
-        Thread.sleep(1000);
+    }
+    public ShippingPage verifyMerchandisePage() throws InterruptedException
+    {
         viewInCart.click();
         return new ShippingPage(driver);
     }

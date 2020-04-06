@@ -43,13 +43,33 @@ public class RegisterPage extends TestBase
         return broadleafLogo.isDisplayed();
     }
 
-    public HomePage verifyRegisterPage(String userName,String fName,String lName,String password1,String confirmPass)
+    public void setEmail(String userName)
     {
         email.sendKeys(userName);
+    }
+
+    public void setFirstName(String fName)
+    {
         firstName.sendKeys(fName);
+    }
+
+    public void setLastName(String lName)
+    {
         lastName.sendKeys(lName);
+    }
+
+    public void setPassword(String password1)
+    {
         password.sendKeys(password1);
+    }
+
+    public void setConfirmPassword(String confirmPass)
+    {
         confirmPassword.sendKeys(confirmPass);
+    }
+
+    public HomePage verifyRegisterPage()
+    {
         clickRegister.click();
         return new HomePage(driver);
     }

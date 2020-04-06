@@ -17,7 +17,8 @@ public class HomePageTest extends TestBase
     public void setLoginPage() throws InterruptedException
     {
         LoginPage loginPage= new LoginPage(driver);
-        loginPage.login("deepali.kalagate@thoughtworks.com","Mysweetfamily@333");
+        loginPage.setEmail("deepali.kalagate@thoughtworks.com");
+        loginPage.setPassword("Mysweetfamily@333");
     }
 
     @Test(priority = 1)
@@ -34,5 +35,6 @@ public class HomePageTest extends TestBase
         HomePage homePage=new HomePage(driver);
         HotSaucePage hotSaucePage =new HotSaucePage(driver);
        hotSaucePage = homePage.clickOnHotsauce();
+       Assert.assertTrue(hotSaucePage.verifyHotSaucePageLable());
     }
 }

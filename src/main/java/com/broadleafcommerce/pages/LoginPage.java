@@ -9,6 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends TestBase
 {
     //PageFactory-Object Repository
+    @FindBy(xpath = "//img[contains(@class,'brand-logo')]")
+    private WebElement logoImage;
+
     @FindBy(id="username")
     private WebElement email;
 
@@ -26,14 +29,24 @@ public class LoginPage extends TestBase
     }
 
     //Actions
-    public HomePage login(String userName,String password1) throws InterruptedException
+    public boolean verifyLogoImage()
+    {
+        return logoImage.isDisplayed();
+    }
+
+    public void setEmail(String userName)
     {
         email.sendKeys(userName);
-        Thread.sleep(1000);
+    }
+
+    public void setPassword(String password1)
+    {
         password.sendKeys(password1);
-        Thread.sleep(1000);
+    }
+
+    public HomePage login()
+    {
         clickLogin.click();
-        Thread.sleep(1000);
         return new HomePage(driver);
     }
 }

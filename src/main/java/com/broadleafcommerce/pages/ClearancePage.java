@@ -6,8 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ClearancePage extends TestBase
-{
+public class ClearancePage extends TestBase {
     @FindBy(className = "section-title")
     private WebElement clearancePageText;
 
@@ -20,24 +19,27 @@ public class ClearancePage extends TestBase
     @FindBy(xpath = "//a[@class='btn btn-secondary']")
     private WebElement viewInCart;
 
-    public ClearancePage(WebDriver driver)
-    {
-        PageFactory.initElements(driver,this);
+    public ClearancePage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public boolean verifyClearancePageText()
-    {
+    public boolean verifyClearancePageText() {
         return clearancePageText.isDisplayed();
     }
 
-    public ShippingPage verifyClearancePageFields() throws InterruptedException
+    public void setClearanceItem()
     {
         clearanceItem.click();
-        Thread.sleep(1000);
-        addToCart.click();
-        Thread.sleep(1000);
+    }
+
+    public void setAddToCart()
+    {
+       // addToCart.click();
+    }
+
+    public ShippingPage verifyClearancePage() throws InterruptedException
+    {
         viewInCart.click();
-        Thread.sleep(1000);
         return new ShippingPage(driver);
     }
 }
