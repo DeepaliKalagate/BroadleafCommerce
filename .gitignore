@@ -1,5 +1,5 @@
-.build/
-.gradlew/
-setting.gradle/
 test-output/
 Screenshot/
+/build/*
+build/*
+.gradle*
