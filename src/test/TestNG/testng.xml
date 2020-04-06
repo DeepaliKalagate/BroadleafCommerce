@@ -27,18 +27,7 @@
                     <include name="loginTest"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.HotSauceTest">
-                <methods>
-                    <parameter name="browserName" value="chrome"></parameter>
-                    <include name="verifyHotSaucePageLableAndTitle"/>
-                </methods>
-            </class>
-            <class name="com.broadleafcommerce.script.HotSauceTest">
-                <methods>
-                    <parameter name="browserName" value="chrome"></parameter>
-                    <include name="selectHotSauceTest"/>
-                </methods>
-            </class>
+
             <class name="com.broadleafcommerce.script.HomePageTest">
                 <methods>
                     <parameter name="browserName" value="firefox"></parameter>
@@ -93,7 +82,7 @@
                     <include name="verifyMerchandiseTest"/>
                 </methods>
             </class>-->
-        <class name="com.broadleafcommerce.script.MarchandisePageTest">
+        <!--<class name="com.broadleafcommerce.script.MarchandisePageTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
                     <include name="verifyMerchandisePageTextAndTitle"/>
@@ -105,7 +94,19 @@
                     <include name="verifyMerchandiseTest"/>
                 </methods>
             </class>
-
+-->
+            <class name="com.broadleafcommerce.script.HotSauceTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyHotSaucePageLableAndTitle"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.HotSauceTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="selectHotSauceTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

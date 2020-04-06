@@ -84,7 +84,7 @@ public class MarchandisePageTest extends TestBase
             list.add(webElement.getText());
         }
         System.out.println(list);
-       // Assert.assertTrue(productName.contains("HAWT LIKE A HABANERO SHIRT (WOMEN'S) SILVER (MEDIUM)"),"Product name is incorrect");
+       Assert.assertTrue(list.contains("HAWT LIKE A HABANERO SHIRT (WOMEN'S) SILVER (MEDIUM)"),"Product name is incorrect");
 
         ShippingPage shippingPage=new ShippingPage(driver);
         shippingPage.setClickOnCheckout();

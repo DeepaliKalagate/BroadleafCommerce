@@ -47,17 +47,16 @@ public class HotSauceTest extends TestBase
     {
         List<String> list=new ArrayList<>();
         HomePage homePage=new HomePage(driver);
-        HotSaucePage hotSaucePage=homePage.clickOnHotsauce();
+        HotSaucePage hotSaucePage=new HotSaucePage(driver);
 
-        Thread.sleep(1000);
+        hotSaucePage.setManufacturer();
+        hotSaucePage.setSelectManufacturer();
+        hotSaucePage.setHeatRange();
+        hotSaucePage.setSelectHeatRange();
+        hotSaucePage.setPrice();
+        hotSaucePage.setSelectPrice();
+
         hotSaucePage.setViewHotSuace();
-        String item_status=driver.findElement(By.xpath("//div[@data-id='2']")).getText();
-        if(item_status.equals("Out of Stock"))
-        {
-            driver.navigate().back();
-        }
-        else
-        {
             hotSaucePage.setQuickViewOfHotSauce();
             hotSaucePage.setAddToCart();
             hotSaucePage.verifyToShowHotSauses();
@@ -88,6 +87,5 @@ public class HotSauceTest extends TestBase
             shippingPage.setPlaceOrder();
             homePage=shippingPage.verifyShippingPage();
             Assert.assertTrue(homePage.verifyUserName());
-        }
     }
 }

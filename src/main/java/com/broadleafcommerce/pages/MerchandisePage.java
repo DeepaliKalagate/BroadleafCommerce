@@ -91,8 +91,9 @@ public class MerchandisePage extends TestBase
     {
         addToCart.click();
     }
-    public ShippingPage verifyMerchandisePage()
+    public ShippingPage verifyMerchandisePage() throws InterruptedException
     {
+        Thread.sleep(2000);
         viewInCart.click();
         return new ShippingPage(driver);
     }
