@@ -93,7 +93,7 @@ public class MerchandisePage extends TestBase
     }
     public ShippingPage verifyMerchandisePage() throws InterruptedException
     {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         viewInCart.click();
         return new ShippingPage(driver);
     }

@@ -9,7 +9,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -30,13 +29,13 @@ public class GiftCardTest extends TestBase
         giftCardPage=homePage.clickOnGiftCard();
     }
 
-   /* @Test(priority = 1)
+    @Test(priority = 1)
     public void verifyHotSaucePageLable()
     {
         GiftCardPage giftCardPage=new GiftCardPage(driver);
         Assert.assertTrue(driver.getTitle().equals("Gift Cards - Test Site"));
     }
-*/
+
     @Test(priority = 2)
     public void selectHotSauceTest() throws InterruptedException
     {

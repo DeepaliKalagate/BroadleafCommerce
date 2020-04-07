@@ -22,7 +22,7 @@ public class ShippingPageTest extends TestBase
         loginPage.setPassword(property.getProperty("password"));
         loginPage.clickOnLogin();
         HotSaucePage hotSaucePage=new HotSaucePage(driver);
-        ShippingPage shippingPage=new ShippingPage(driver);
+        ShippingPage shippingPage;
         hotSaucePage.setViewHotSuace();
         hotSaucePage.setQuickViewOfHotSauce();
         hotSaucePage.setAddToCart();
@@ -36,7 +36,6 @@ public class ShippingPageTest extends TestBase
         HomePage homePage=new HomePage(driver);
         shippingPage.setClickOnCheckout();
         Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
-        Thread.sleep(1000);
         homePage=shippingPage.VerifyShippingPage(property.getProperty("fullName"),
                 property.getProperty("address1"),property.getProperty("address2"),
                 property.getProperty("city"),property.getProperty("state"),

@@ -9,7 +9,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -30,15 +29,14 @@ public class MarchandisePageTest extends TestBase
         merchandisePage=homePage.clickOnMerchandise();
     }
 
-
-    /*@Test(priority = 1)
+    @Test(priority = 1)
     public void verifyMerchandisePageTextAndTitle()
     {
         MerchandisePage merchandisePage=new MerchandisePage(driver);
         boolean merchandisePageText=merchandisePage.verifyMarchandisePageText();
         Assert.assertTrue(merchandisePageText);
         Assert.assertTrue(driver.getTitle().equals("Merchandise - Test Site"));
-    }*/
+    }
 
     @Test(priority = 2)
     public void verifyMerchandiseTest() throws InterruptedException

@@ -9,7 +9,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,14 +27,14 @@ public class ClearancePageTest extends TestBase
         clearancePage=homePage.clickOnClearance();
     }
 
-    /*@Test(priority = 1)
+    @Test(priority = 1)
     public void verifyClearancePageTextAndTitle()
     {
         ClearancePage clearancePage=new ClearancePage(driver);
         boolean clearancePageText=clearancePage.verifyClearancePageText();
         Assert.assertTrue(clearancePageText);
         Assert.assertTrue(driver.getTitle().equals("Clearance - Test Site"));
-    }*/
+    }
 
     @Test(priority = 2)
     public void verifyClearancePageTest() throws InterruptedException
