@@ -36,7 +36,7 @@ public class ShippingPage extends TestBase
     @FindBy(id="phonePrimary")
     private WebElement phoneNumber;
 
-    @FindBy(xpath = "//div[@class='col-sm-6 shipping-methods-wrapper']//div[1]//label[1]//span[1]")
+    @FindBy(id = "fulfillmentOptionId1")
     private WebElement shippingMethod;
 
     @FindBy(xpath = "//span[contains(text(),'Continue')]")
@@ -66,77 +66,23 @@ public class ShippingPage extends TestBase
     {
         clickOnCheckout.click();
     }
-
-    public void setFullName(String name)
+    public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo) throws InterruptedException
     {
+        Thread.sleep(1000);
         fullName.sendKeys(name);
-    }
-
-    public void setAddress1(String addressFirst)
-    {
         address1.sendKeys(addressFirst);
-    }
-
-    public void setAddress2(String addressTwo)
-    {
         address2.sendKeys(addressTwo);
-    }
-
-    public void setCity(String cityName) throws InterruptedException
-    {
         city.sendKeys(cityName);
-        Thread.sleep(500);
-    }
-
-    public void setState(String selectState)
-    {
         Select select = new Select(state);
         select.selectByVisibleText(selectState);
-    }
-
-    public void setPostal(String postalCode)
-    {
         postal.sendKeys(postalCode);
-    }
-
-    public void setPhoneNumber(String phoneNo)
-    {
         phoneNumber.sendKeys(phoneNo);
-    }
-
-    public void setShippingMethod()
-    {
         shippingMethod.click();
-    }
-
-    public void setClickToContinue() throws InterruptedException
-    {
         clickToContinue.click();
-        Thread.sleep(1000);
-    }
-
-    public void setCashOnDelivery()
-    {
         cashOnDelivery.click();
-    }
-
-    public void setContinueShopping()
-    {
         continueShopping.click();
-    }
-
-    public void setPlaceOrder()
-    {
         placeOrder.click();
-    }
-
-    public void setClickOnDropDown()
-    {
         clickOnDropDown.click();
-    }
-
-    public HomePage verifyShippingPage()
-    {
         clickOnLogout.click();
         return new HomePage(driver);
     }

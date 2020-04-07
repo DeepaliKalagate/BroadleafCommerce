@@ -35,8 +35,7 @@ public class GiftCardPage extends TestBase
     @FindBy(xpath = "//li[@class='dropdown js-miniCart open']//i[@class='material-icons'][contains(text(),'shopping_cart')]")
     private WebElement clickOnCart;
 
-    @FindBy(className = "//a[@class='btn btn-primary goto-full-cart']")
-    //@FindBy(xpath="//li[@class='dropdown js-miniCart open']//a[@class='btn btn-primary goto-full-cart'][contains(text(),'View Your Cart')]")
+    @FindBy(className = "btn btn-primary goto-full-cart")
     private WebElement viewInCart;
 
     public GiftCardPage(WebDriver driver)

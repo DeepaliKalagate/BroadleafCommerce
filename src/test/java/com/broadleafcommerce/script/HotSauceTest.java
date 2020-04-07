@@ -61,7 +61,7 @@ public class HotSauceTest extends TestBase
             hotSaucePage.setAddToCart();
             hotSaucePage.verifyToShowHotSauses();
 
-            List<WebElement> productName =driver.findElements(By.xpath("//div[@id='cart']"));
+            List<WebElement> productName =driver.findElements(By.xpath("//div[@class='card checkout-card cart-summary-row']"));
             for (WebElement webElement:productName)
             {
                 System.out.println(webElement.getText());
@@ -73,19 +73,10 @@ public class HotSauceTest extends TestBase
             ShippingPage shippingPage=new ShippingPage(driver);
             shippingPage.setClickOnCheckout();
             Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
-            shippingPage.setFullName("fullName");
-            shippingPage.setAddress1("address1");
-            shippingPage.setAddress2("address2");
-            shippingPage.setCity("city");
-            shippingPage.setState("state");
-            shippingPage.setPostal("postal");
-            shippingPage.setPhoneNumber("mobileno");
-            shippingPage.setShippingMethod();
-            shippingPage.setClickToContinue();
-            shippingPage.setCashOnDelivery();
-            shippingPage.setContinueShopping();
-            shippingPage.setPlaceOrder();
-            homePage=shippingPage.verifyShippingPage();
-            Assert.assertTrue(homePage.verifyUserName());
+        homePage=shippingPage.VerifyShippingPage(property.getProperty("fullName"),
+                property.getProperty("address1"),property.getProperty("address2"),
+                property.getProperty("city"),property.getProperty("state"),
+                property.getProperty("postal"),property.getProperty("mobileno"));
+        Assert.assertTrue(homePage.verifyUserName());
     }
 }

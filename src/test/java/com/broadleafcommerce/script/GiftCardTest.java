@@ -11,7 +11,9 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 @Listeners(Listener.class)
 public class GiftCardTest extends TestBase
@@ -28,18 +30,17 @@ public class GiftCardTest extends TestBase
         giftCardPage=homePage.clickOnGiftCard();
     }
 
-    @Test(priority = 1)
+   /* @Test(priority = 1)
     public void verifyHotSaucePageLable()
     {
         GiftCardPage giftCardPage=new GiftCardPage(driver);
         Assert.assertTrue(driver.getTitle().equals("Gift Cards - Test Site"));
     }
-
+*/
     @Test(priority = 2)
     public void selectHotSauceTest() throws InterruptedException
     {
         List<String> list=new ArrayList<>();
-        Thread.sleep(1000);
         GiftCardPage giftCardPage=new GiftCardPage(driver);
         giftCardPage.setSelectGiftCard();
         giftCardPage.setPersonalMessage(property.getProperty("message"));
@@ -48,36 +49,43 @@ public class GiftCardTest extends TestBase
         giftCardPage.setName(property.getProperty("recepeintName"));
         giftCardPage.setSelectColor();
         giftCardPage.setClickAddToCart();
-        giftCardPage.setClickOnCart();
-        giftCardPage.setGiftCard();
+        Thread.sleep(1000);
 
-        List<WebElement> productName =driver.findElements(By.xpath("//div[@class='col-sm-7']"));
+        String MainWindow=driver.getWindowHandle();
+        Set<String> s1=driver.getWindowHandles();
+        Iterator<String> i1=s1.iterator();
+
+        while(i1.hasNext())
+        {
+            String ChildWindow=i1.next();
+
+            if(!MainWindow.equalsIgnoreCase(ChildWindow))
+            {
+                // Switching to Child window
+                driver.switchTo().window(ChildWindow);
+
+                driver.findElement(By.className("btn btn-primary goto-full-cart")).click();
+            }
+        }
+        driver.switchTo().window(MainWindow);
+        List<WebElement> productName =driver.findElements(By.xpath("//div[@class='card checkout-card cart-summary-row']"));
         for (WebElement webElement:productName)
         {
             System.out.println(webElement.getText());
             list.add(webElement.getText());
         }
         System.out.println(list);
-        Assert.assertTrue(productName.contains("BLAZIN' SADDLE XXX HOT HABANERO PEPPER SAUCE"),"Product name is incorrect");
+        Assert.assertTrue(productName.contains("$5 Gift Card"),"Product name is incorrect");
 
         ShippingPage shippingPage=new ShippingPage(driver);
         HomePage homePage=new HomePage(driver);
         shippingPage.setClickOnCheckout();
         Thread.sleep(1000);
         Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
-        shippingPage.setFullName("fullName");
-        shippingPage.setAddress1("address1");
-        shippingPage.setAddress2("address2");
-        shippingPage.setCity("city");
-        shippingPage.setState("state");
-        shippingPage.setPostal("postal");
-        shippingPage.setPhoneNumber("mobileno");
-        shippingPage.setShippingMethod();
-        shippingPage.setClickToContinue();
-        shippingPage.setCashOnDelivery();
-        shippingPage.setContinueShopping();
-        shippingPage.setPlaceOrder();
-        homePage=shippingPage.verifyShippingPage();
+        homePage=shippingPage.VerifyShippingPage(property.getProperty("fullName"),
+                property.getProperty("address1"),property.getProperty("address2"),
+                property.getProperty("city"),property.getProperty("state"),
+                property.getProperty("postal"),property.getProperty("mobileno"));
         Assert.assertTrue(homePage.verifyUserName());
     }
 }

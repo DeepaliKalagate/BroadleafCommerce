@@ -36,19 +36,11 @@ public class ShippingPageTest extends TestBase
         HomePage homePage=new HomePage(driver);
         shippingPage.setClickOnCheckout();
         Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
-        shippingPage.setFullName("fullName");
-        shippingPage.setAddress1("address1");
-        shippingPage.setAddress2("address2");
-        shippingPage.setCity("city");
-        shippingPage.setState("MH");
-        shippingPage.setPostal("postal");
-        shippingPage.setPhoneNumber("mobileno");
-        shippingPage.setShippingMethod();
-        shippingPage.setClickToContinue();
-        shippingPage.setCashOnDelivery();
-        shippingPage.setContinueShopping();
-        shippingPage.setPlaceOrder();
-        homePage=shippingPage.verifyShippingPage();
+        Thread.sleep(1000);
+        homePage=shippingPage.VerifyShippingPage(property.getProperty("fullName"),
+                property.getProperty("address1"),property.getProperty("address2"),
+                property.getProperty("city"),property.getProperty("state"),
+                property.getProperty("postal"),property.getProperty("mobileno"));
         Assert.assertTrue(homePage.verifyUserName());
     }
 }
