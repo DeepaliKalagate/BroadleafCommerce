@@ -29,12 +29,12 @@ public class GiftCardTest extends TestBase
         giftCardPage=homePage.clickOnGiftCard();
     }
 
-    @Test(priority = 1)
+   /* @Test(priority = 1)
     public void verifyHotSaucePageLable()
     {
         GiftCardPage giftCardPage=new GiftCardPage(driver);
         Assert.assertTrue(driver.getTitle().equals("Gift Cards - Test Site"));
-    }
+    }*/
 
     @Test(priority = 2)
     public void selectHotSauceTest() throws InterruptedException
@@ -74,13 +74,10 @@ public class GiftCardTest extends TestBase
             list.add(webElement.getText());
         }
         System.out.println(list);
-        Assert.assertTrue(productName.contains("$5 Gift Card"),"Product name is incorrect");
+        //Assert.assertTrue(productName.contains("$5 Gift Card"),"Product name is incorrect");
 
         ShippingPage shippingPage=new ShippingPage(driver);
         HomePage homePage=new HomePage(driver);
-        shippingPage.setClickOnCheckout();
-        Thread.sleep(1000);
-        Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
         homePage=shippingPage.VerifyShippingPage(property.getProperty("fullName"),
                 property.getProperty("address1"),property.getProperty("address2"),
                 property.getProperty("city"),property.getProperty("state"),

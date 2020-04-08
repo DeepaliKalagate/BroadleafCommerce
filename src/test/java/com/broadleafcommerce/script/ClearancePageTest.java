@@ -55,8 +55,6 @@ public class ClearancePageTest extends TestBase
        // Assert.assertTrue(productName.contains("BLAZIN' SADDLE XXX HOT HABANERO PEPPER SAUCE"),"Product name is incorrect");
         ShippingPage shippingPage=new ShippingPage(driver);
         HomePage homePage=new HomePage(driver);
-        shippingPage.setClickOnCheckout();
-        Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
         homePage=shippingPage.VerifyShippingPage(property.getProperty("fullName"),
                 property.getProperty("address1"),property.getProperty("address2"),
                 property.getProperty("city"),property.getProperty("state"),

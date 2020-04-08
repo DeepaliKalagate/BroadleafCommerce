@@ -39,13 +39,25 @@
                     <include name="verifyHotSauceLinkTest"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.GiftCardTest">
+            <class name="com.broadleafcommerce.script.HotSauceTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
-                    <include name="verifyHotSaucePageLable"/>
+                    <include name="verifyHotSaucePageLableAndTitle"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.GiftCardTest">
+            <class name="com.broadleafcommerce.script.HotSauceTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="hotSauceTest"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.HotSaucePageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyHotSaucePageLableAndTitle"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.HotSaucePageTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
                     <include name="selectHotSauceTest"/>
@@ -92,14 +104,20 @@
                     <parameter name="browserName" value="chrome"></parameter>
                     <include name="verifyMerchandiseTest"/>
                 </methods>
-            </class>-->
-            <class name="com.broadleafcommerce.script.HotSauceTest">
+            </class>
+            <class name="com.broadleafcommerce.script.GiftCardTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
-                    <include name="verifyHotSaucePageLableAndTitle"/>
+                    <include name="verifyHotSaucePageLable"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.HotSauceTest">
+            <class name="com.broadleafcommerce.script.GiftCardTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="selectHotSauceTest"/>
+                </methods>
+            </class>-->
+            <class name="com.broadleafcommerce.script.HotSauceRemoveFromCartTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
                     <include name="selectHotSauceTest"/>

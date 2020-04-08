@@ -12,7 +12,7 @@ public class ShippingPage extends TestBase
     @FindBy(id = "checkout")
     private WebElement shippingPageText;
 
-    @FindBy(xpath = "//span[contains(text(),'Checkout')]")
+    @FindBy(xpath = "//*[@id=\"cart\"]/div[3]/div[1]/div[2]/div[5]/div[1]/a/i")
     private WebElement clickOnCheckout;
 
     @FindBy(id = "fullName")
@@ -36,10 +36,10 @@ public class ShippingPage extends TestBase
     @FindBy(id="phonePrimary")
     private WebElement phoneNumber;
 
-    @FindBy(id = "fulfillmentOptionId1")
+    @FindBy(xpath = "//div[@class='col-sm-6 shipping-methods-wrapper']//div[2]//label[1]//span[1]")
     private WebElement shippingMethod;
 
-    @FindBy(xpath = "//span[contains(text(),'Continue')]")
+    @FindBy(xpath = "//a[@class='btn btn-primary']//span[contains(text(),'Checkout')]")
     private WebElement clickToContinue;
 
     @FindBy(xpath = "//a[contains(text(),'Collect On Delivery')]")
@@ -51,24 +51,15 @@ public class ShippingPage extends TestBase
     @FindBy(xpath = "//div[@class='col-sm-4 checkout-stage-action']//span[contains(text(),'Place Your Order')]")
     private WebElement placeOrder;
 
-    @FindBy(xpath = "//body[@class='locale-en_US index-page']/nav[@id='sectionsNav']/div[@class='container-fluid']/div[@class='collapse navbar-collapse nav-wrapper']/ul[@class='nav navbar-nav navbar-right']/li[@class='dropdown']/a[1]")
-    private WebElement clickOnDropDown;
-
-    @FindBy(xpath = "//a[contains(text(),'Logout')]")
-    private WebElement clickOnLogout;
-
     public ShippingPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
 
-    public void setClickOnCheckout() throws InterruptedException
-    {
-        clickOnCheckout.click();
-    }
     public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo) throws InterruptedException
     {
-        Thread.sleep(1000);
+        clickOnCheckout.click();
+        Thread.sleep(500);
         fullName.sendKeys(name);
         address1.sendKeys(addressFirst);
         address2.sendKeys(addressTwo);
@@ -77,13 +68,14 @@ public class ShippingPage extends TestBase
         select.selectByVisibleText(selectState);
         postal.sendKeys(postalCode);
         phoneNumber.sendKeys(phoneNo);
+        Thread.sleep(500);
         shippingMethod.click();
+        Thread.sleep(500);
         clickToContinue.click();
+        Thread.sleep(500);
         cashOnDelivery.click();
         continueShopping.click();
         placeOrder.click();
-        clickOnDropDown.click();
-        clickOnLogout.click();
         return new HomePage(driver);
     }
 }

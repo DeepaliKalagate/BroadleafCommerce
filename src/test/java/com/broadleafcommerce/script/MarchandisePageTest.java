@@ -84,8 +84,6 @@ public class MarchandisePageTest extends TestBase
        Assert.assertTrue(list.contains("HAWT LIKE A HABANERO SHIRT (WOMEN'S) SILVER (MEDIUM)"),"Product name is incorrect");
 
         ShippingPage shippingPage=new ShippingPage(driver);
-        shippingPage.setClickOnCheckout();
-        Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Checkout"));
         homePage=shippingPage.VerifyShippingPage(property.getProperty("fullName"),
                 property.getProperty("address1"),property.getProperty("address2"),
                 property.getProperty("city"),property.getProperty("state"),

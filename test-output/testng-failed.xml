@@ -3,7 +3,7 @@
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="BroadleafCommerce(failed)">
     <classes>
-      <class name="com.broadleafcommerce.script.HotSauceTest">
+      <class name="com.broadleafcommerce.script.HotSauceRemoveFromCartTest">
         <parameter name="browserName" value="chrome"/>
         <methods>
           <include name="tearDown"/>
@@ -11,7 +11,7 @@
           <include name="setUP"/>
           <include name="selectHotSauceTest"/>
         </methods>
-      </class> <!-- com.broadleafcommerce.script.HotSauceTest -->
+      </class> <!-- com.broadleafcommerce.script.HotSauceRemoveFromCartTest -->
     </classes>
   </test> <!-- BroadleafCommerce(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

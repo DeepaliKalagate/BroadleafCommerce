@@ -2,12 +2,10 @@ package com.broadleafcommerce.pages;
 
 
 import com.broadleafcommerce.base.TestBase;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 public class HotSaucePage extends TestBase
 {
@@ -18,25 +16,28 @@ public class HotSaucePage extends TestBase
     private WebElement sortBy;
 
     @FindBy(xpath = "//a[contains(text(),'Price: Low to High')]")
-    private WebElement price;
+    private WebElement sortByPrice;
 
-    @FindBy(xpath = "//div[@id='heading0']//i[@class='material-icons'][contains(text(),'keyboard_arrow_down')]")
+    @FindBy(xpath = "//h4[@class='panel-title'][contains(text(),'Manufacturer')]")
     private WebElement manufacturer;
 
     @FindBy(xpath = "//div[@id='collapse0']//div[4]//label[1]//span[1]//span[1]")
     private WebElement selectManufacturer;
 
-    @FindBy(xpath = "//div[@id='heading1']//i[@class='material-icons'][contains(text(),'keyboard_arrow_down')]")
+    @FindBy(xpath = "//h4[contains(text(),'Heat Range')]")
     private WebElement heatRange;
 
     @FindBy(xpath = "//div[@id='collapse1']//div[2]//label[1]//span[1]//span[1]")
     private WebElement selectHeatRange;
 
+    @FindBy(xpath = "//h4[contains(text(),'Price')]")
+    private WebElement selectPrice;
+
+    @FindBy(xpath = "//div[@id='collapse2']//div[2]//label[1]//span[@class='checkbox-material']//span[1]")
+    private WebElement getSelectPrice;
+
     @FindBy(xpath = "//div[@class='js-image image card-image']")
     private WebElement viewHotSuace;
-
-    @FindBy(xpath = "//body[@class='locale-en_US index-page']/div[@class='main']/div[@class='container']/div[@id='search']/div[@id='category-search-content']/div[@id='right_column']/div[@id='products']/div[1]/div[1]/a[1]/div[1]")
-    private WebElement quickViewOfHotSauce;
 
     @FindBy(xpath = "//span[contains(text(),'Add to Cart')]")
     private WebElement addToCart;
@@ -54,12 +55,16 @@ public class HotSaucePage extends TestBase
         return hotsauceLable.isDisplayed();
     }
 
-    public void setManufacturer()
+    public void setSortBy() throws InterruptedException
+    {
+        sortBy.click();
+        Thread.sleep(1000);
+        sortByPrice.click();
+    }
+
+    public void setManufacturer() throws InterruptedException
     {
         manufacturer.click();
-    }
-    public void setSelectManufacturer() throws InterruptedException
-    {
         Thread.sleep(500);
         selectManufacturer.click();
     }
@@ -67,21 +72,15 @@ public class HotSaucePage extends TestBase
     public void setHeatRange()
     {
         heatRange.click();
-    }
-    public void setSelectHeatRange()
-    {
         selectHeatRange.click();
     }
 
-    public void setSortBy() throws InterruptedException
+    public void setSelectPrice() throws InterruptedException
     {
-        sortBy.click();
+        selectPrice.click();
         Thread.sleep(500);
-    }
-
-    public void setPrice()
-    {
-        price.click();
+        getSelectPrice.click();
+        Thread.sleep(1000);
     }
 
     public void setViewHotSuace()
@@ -89,18 +88,9 @@ public class HotSaucePage extends TestBase
         viewHotSuace.click();
     }
 
-    public void setQuickViewOfHotSauce()
-    {
-        quickViewOfHotSauce.click();
-    }
-
-    public void setAddToCart()
-    {
-        //addToCart.click();
-    }
-
     public ShippingPage verifyToShowHotSauses()
     {
+        //addToCart.click();
         viewInCart.click();
         return new ShippingPage(driver);
     }
