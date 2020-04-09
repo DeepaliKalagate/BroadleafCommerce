@@ -5,9 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MerchandisePage extends TestBase
 {
@@ -41,11 +38,17 @@ public class MerchandisePage extends TestBase
     @FindBy(xpath = "//select[@class='selectpicker mobile-device']")
     private WebElement shirtSize;
 
-    @FindBy(xpath = "//span[contains(text(),'Add to Cart')]")
-    private WebElement addToCart;
+    @FindBy(xpath = "//i[contains(text(),'favorite_border')]")
+    private WebElement addToWishlist;
 
-    @FindBy(xpath = "//a[@class='btn btn-primary goto-full-cart']")
-    private WebElement viewInCart;
+    @FindBy(xpath = "//li[@class='dropdown']//a[1]/i")
+    private WebElement clickOnUserName;
+
+    @FindBy(xpath = "//a[contains(text(),'My Profile')]")
+    private WebElement clickOnProfile;
+
+    @FindBy(xpath = "//a[contains(text(),'Manage Wishlist')]")
+    private WebElement clickOnManageWishlist;
 
     public MerchandisePage(WebDriver driver)
     {
@@ -87,14 +90,22 @@ public class MerchandisePage extends TestBase
     {
         shirtSize.sendKeys(size);
     }
-    public void setAddToCart()
+
+    public void setAddToWishlist()
     {
-        addToCart.click();
+        addToWishlist.click();
     }
-    public ShippingPage verifyMerchandisePage() throws InterruptedException
+    public void setClickOnDropdown() throws InterruptedException {
+        Thread.sleep(1000);
+        clickOnUserName.click();
+    }
+    public void setClickOnProfile() throws InterruptedException
     {
         Thread.sleep(1000);
-        viewInCart.click();
-        return new ShippingPage(driver);
+        clickOnProfile.click();
+    }
+    public void setClickOnManageWishlist()
+    {
+        clickOnManageWishlist.click();
     }
 }

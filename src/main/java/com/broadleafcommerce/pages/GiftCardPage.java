@@ -11,13 +11,13 @@ public class GiftCardPage extends TestBase
     @FindBy(xpath = "//h2[@class='section-title']")
     private WebElement giftCardPageText;
 
-    @FindBy(xpath = "//body[@class='locale-en_US index-page']/div[@class='main']/div[@class='container']/div[@id='category']/div[@id='category-search-content']/div[@id='right_column']/div[@id='products']/div[1]/div[1]/a[1]/div[1]")
+    @FindBy(xpath = "//div[@data-id='-15000']")
     private WebElement selectGiftCard;
 
     @FindBy(xpath = "//textarea[@name='itemAttributes[null]']")
     private WebElement personalMessage;
 
-    @FindBy(css = "body.locale-en_US.index-page:nth-child(2) div.main:nth-child(7) div.container div.product-page:nth-child(1) div.main-product.js-productContainer.card-product.row div.col-sm-5 div.js-productOptions:nth-child(4) div.js-productOptionGroup.product-options:nth-child(3) div.form-group.label-floating.is-empty > input.form-control")
+    @FindBy(xpath = "//div//div//div//div//div//div//div//div[3]//input[1]")
     private WebElement sender;
 
     @FindBy(xpath = "//div//div//div//div//div//div//div[4]//input[1]")

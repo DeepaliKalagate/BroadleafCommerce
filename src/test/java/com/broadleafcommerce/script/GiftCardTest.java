@@ -48,8 +48,7 @@ public class GiftCardTest extends TestBase
         giftCardPage.setName(property.getProperty("recepeintName"));
         giftCardPage.setSelectColor();
         giftCardPage.setClickAddToCart();
-        Thread.sleep(1000);
-
+        Thread.sleep(500);
         String MainWindow=driver.getWindowHandle();
         Set<String> s1=driver.getWindowHandles();
         Iterator<String> i1=s1.iterator();
@@ -66,7 +65,9 @@ public class GiftCardTest extends TestBase
                 driver.findElement(By.className("btn btn-primary goto-full-cart")).click();
             }
         }
+        //witching to Parent Window
         driver.switchTo().window(MainWindow);
+
         List<WebElement> productName =driver.findElements(By.xpath("//div[@class='card checkout-card cart-summary-row']"));
         for (WebElement webElement:productName)
         {
@@ -75,13 +76,5 @@ public class GiftCardTest extends TestBase
         }
         System.out.println(list);
         //Assert.assertTrue(productName.contains("$5 Gift Card"),"Product name is incorrect");
-
-        ShippingPage shippingPage=new ShippingPage(driver);
-        HomePage homePage=new HomePage(driver);
-        homePage=shippingPage.VerifyShippingPage(property.getProperty("fullName"),
-                property.getProperty("address1"),property.getProperty("address2"),
-                property.getProperty("city"),property.getProperty("state"),
-                property.getProperty("postal"),property.getProperty("mobileno"));
-        Assert.assertTrue(homePage.verifyUserName());
     }
 }

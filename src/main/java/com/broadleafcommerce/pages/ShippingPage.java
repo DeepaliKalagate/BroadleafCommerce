@@ -12,7 +12,7 @@ public class ShippingPage extends TestBase
     @FindBy(id = "checkout")
     private WebElement shippingPageText;
 
-    @FindBy(xpath = "//*[@id=\"cart\"]/div[3]/div[1]/div[2]/div[5]/div[1]/a/i")
+    @FindBy(xpath = "//span[contains(text(),'Checkout')]")
     private WebElement clickOnCheckout;
 
     @FindBy(id = "fullName")
@@ -58,6 +58,7 @@ public class ShippingPage extends TestBase
 
     public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo) throws InterruptedException
     {
+        Thread.sleep(1000);
         clickOnCheckout.click();
         Thread.sleep(500);
         fullName.sendKeys(name);
