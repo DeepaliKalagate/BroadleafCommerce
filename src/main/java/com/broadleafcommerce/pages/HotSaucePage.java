@@ -1,6 +1,4 @@
 package com.broadleafcommerce.pages;
-
-
 import com.broadleafcommerce.base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -90,7 +88,7 @@ public class HotSaucePage extends TestBase
 
     public ShippingPage verifyToShowHotSauses()
     {
-        //addToCart.click();
+        addToCart.click();
         viewInCart.click();
         return new ShippingPage(driver);
     }

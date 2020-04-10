@@ -3,15 +3,15 @@
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="BroadleafCommerce(failed)">
     <classes>
-      <class name="com.broadleafcommerce.script.MarchandisePageTest">
+      <class name="com.broadleafcommerce.script.ProductRemoveFromCartTest">
         <parameter name="browserName" value="chrome"/>
         <methods>
           <include name="tearDown"/>
-          <include name="verifyMerchandiseTest"/>
-          <include name="setLoginPage"/>
           <include name="setUP"/>
+          <include name="productRemoveFromCartTest"/>
+          <include name="setLoginPage"/>
         </methods>
-      </class> <!-- com.broadleafcommerce.script.MarchandisePageTest -->
+      </class> <!-- com.broadleafcommerce.script.ProductRemoveFromCartTest -->
     </classes>
   </test> <!-- BroadleafCommerce(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

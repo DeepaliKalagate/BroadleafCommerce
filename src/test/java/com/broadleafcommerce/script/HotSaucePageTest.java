@@ -65,7 +65,7 @@ public class HotSaucePageTest extends TestBase
         {
             hotSaucePage.verifyToShowHotSauses();
 
-            List<WebElement> productName = driver.findElements(By.xpath("//div[@class='col-sm-7']"));
+            List<WebElement> productName = driver.findElements(By.xpath("//div[@class='row']/child::div[@class='col-sm-7']"));
             for (WebElement webElement : productName)
             {
                 System.out.println(webElement.getText());

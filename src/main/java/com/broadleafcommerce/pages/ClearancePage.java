@@ -10,7 +10,13 @@ public class ClearancePage extends TestBase {
     @FindBy(className = "section-title")
     private WebElement clearancePageText;
 
-    @FindBy(xpath = "//body[@class='locale-en_US index-page']/div[@class='main']/div[@class='container']/div[@id='category']/div[@id='category-search-content']/div[@id='right_column']/div[@id='products']/div[1]/div[1]/a[1]/div[1]")
+    @FindBy(xpath = "//input[@placeholder='search']")
+    private WebElement searchSauce;
+
+    @FindBy(xpath = "//strong[contains(text(),'blazin')]")
+    private WebElement viewHotSuace;
+
+    @FindBy(xpath = "//div[@class='col-md-4']//div[@data-id='8']")
     private WebElement clearanceItem;
 
     @FindBy(xpath = "//button[@class='btn btn-primary js-addToCart']")
@@ -27,6 +33,16 @@ public class ClearancePage extends TestBase {
         return clearancePageText.isDisplayed();
     }
 
+   public void setSearchSauce(String serachItem)
+   {
+       searchSauce.sendKeys(serachItem);
+   }
+
+   public void setViewHotSuace()
+   {
+       viewHotSuace.click();
+   }
+
     public void setClearanceItem()
     {
         clearanceItem.click();
@@ -34,7 +50,7 @@ public class ClearancePage extends TestBase {
 
     public void setAddToCart()
     {
-      // addToCart.click();
+       //addToCart.click();
     }
 
     public ShippingPage verifyClearancePage()

@@ -2,7 +2,9 @@ package com.broadleafcommerce.script;
 
 import com.broadleafcommerce.base.Listener;
 import com.broadleafcommerce.base.TestBase;
-import com.broadleafcommerce.pages.*;
+import com.broadleafcommerce.pages.HomePage;
+import com.broadleafcommerce.pages.LoginPage;
+import com.broadleafcommerce.pages.MerchandisePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -10,9 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 @Listeners(Listener.class)
 public class MarchandisePageTest extends TestBase

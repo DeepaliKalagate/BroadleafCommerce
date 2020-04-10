@@ -29,15 +29,15 @@ public class GiftCardTest extends TestBase
         giftCardPage=homePage.clickOnGiftCard();
     }
 
-   /* @Test(priority = 1)
-    public void verifyHotSaucePageLable()
+    @Test(priority = 1)
+    public void verifyGiftCardPageLable()
     {
         GiftCardPage giftCardPage=new GiftCardPage(driver);
         Assert.assertTrue(driver.getTitle().equals("Gift Cards - Test Site"));
-    }*/
+    }
 
     @Test(priority = 2)
-    public void selectHotSauceTest() throws InterruptedException
+    public void selectGiftCardTest() throws InterruptedException
     {
         List<String> list=new ArrayList<>();
         GiftCardPage giftCardPage=new GiftCardPage(driver);
@@ -68,7 +68,7 @@ public class GiftCardTest extends TestBase
         //witching to Parent Window
         driver.switchTo().window(MainWindow);
 
-        List<WebElement> productName =driver.findElements(By.xpath("//div[@class='card checkout-card cart-summary-row']"));
+        List<WebElement> productName =driver.findElements(By.xpath("//div[@class='row']/child::div[@class='col-sm-7']"));
         for (WebElement webElement:productName)
         {
             System.out.println(webElement.getText());
