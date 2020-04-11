@@ -93,6 +93,7 @@ public class HotSaucePage extends TestBase
     public ShippingPage verifyToShowHotSauses()
     {
         addToCart.click();
+        wait.until(ExpectedConditions.visibilityOf(viewInCart));
         viewInCart.click();
         return new ShippingPage(driver);
     }

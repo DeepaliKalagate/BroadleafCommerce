@@ -2,6 +2,7 @@ package com.broadleafcommerce.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,6 +15,7 @@ public class TestBase implements IAutoConstants
 {
     public static WebDriver driver;
     public static Properties property;
+    public static ChromeOptions chromeOptions;
     public static FileInputStream fileInputStream;
     public static String filePath="src/main/java/com/broadleafcommerce/config/config.properties";
 
@@ -38,6 +40,7 @@ public class TestBase implements IAutoConstants
         if(browserName.equalsIgnoreCase("chrome"))
         {
             System.setProperty(CHROME_KEY,CHROME_VALUE);
+            chromeOptions.addArguments("--disable-notifications");
             driver = new ChromeDriver();
             String url= property.getProperty("URL");
             driver.manage().window().maximize();
