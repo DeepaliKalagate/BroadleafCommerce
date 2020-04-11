@@ -56,7 +56,7 @@ public class ClearancePage extends TestBase
 
     public void setAddToCart()
     {
-       //addToCart.click();
+       addToCart.click();
     }
 
     public ShippingPage verifyClearancePage()
