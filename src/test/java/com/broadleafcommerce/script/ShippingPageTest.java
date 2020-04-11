@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 public class ShippingPageTest extends TestBase
 {
    @BeforeMethod
-    public void setLoginPage() throws InterruptedException
+    public void setLoginPage()
     {
         LoginPage loginPage= new LoginPage(driver);
         loginPage.setEmail(property.getProperty("email"));
@@ -28,7 +28,7 @@ public class ShippingPageTest extends TestBase
     }
 
     @Test()
-    public void verifyShippingPageTest() throws InterruptedException
+    public void verifyShippingPageTest()
     {
         ShippingPage shippingPage=new ShippingPage(driver);
         HomePage homePage=new HomePage(driver);

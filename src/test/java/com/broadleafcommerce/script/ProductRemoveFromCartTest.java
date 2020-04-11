@@ -40,7 +40,7 @@ public class ProductRemoveFromCartTest extends TestBase
         }
         else
         {
-            //removeFromCartPage.setAddToCart();
+            removeFromCartPage.setAddToCart();
             removeFromCartPage.setViewInCart();
             List<WebElement> productName = driver.findElements(By.xpath("//div[@class='col-sm-7']"));
             for (WebElement webElement : productName)
@@ -55,7 +55,8 @@ public class ProductRemoveFromCartTest extends TestBase
                 removeFromCartPage.setRemoveitem();
                 Thread.sleep(500);
             }
-            Thread.sleep(1000);
+            removeFromCartPage.setClickOnDropdown();
+            removeFromCartPage.setClickOnLogout();
         }
     }
 }

@@ -39,12 +39,11 @@ public class ClearancePageTest extends TestBase
     }
 
     @Test(priority = 2)
-    public void verifyClearancePageTest() throws InterruptedException
+    public void verifyClearancePageTest()
     {
         List<String> list=new ArrayList<>();
         ClearancePage clearancePage=new ClearancePage(driver);
         clearancePage.setSearchSauce("Blazin");
-        Thread.sleep(1000);
         clearancePage.setViewHotSuace();
         clearancePage.setClearanceItem();
         clearancePage.setAddToCart();

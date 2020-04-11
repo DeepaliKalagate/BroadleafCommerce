@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class HomePageTest extends TestBase
 {
     @BeforeMethod
-    public void setLoginPage() throws InterruptedException
+    public void setLoginPage()
     {
         LoginPage loginPage= new LoginPage(driver);
         loginPage.setEmail("deepali.kalagate@thoughtworks.com");

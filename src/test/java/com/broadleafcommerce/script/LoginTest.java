@@ -21,7 +21,7 @@ public class LoginTest extends TestBase
     }
 
     @Test(priority = 2)
-    public void loginTest() throws InterruptedException
+    public void loginTest()
     {
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage=new HomePage(driver);

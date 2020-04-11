@@ -13,7 +13,7 @@ import java.util.List;
 public class HotSauceTest extends TestBase
 {
     @BeforeMethod
-    public void setLoginPage() throws InterruptedException
+    public void setLoginPage()
     {
         LoginPage loginPage= new LoginPage(driver);
         loginPage.setEmail(property.getProperty("email"));
@@ -25,13 +25,12 @@ public class HotSauceTest extends TestBase
     }
 
     @Test(priority = 1)
-    public void verifyHotSaucePageLableAndTitle() throws InterruptedException
+    public void verifyHotSaucePageLableAndTitle()
     {
 
         HotSauce hotSauce=new HotSauce(driver);
         boolean hotSaucePageLable=hotSauce.verifyHotSaucePageLable();
         Assert.assertTrue(hotSaucePageLable);
-        Thread.sleep(1000);
         Assert.assertTrue(driver.getTitle().equals("Hot Sauces - Test Site"));
     }
     @Test(priority = 2)

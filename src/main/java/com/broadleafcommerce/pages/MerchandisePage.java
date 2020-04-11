@@ -5,9 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MerchandisePage extends TestBase
 {
+    WebDriverWait wait=new WebDriverWait(driver,5);
+
     @FindBy(className = "section-title")
     private WebElement marchandisePageText;
 
@@ -60,10 +64,10 @@ public class MerchandisePage extends TestBase
         return marchandisePageText.isDisplayed();
     }
 
-    public void setSortBy() throws InterruptedException
+    public void setSortBy()
     {
         sortBy.click();
-        Thread.sleep(500);
+        wait.until(ExpectedConditions.visibilityOf(price));
     }
 
     public void setPrice()
@@ -94,14 +98,15 @@ public class MerchandisePage extends TestBase
     public void setAddToWishlist()
     {
         addToWishlist.click();
+        wait.until(ExpectedConditions.visibilityOf(clickOnUserName));
     }
-    public void setClickOnDropdown() throws InterruptedException {
-        Thread.sleep(1000);
-        clickOnUserName.click();
-    }
-    public void setClickOnProfile() throws InterruptedException
+    public void setClickOnDropdown()
     {
-        Thread.sleep(1000);
+        clickOnUserName.click();
+        wait.until(ExpectedConditions.visibilityOf(clickOnProfile));
+    }
+    public void setClickOnProfile()
+    {
         clickOnProfile.click();
     }
     public void setClickOnManageWishlist()

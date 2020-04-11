@@ -5,10 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ShippingPage extends TestBase
 {
+    WebDriverWait wait=new WebDriverWait(driver,10);
     @FindBy(id = "checkout")
     private WebElement shippingPageText;
 
@@ -56,11 +59,11 @@ public class ShippingPage extends TestBase
         PageFactory.initElements(driver,this);
     }
 
-    public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo) throws InterruptedException
+    public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo)
     {
-        Thread.sleep(1000);
+        wait.until(ExpectedConditions.visibilityOf(clickOnCheckout));
         clickOnCheckout.click();
-        Thread.sleep(500);
+        wait.until(ExpectedConditions.visibilityOf(fullName));
         fullName.sendKeys(name);
         address1.sendKeys(addressFirst);
         address2.sendKeys(addressTwo);
@@ -69,11 +72,11 @@ public class ShippingPage extends TestBase
         select.selectByVisibleText(selectState);
         postal.sendKeys(postalCode);
         phoneNumber.sendKeys(phoneNo);
-        Thread.sleep(500);
+        wait.until(ExpectedConditions.visibilityOf(shippingMethod));
         shippingMethod.click();
-        Thread.sleep(500);
+        wait.until(ExpectedConditions.visibilityOf(clickToContinue));
         clickToContinue.click();
-        Thread.sleep(500);
+        wait.until(ExpectedConditions.visibilityOf(cashOnDelivery));
         cashOnDelivery.click();
         continueShopping.click();
         placeOrder.click();

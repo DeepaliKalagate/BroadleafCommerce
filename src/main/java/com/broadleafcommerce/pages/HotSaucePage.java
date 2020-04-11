@@ -4,9 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HotSaucePage extends TestBase
 {
+    WebDriverWait wait=new WebDriverWait(driver,5);
+
     @FindBy(className = "section-title")
     private WebElement hotsauceLable;
 
@@ -56,14 +60,14 @@ public class HotSaucePage extends TestBase
     public void setSortBy() throws InterruptedException
     {
         sortBy.click();
-        Thread.sleep(1000);
+        wait.until(ExpectedConditions.visibilityOf(sortByPrice));
         sortByPrice.click();
     }
 
-    public void setManufacturer() throws InterruptedException
+    public void setManufacturer()
     {
         manufacturer.click();
-        Thread.sleep(500);
+        wait.until(ExpectedConditions.visibilityOf(selectManufacturer));
         selectManufacturer.click();
     }
 
@@ -73,12 +77,12 @@ public class HotSaucePage extends TestBase
         selectHeatRange.click();
     }
 
-    public void setSelectPrice() throws InterruptedException
+    public void setSelectPrice()
     {
         selectPrice.click();
-        Thread.sleep(500);
+        wait.until(ExpectedConditions.visibilityOf(getSelectPrice));
         getSelectPrice.click();
-        Thread.sleep(1000);
+        wait.until(ExpectedConditions.visibilityOf(sortBy));
     }
 
     public void setViewHotSuace()

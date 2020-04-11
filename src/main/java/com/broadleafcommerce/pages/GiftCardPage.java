@@ -5,9 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GiftCardPage extends TestBase
 {
+    WebDriverWait wait=new WebDriverWait(driver,5);
+
     @FindBy(xpath = "//h2[@class='section-title']")
     private WebElement giftCardPageText;
 
@@ -76,6 +80,7 @@ public class GiftCardPage extends TestBase
     public void setClickAddToCart()
     {
         clickAddToCart.click();
+        wait.until(ExpectedConditions.visibilityOf(clickOnCart));
     }
 
     public void setClickOnCart()

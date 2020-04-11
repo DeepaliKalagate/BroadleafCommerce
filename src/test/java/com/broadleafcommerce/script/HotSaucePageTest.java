@@ -19,7 +19,7 @@ import java.util.List;
 public class HotSaucePageTest extends TestBase
 {
     @BeforeMethod
-    public void setLoginPage() throws InterruptedException
+    public void setLoginPage()
     {
         LoginPage loginPage= new LoginPage(driver);
         loginPage.setEmail(property.getProperty("email"));
@@ -31,13 +31,12 @@ public class HotSaucePageTest extends TestBase
     }
 
     @Test(priority = 1)
-    public void verifyHotSaucePageLableAndTitle() throws InterruptedException
+    public void verifyHotSaucePageLableAndTitle()
     {
         HomePage homePage=new HomePage(driver);
         HotSaucePage hotSausPage=homePage.clickOnHotsauce();
         boolean hotSaucePageLable=hotSausPage.verifyHotSaucePageLable();
         Assert.assertTrue(hotSaucePageLable);
-        Thread.sleep(1000);
         Assert.assertTrue(driver.getTitle().equals("Hot Sauces - Test Site"));
     }
 
@@ -48,7 +47,6 @@ public class HotSaucePageTest extends TestBase
         HomePage homePage=new HomePage(driver);
         HotSaucePage hotSaucePage=new HotSaucePage(driver);
 
-        Thread.sleep(1000);
         hotSaucePage.setSelectPrice();
         hotSaucePage.setSortBy();
         hotSaucePage.setManufacturer();

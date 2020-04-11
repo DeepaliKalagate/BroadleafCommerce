@@ -18,7 +18,7 @@ import java.util.Set;
 public class GiftCardTest extends TestBase
 {
    @BeforeMethod
-    public void setLoginPage() throws InterruptedException
+    public void setLoginPage()
     {
         LoginPage loginPage= new LoginPage(driver);
         loginPage.setEmail("deepali.kalagate@thoughtworks.com");
@@ -37,7 +37,7 @@ public class GiftCardTest extends TestBase
     }
 
     @Test(priority = 2)
-    public void selectGiftCardTest() throws InterruptedException
+    public void selectGiftCardTest()
     {
         List<String> list=new ArrayList<>();
         GiftCardPage giftCardPage=new GiftCardPage(driver);
@@ -48,7 +48,6 @@ public class GiftCardTest extends TestBase
         giftCardPage.setName(property.getProperty("recepeintName"));
         giftCardPage.setSelectColor();
         giftCardPage.setClickAddToCart();
-        Thread.sleep(500);
         String MainWindow=driver.getWindowHandle();
         Set<String> s1=driver.getWindowHandles();
         Iterator<String> i1=s1.iterator();
