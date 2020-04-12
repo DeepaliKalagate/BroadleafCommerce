@@ -4,11 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 
 public class TestBase implements IAutoConstants
@@ -34,12 +38,12 @@ public class TestBase implements IAutoConstants
 
     @Parameters("browserName")
     @BeforeMethod
-    public void setUP(String browserName) throws InterruptedException
-    {
+    public void setUP(String browserName) throws MalformedURLException {
         if(browserName.equalsIgnoreCase("chrome"))
         {
-            System.setProperty(CHROME_KEY,CHROME_VALUE);
-            driver = new ChromeDriver();
+            DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
+            desiredCapabilities.setBrowserName("chrome");
+            driver=new RemoteWebDriver(new URL(""),desiredCapabilities);
             String url= property.getProperty("URL");
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
@@ -47,8 +51,9 @@ public class TestBase implements IAutoConstants
         }
         else if(browserName.equalsIgnoreCase("firefox"))
         {
-            System.setProperty(GECKO_KEY,GECKO_VALUE);
-            driver = new FirefoxDriver();
+            DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
+            desiredCapabilities.setBrowserName("firefox");
+            driver=new RemoteWebDriver(new URL(""),desiredCapabilities);
             String url= property.getProperty("URL");
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
