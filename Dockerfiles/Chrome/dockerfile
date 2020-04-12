@@ -1,0 +1,5 @@
+FROM selenium/node-chrome-debug
+
+MAINTAINER deepali kalagate <deepali.kalagate@thoughtworks.com>
+
+CMD ["echo","Welcome to Chrome!"]

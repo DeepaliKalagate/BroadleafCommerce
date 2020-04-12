@@ -1,0 +1,6 @@
+#getting base image
+FROM selenium/node-firefox-debug
+
+MAINTAINER deepali kalagate <deepali.kalagate@thoughtworks.com>
+
+CMD ["echo", "Welcome to Firefox!"]

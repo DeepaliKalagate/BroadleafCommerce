@@ -1,0 +1,6 @@
+#getting base image
+FROM selenium/hub
+
+MAINTAINER deepali kalagate <deepali.kalagate@thoughtworks.com>
+
+CMD ["echo", "Welcome to Selenium!"]
