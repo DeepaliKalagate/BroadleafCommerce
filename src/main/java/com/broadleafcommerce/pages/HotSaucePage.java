@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HotSaucePage extends TestBase
 {
-    WebDriverWait wait=new WebDriverWait(driver,5);
+    WebDriverWait wait=new WebDriverWait(driver,10);
 
     @FindBy(className = "section-title")
     private WebElement hotsauceLable;
@@ -25,12 +25,6 @@ public class HotSaucePage extends TestBase
 
     @FindBy(xpath = "//div[@id='collapse0']//div[4]//label[1]//span[1]//span[1]")
     private WebElement selectManufacturer;
-
-    @FindBy(xpath = "//h4[contains(text(),'Heat Range')]")
-    private WebElement heatRange;
-
-    @FindBy(xpath = "//div[@id='collapse1']//div[2]//label[1]//span[1]//span[1]")
-    private WebElement selectHeatRange;
 
     @FindBy(xpath = "//h4[contains(text(),'Price')]")
     private WebElement selectPrice;
@@ -71,18 +65,11 @@ public class HotSaucePage extends TestBase
         selectManufacturer.click();
     }
 
-    public void setHeatRange()
-    {
-        heatRange.click();
-        selectHeatRange.click();
-    }
-
     public void setSelectPrice()
     {
         selectPrice.click();
         wait.until(ExpectedConditions.visibilityOf(getSelectPrice));
         getSelectPrice.click();
-        wait.until(ExpectedConditions.visibilityOf(sortBy));
     }
 
     public void setViewHotSuace()

@@ -42,7 +42,7 @@ public class ShippingPage extends TestBase
     @FindBy(xpath = "//div[@class='col-sm-6 shipping-methods-wrapper']//div[2]//label[1]//span[1]")
     private WebElement shippingMethod;
 
-    @FindBy(xpath = "//a[@class='btn btn-primary']//span[contains(text(),'Checkout')]")
+    @FindBy(xpath = "//span[contains(text(),'Continue')]")
     private WebElement clickToContinue;
 
     @FindBy(xpath = "//a[contains(text(),'Collect On Delivery')]")
@@ -74,7 +74,6 @@ public class ShippingPage extends TestBase
         phoneNumber.sendKeys(phoneNo);
         wait.until(ExpectedConditions.visibilityOf(shippingMethod));
         shippingMethod.click();
-        wait.until(ExpectedConditions.visibilityOf(clickToContinue));
         clickToContinue.click();
         wait.until(ExpectedConditions.visibilityOf(cashOnDelivery));
         cashOnDelivery.click();

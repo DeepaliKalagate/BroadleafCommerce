@@ -47,10 +47,9 @@ public class HotSaucePageTest extends TestBase
         HomePage homePage=new HomePage(driver);
         HotSaucePage hotSaucePage=new HotSaucePage(driver);
 
-        hotSaucePage.setSelectPrice();
         hotSaucePage.setSortBy();
+        hotSaucePage.setSelectPrice();
         hotSaucePage.setManufacturer();
-        hotSaucePage.setHeatRange();
         hotSaucePage.setViewHotSuace();
         Thread.sleep(500);
         String element=driver.findElement(By.xpath("//div[@class='col-sm-10']//button[@class='btn']")).getText();
@@ -70,7 +69,7 @@ public class HotSaucePageTest extends TestBase
                 list.add(webElement.getText());
             }
             System.out.println(list);
-            //Assert.assertEquals(productName,"DAY OF THE DEAD CHIPOTLE HOT SAUCE","Product name is incorrect");
+            Assert.assertTrue(list.contains("BULL SNORT COWBOY CAYENNE PEPPER HOT SAUCE"),"Product name is incorrect");
 
             ShippingPage shippingPage = new ShippingPage(driver);
             homePage = shippingPage.VerifyShippingPage(property.getProperty("fullName"),

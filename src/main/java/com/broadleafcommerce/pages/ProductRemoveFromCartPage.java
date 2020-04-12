@@ -26,7 +26,7 @@ public class ProductRemoveFromCartPage extends TestBase
     @FindBy(xpath = "//li[@class='dropdown']//a[1]/i")
     private WebElement clickOnUserName;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[contains(text(),'Logout')]")
     private WebElement clickOnLogout;
 
     public ProductRemoveFromCartPage(WebDriver driver)
@@ -59,6 +59,7 @@ public class ProductRemoveFromCartPage extends TestBase
     public void setClickOnDropdown()
     {
         clickOnUserName.click();
+        wait.until(ExpectedConditions.visibilityOf(clickOnLogout));
     }
 
     public void setClickOnLogout()

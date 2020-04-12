@@ -34,7 +34,7 @@ public class HomePageTest extends TestBase
     {
         HomePage homePage=new HomePage(driver);
         HotSaucePage hotSaucePage =new HotSaucePage(driver);
-       hotSaucePage = homePage.clickOnHotsauce();
-       Assert.assertTrue(hotSaucePage.verifyHotSaucePageLable());
+        hotSaucePage = homePage.clickOnHotsauce();
+        Assert.assertTrue(hotSaucePage.verifyHotSaucePageLable());
     }
 }

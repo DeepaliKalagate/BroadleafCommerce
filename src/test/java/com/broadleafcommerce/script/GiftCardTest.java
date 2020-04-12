@@ -48,24 +48,7 @@ public class GiftCardTest extends TestBase
         giftCardPage.setName(property.getProperty("recepeintName"));
         giftCardPage.setSelectColor();
         giftCardPage.setClickAddToCart();
-        String MainWindow=driver.getWindowHandle();
-        Set<String> s1=driver.getWindowHandles();
-        Iterator<String> i1=s1.iterator();
-
-        while(i1.hasNext())
-        {
-            String ChildWindow=i1.next();
-
-            if(!MainWindow.equalsIgnoreCase(ChildWindow))
-            {
-                // Switching to Child window
-                driver.switchTo().window(ChildWindow);
-
-                driver.findElement(By.className("btn btn-primary goto-full-cart")).click();
-            }
-        }
-        //witching to Parent Window
-        driver.switchTo().window(MainWindow);
+        giftCardPage.setGiftCard();
 
         List<WebElement> productName =driver.findElements(By.xpath("//div[@class='row']/child::div[@class='col-sm-7']"));
         for (WebElement webElement:productName)
@@ -74,6 +57,6 @@ public class GiftCardTest extends TestBase
             list.add(webElement.getText());
         }
         System.out.println(list);
-        //Assert.assertTrue(productName.contains("$5 Gift Card"),"Product name is incorrect");
+        Assert.assertTrue(list.contains("$5 GIFT CARD"),"Product name is incorrect");
     }
 }
