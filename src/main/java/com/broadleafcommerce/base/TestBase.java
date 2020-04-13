@@ -43,7 +43,7 @@ public class TestBase implements IAutoConstants
         {
             DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
             desiredCapabilities.setBrowserName("chrome");
-            driver=new RemoteWebDriver(new URL(""),desiredCapabilities);
+            driver=new RemoteWebDriver(new URL("http://localhost:4545/wd/hub"),desiredCapabilities);
             String url= property.getProperty("URL");
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
@@ -53,7 +53,7 @@ public class TestBase implements IAutoConstants
         {
             DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
             desiredCapabilities.setBrowserName("firefox");
-            driver=new RemoteWebDriver(new URL(""),desiredCapabilities);
+            driver=new RemoteWebDriver(new URL("http://localhost:4545/wd/hub"),desiredCapabilities);
             String url= property.getProperty("URL");
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
