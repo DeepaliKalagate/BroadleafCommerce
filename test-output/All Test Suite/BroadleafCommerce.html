@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>BroadleafCommerce</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>15/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Apr 12 20:39:57 IST 2020</td>
+<td>Started on:</td><td>Mon Apr 13 10:09:44 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>34 seconds (34184 ms)</td>
+<tr><td>Total time:</td><td>1021 seconds (1021018 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,12 +75,13 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.broadleafcommerce.script.GiftCardTest.selectGiftCardTest()'><b>selectGiftCardTest</b><br>Test class: com.broadleafcommerce.script.GiftCardTest</td>
-<td><div><pre>java.lang.AssertionError: Product name is incorrect did not expect to find [true] but found [false]
+<td title='com.broadleafcommerce.script.ProductRemoveFromCartTest.productRemoveFromCartTest()'><b>productRemoveFromCartTest</b><br>Test class: com.broadleafcommerce.script.ProductRemoveFromCartTest</td>
+<td><div><pre>java.lang.AssertionError: expected [Product name is incorrect] but found [false]
 	at org.testng.Assert.fail(Assert.java:97)
-	at org.testng.Assert.failNotEquals(Assert.java:969)
-	at org.testng.Assert.assertTrue(Assert.java:43)
-	at com.broadleafcommerce.script.GiftCardTest.selectGiftCardTest(GiftCardTest.java:80)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:563)
+	at com.broadleafcommerce.script.ProductRemoveFromCartTest.productRemoveFromCartTest(ProductRemoveFromCartTest.java:52)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -108,12 +109,13 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.run(TestNG.java:1000)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
-</pre></div><a href='#' onClick='toggleBox("stack-trace16373883", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace16373883'><pre>java.lang.AssertionError: Product name is incorrect did not expect to find [true] but found [false]
+</pre></div><a href='#' onClick='toggleBox("stack-trace253988431", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace253988431'><pre>java.lang.AssertionError: expected [Product name is incorrect] but found [false]
 	at org.testng.Assert.fail(Assert.java:97)
-	at org.testng.Assert.failNotEquals(Assert.java:969)
-	at org.testng.Assert.assertTrue(Assert.java:43)
-	at com.broadleafcommerce.script.GiftCardTest.selectGiftCardTest(GiftCardTest.java:80)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:563)
+	at com.broadleafcommerce.script.ProductRemoveFromCartTest.productRemoveFromCartTest(ProductRemoveFromCartTest.java:52)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -142,8 +144,273 @@ function toggleAllBoxes() {
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
 </pre></div></td>
-<td>6</td>
-<td>com.broadleafcommerce.script.GiftCardTest@4466af20</td></tr>
+<td>4</td>
+<td>com.broadleafcommerce.script.ProductRemoveFromCartTest@564fabc8</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.HotSaucePageTest.selectHotSauceTest()'><b>selectHotSauceTest</b><br>Test class: com.broadleafcommerce.script.HotSaucePageTest</td>
+<td><div><pre>java.lang.AssertionError: Product name is incorrect did not expect to find [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at com.broadleafcommerce.script.HotSaucePageTest.selectHotSauceTest(HotSaucePageTest.java:72)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1824423245", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1824423245'><pre>java.lang.AssertionError: Product name is incorrect did not expect to find [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at com.broadleafcommerce.script.HotSaucePageTest.selectHotSauceTest(HotSaucePageTest.java:72)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
+</pre></div></td>
+<td>16</td>
+<td>com.broadleafcommerce.script.HotSaucePageTest@1189dd52</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.ClearancePageTest.verifyClearancePageTest()'><b>verifyClearancePageTest</b><br>Test class: com.broadleafcommerce.script.ClearancePageTest</td>
+<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=80.0.3987.163)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Deepalis-MacBook-Pro.local&apos;, ip: &apos;2405:204:30a:bc85:e04b:cb8e:302:51de%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;11.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/rq/v_15qjc53rv...}, goog:chromeOptions: {debuggerAddress: localhost:50564}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 50fc16a87c5d60d190d265e9838c0636
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy13.click(Unknown Source)
+	at com.broadleafcommerce.pages.ClearancePage.verifyClearancePage(ClearancePage.java:64)
+	at com.broadleafcommerce.script.ClearancePageTest.verifyClearancePageTest(ClearancePageTest.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
+</pre></div><a href='#' onClick='toggleBox("stack-trace446613518", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace446613518'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=80.0.3987.163)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Deepalis-MacBook-Pro.local&apos;, ip: &apos;2405:204:30a:bc85:e04b:cb8e:302:51de%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;11.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.163, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: /var/folders/rq/v_15qjc53rv...}, goog:chromeOptions: {debuggerAddress: localhost:50564}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 50fc16a87c5d60d190d265e9838c0636
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy13.click(Unknown Source)
+	at com.broadleafcommerce.pages.ClearancePage.verifyClearancePage(ClearancePage.java:64)
+	at com.broadleafcommerce.script.ClearancePageTest.verifyClearancePageTest(ClearancePageTest.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
+</pre></div></td>
+<td>33</td>
+<td>com.broadleafcommerce.script.ClearancePageTest@16d04d3d</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.broadleafcommerce.script.RegisterPageTest.broadleafLogoImageAndPageTitleTest()'><b>broadleafLogoImageAndPageTitleTest</b><br>Test class: com.broadleafcommerce.script.RegisterPageTest</td>
+<td></td>
+<td>0</td>
+<td>com.broadleafcommerce.script.RegisterPageTest@38c6f217</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.LoginTest.broadleafLogoImageAndPageTitleTest()'><b>broadleafLogoImageAndPageTitleTest</b><br>Test class: com.broadleafcommerce.script.LoginTest</td>
+<td></td>
+<td>0</td>
+<td>com.broadleafcommerce.script.LoginTest@478190fc</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.HotSauceTest.hotSauceTest()'><b>hotSauceTest</b><br>Test class: com.broadleafcommerce.script.HotSauceTest</td>
+<td></td>
+<td>19</td>
+<td>com.broadleafcommerce.script.HotSauceTest@3a93b025</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.LoginTest.loginTest()'><b>loginTest</b><br>Test class: com.broadleafcommerce.script.LoginTest</td>
+<td></td>
+<td>7</td>
+<td>com.broadleafcommerce.script.LoginTest@478190fc</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.GiftCardTest.selectGiftCardTest()'><b>selectGiftCardTest</b><br>Test class: com.broadleafcommerce.script.GiftCardTest</td>
+<td></td>
+<td>5</td>
+<td>com.broadleafcommerce.script.GiftCardTest@7e07db1f</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.ClearancePageTest.verifyClearancePageTextAndTitle()'><b>verifyClearancePageTextAndTitle</b><br>Test class: com.broadleafcommerce.script.ClearancePageTest</td>
+<td></td>
+<td>1</td>
+<td>com.broadleafcommerce.script.ClearancePageTest@16d04d3d</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.GiftCardTest.verifyGiftCardPageLable()'><b>verifyGiftCardPageLable</b><br>Test class: com.broadleafcommerce.script.GiftCardTest</td>
+<td></td>
+<td>0</td>
+<td>com.broadleafcommerce.script.GiftCardTest@7e07db1f</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.HomePageTest.verifyHotSauceLinkTest()'><b>verifyHotSauceLinkTest</b><br>Test class: com.broadleafcommerce.script.HomePageTest</td>
+<td></td>
+<td>14</td>
+<td>com.broadleafcommerce.script.HomePageTest@79e2c065</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.HotSauceTest.verifyHotSaucePageLableAndTitle()'><b>verifyHotSaucePageLableAndTitle</b><br>Test class: com.broadleafcommerce.script.HotSauceTest</td>
+<td></td>
+<td>1</td>
+<td>com.broadleafcommerce.script.HotSauceTest@3a93b025</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.HotSaucePageTest.verifyHotSaucePageLableAndTitle()'><b>verifyHotSaucePageLableAndTitle</b><br>Test class: com.broadleafcommerce.script.HotSaucePageTest</td>
+<td></td>
+<td>14</td>
+<td>com.broadleafcommerce.script.HotSaucePageTest@1189dd52</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.MarchandisePageTest.verifyMerchandisePageTextAndTitle()'><b>verifyMerchandisePageTextAndTitle</b><br>Test class: com.broadleafcommerce.script.MarchandisePageTest</td>
+<td></td>
+<td>1</td>
+<td>com.broadleafcommerce.script.MarchandisePageTest@35cabb2a</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.MarchandisePageTest.verifyMerchandiseTest()'><b>verifyMerchandiseTest</b><br>Test class: com.broadleafcommerce.script.MarchandisePageTest</td>
+<td></td>
+<td>81</td>
+<td>com.broadleafcommerce.script.MarchandisePageTest@35cabb2a</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.RegisterPageTest.verifyRegisterPageTest()'><b>verifyRegisterPageTest</b><br>Test class: com.broadleafcommerce.script.RegisterPageTest</td>
+<td></td>
+<td>14</td>
+<td>com.broadleafcommerce.script.RegisterPageTest@38c6f217</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.ShippingPageTest.verifyShippingPageTest()'><b>verifyShippingPageTest</b><br>Test class: com.broadleafcommerce.script.ShippingPageTest</td>
+<td></td>
+<td>5</td>
+<td>com.broadleafcommerce.script.ShippingPageTest@36bc55de</td></tr>
+<tr>
+<td title='com.broadleafcommerce.script.HomePageTest.verifyUserNameTest()'><b>verifyUserNameTest</b><br>Test class: com.broadleafcommerce.script.HomePageTest</td>
+<td></td>
+<td>0</td>
+<td>com.broadleafcommerce.script.HomePageTest@79e2c065</td></tr>
 </table><p>
 </body>
 </html>

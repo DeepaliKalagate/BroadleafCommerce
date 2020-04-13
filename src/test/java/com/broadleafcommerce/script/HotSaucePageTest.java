@@ -61,7 +61,6 @@ public class HotSaucePageTest extends TestBase
         else
         {
             hotSaucePage.verifyToShowHotSauses();
-
             List<WebElement> productName = driver.findElements(By.xpath("//div[@class='row']/child::div[@class='col-sm-7']"));
             for (WebElement webElement : productName)
             {
@@ -70,13 +69,6 @@ public class HotSaucePageTest extends TestBase
             }
             System.out.println(list);
             Assert.assertTrue(list.contains("BULL SNORT COWBOY CAYENNE PEPPER HOT SAUCE"),"Product name is incorrect");
-
-            ShippingPage shippingPage = new ShippingPage(driver);
-            homePage = shippingPage.VerifyShippingPage(property.getProperty("fullName"),
-                    property.getProperty("address1"), property.getProperty("address2"),
-                    property.getProperty("city"), property.getProperty("state"),
-                    property.getProperty("postal"), property.getProperty("mobileno"));
-            Assert.assertTrue(homePage.verifyUserName());
         }
     }
 }
