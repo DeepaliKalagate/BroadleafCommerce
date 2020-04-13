@@ -30,7 +30,7 @@ public class HotSaucePageTest extends TestBase
         hotSausPage=homePage.clickOnHotsauce();
     }
 
-    @Test(priority = 1)
+    @Test
     public void verifyHotSaucePageLableAndTitle()
     {
         HomePage homePage=new HomePage(driver);
@@ -40,7 +40,7 @@ public class HotSaucePageTest extends TestBase
         Assert.assertTrue(driver.getTitle().equals("Hot Sauces - Test Site"));
     }
 
-    @Test(priority = 2)
+    @Test
     public void selectHotSauceTest() throws InterruptedException
     {
         List<String> list=new ArrayList<>();

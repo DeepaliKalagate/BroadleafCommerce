@@ -29,7 +29,7 @@ public class ClearancePageTest extends TestBase
         clearancePage=homePage.clickOnClearance();
     }
 
-    @Test(priority = 1)
+    @Test
     public void verifyClearancePageTextAndTitle()
     {
         ClearancePage clearancePage=new ClearancePage(driver);
@@ -38,7 +38,7 @@ public class ClearancePageTest extends TestBase
         Assert.assertTrue(driver.getTitle().equals("Clearance - Test Site"));
     }
 
-    @Test(priority = 2)
+    @Test
     public void verifyClearancePageTest()
     {
         List<String> list=new ArrayList<>();

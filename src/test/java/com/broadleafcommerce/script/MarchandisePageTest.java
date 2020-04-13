@@ -29,7 +29,7 @@ public class MarchandisePageTest extends TestBase
         merchandisePage=homePage.clickOnMerchandise();
     }
 
-    @Test(priority = 1)
+    @Test
     public void verifyMerchandisePageTextAndTitle()
     {
         MerchandisePage merchandisePage=new MerchandisePage(driver);
@@ -38,7 +38,7 @@ public class MarchandisePageTest extends TestBase
         Assert.assertTrue(driver.getTitle().equals("Merchandise - Test Site"));
     }
 
-    @Test(priority = 2)
+    @Test
     public void verifyMerchandiseTest() throws InterruptedException
     {
         List<String> list=new ArrayList<>();

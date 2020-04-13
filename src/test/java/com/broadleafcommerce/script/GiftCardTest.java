@@ -29,14 +29,14 @@ public class GiftCardTest extends TestBase
         giftCardPage=homePage.clickOnGiftCard();
     }
 
-    @Test(priority = 1)
+    @Test
     public void verifyGiftCardPageLable()
     {
         GiftCardPage giftCardPage=new GiftCardPage(driver);
         Assert.assertTrue(driver.getTitle().equals("Gift Cards - Test Site"));
     }
 
-    @Test(priority = 2)
+    @Test
     public void selectGiftCardTest()
     {
         List<String> list=new ArrayList<>();

@@ -21,7 +21,7 @@ public class HomePageTest extends TestBase
         loginPage.setPassword("Mysweetfamily@333");
     }
 
-    @Test(priority = 1)
+    @Test
     public void verifyUserNameTest()
     {
         HomePage homePage=new HomePage(driver);
@@ -29,7 +29,7 @@ public class HomePageTest extends TestBase
         Assert.assertTrue(userName);
     }
 
-    @Test(priority = 2)
+    @Test
     public void verifyHotSauceLinkTest()
     {
         HomePage homePage=new HomePage(driver);

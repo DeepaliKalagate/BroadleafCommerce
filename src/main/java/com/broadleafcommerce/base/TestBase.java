@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
@@ -42,7 +43,7 @@ public class TestBase implements IAutoConstants
         if(browserName.equalsIgnoreCase("chrome"))
         {
             DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
-            desiredCapabilities.setBrowserName("chrome");
+            desiredCapabilities.setBrowserName(BrowserType.CHROME);
             driver=new RemoteWebDriver(new URL("http://localhost:4545/wd/hub"),desiredCapabilities);
             String url= property.getProperty("URL");
             driver.manage().window().maximize();
@@ -52,7 +53,7 @@ public class TestBase implements IAutoConstants
         else if(browserName.equalsIgnoreCase("firefox"))
         {
             DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
-            desiredCapabilities.setBrowserName("firefox");
+            desiredCapabilities.setBrowserName(BrowserType.FIREFOX);
             driver=new RemoteWebDriver(new URL("http://localhost:4545/wd/hub"),desiredCapabilities);
             String url= property.getProperty("URL");
             driver.manage().window().maximize();

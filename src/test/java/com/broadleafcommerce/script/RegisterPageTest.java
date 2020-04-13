@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 @Listeners(Listener.class)
 public class RegisterPageTest extends TestBase
 {
-    @Test(priority = 1)
+    @Test
     public void broadleafLogoImageAndPageTitleTest()
     {
         RegisterPage registerPage=new RegisterPage(driver);
@@ -20,7 +20,7 @@ public class RegisterPageTest extends TestBase
         Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Login"));
     }
 
-    @Test(priority = 2)
+    @Test
     public void verifyRegisterPageTest()
     {
         RegisterPage registerPage=new RegisterPage(driver);

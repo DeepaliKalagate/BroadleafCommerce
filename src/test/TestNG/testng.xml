@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="BroadleafCommerce" parallel="tests">
+    <test verbose="2" preserve-order="true" name="BroadleafCommerce" parallel="methods">
         <classes>
             <class name="com.broadleafcommerce.script.RegisterPageTest">
                 <methods>
@@ -22,20 +22,6 @@
                     <parameter name="browserName" value="firefox"></parameter>
                     <include name="verifyUserNameTest"/>
                     <include name="verifyHotSauceLinkTest"/>
-                    <include name="hotSauceTest"/>
-                </methods>
-            </class>
-            <class name="com.broadleafcommerce.script.HotSauceTest">
-                <methods>
-                    <parameter name="browserName" value="chrome"></parameter>
-                    <include name="hotSauceTest"/>
-                </methods>
-            </class>
-            <class name="com.broadleafcommerce.script.MarchandisePageTest">
-                <methods>
-                    <parameter name="browserName" value="chrome"></parameter>
-                    <include name="verifyMerchandisePageTextAndTitle"/>
-                    <include name="verifyMerchandiseTest"/>
                 </methods>
             </class>
             <class name="com.broadleafcommerce.script.GiftCardTest">
@@ -45,6 +31,32 @@
                     <include name="selectGiftCardTest"/>
                 </methods>
             </class>
+            <class name="com.broadleafcommerce.script.MarchandisePageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyMerchandisePageTextAndTitle"/>
+                    <include name="verifyMerchandiseTest"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.ProductRemoveFromCartTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="productRemoveFromCartTest"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.ShippingPageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyShippingPageTest"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.HotSauceTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="verifyHotSaucePageLableAndTitle"/>
+                    <include name="hotSauceTest"/>
+                </methods>
+            </class>
             <class name="com.broadleafcommerce.script.HotSaucePageTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
@@ -52,25 +64,13 @@
                     <include name="selectHotSauceTest"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.ShippingPageTest">
-                 <methods>
-                     <parameter name="browserName" value="chrome"></parameter>
-                     <include name="verifyShippingPageTest"/>
-                 </methods>
-             </class>
-            <class name="com.broadleafcommerce.script.ProductRemoveFromCartTest">
+            <class name="com.broadleafcommerce.script.ClearancePageTest">
                 <methods>
-                    <parameter name="browserName" value="chrome"></parameter>
-                    <include name="productRemoveFromCartTest"/>
+                    <parameter name="browserName" value="firefox"></parameter>
+                    <include name="verifyClearancePageTextAndTitle"/>
+                    <include name="verifyClearancePageTest"/>
                 </methods>
             </class>
-             <class name="com.broadleafcommerce.script.ClearancePageTest">
-                 <methods>
-                     <parameter name="browserName" value="chrome"></parameter>
-                     <include name="verifyClearancePageTextAndTitle"/>
-                     <include name="verifyClearancePageTest"/>
-                 </methods>
-             </class>
         </classes>
     </test>
 </suite>

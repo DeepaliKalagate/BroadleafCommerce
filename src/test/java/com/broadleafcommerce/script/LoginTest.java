@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 @Listeners(Listener.class)
 public class LoginTest extends TestBase
 {
-    @Test(priority = 1)
+    @Test
     public void broadleafLogoImageAndPageTitleTest()
     {
         LoginPage loginPage=new LoginPage(driver);
@@ -20,7 +20,7 @@ public class LoginTest extends TestBase
         Assert.assertTrue(driver.getTitle().equals("Broadleaf Commerce Demo Store - Heat Clinic - Login"));
     }
 
-    @Test(priority = 2)
+    @Test
     public void loginTest()
     {
         LoginPage loginPage = new LoginPage(driver);
