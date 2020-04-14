@@ -57,6 +57,7 @@ public class ClearancePage extends TestBase
     public void setAddToCart()
     {
        addToCart.click();
+       wait.until(ExpectedConditions.visibilityOf(viewInCart));
     }
 
     public ShippingPage verifyClearancePage()

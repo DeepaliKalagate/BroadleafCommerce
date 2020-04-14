@@ -58,7 +58,7 @@ public class HotSauceTest extends TestBase
                 list.add(webElement.getText());
             }
             System.out.println(list);
-            //Assert.assertEquals(productName,"COOL CAYENNE PEPPER HOT SAUCE","Product name is incorrect");
+            Assert.assertTrue(list.contains("COOL CAYENNE PEPPER HOT SAUCE"),"Product name is incorrect");
             ShippingPage shippingPage=new ShippingPage(driver);
             homePage=shippingPage.VerifyShippingPage(property.getProperty("fullName"),
                     property.getProperty("address1"),property.getProperty("address2"),

@@ -12,24 +12,6 @@
           <include name="setLoginPage"/>
         </methods>
       </class> <!-- com.broadleafcommerce.script.ProductRemoveFromCartTest -->
-      <class name="com.broadleafcommerce.script.ClearancePageTest">
-        <parameter name="browserName" value="chrome"/>
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUP"/>
-          <include name="verifyClearancePageTest"/>
-          <include name="setLoginPage"/>
-        </methods>
-      </class> <!-- com.broadleafcommerce.script.ClearancePageTest -->
-      <class name="com.broadleafcommerce.script.HotSaucePageTest">
-        <parameter name="browserName" value="chrome"/>
-        <methods>
-          <include name="tearDown"/>
-          <include name="setLoginPage"/>
-          <include name="setUP"/>
-          <include name="selectHotSauceTest"/>
-        </methods>
-      </class> <!-- com.broadleafcommerce.script.HotSaucePageTest -->
     </classes>
   </test> <!-- BroadleafCommerce(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

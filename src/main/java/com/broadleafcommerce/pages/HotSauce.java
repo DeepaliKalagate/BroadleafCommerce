@@ -11,7 +11,7 @@ public class HotSauce extends TestBase
     @FindBy(className = "section-title")
     private WebElement hotsauceLable;
 
-    @FindBy(xpath = "//*[@id=\"products\"]/div[1]/div/a/div")
+    @FindBy(xpath = "//div[@id='right_column']//div[@data-id='1']")
     private WebElement viewHotSauce;
 
     @FindBy(xpath = "//span[contains(text(),'Add to Cart')]")

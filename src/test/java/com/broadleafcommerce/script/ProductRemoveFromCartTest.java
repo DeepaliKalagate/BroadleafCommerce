@@ -49,11 +49,11 @@ public class ProductRemoveFromCartTest extends TestBase
                 list.add(webElement.getText());
             }
             System.out.println(list);
-            Assert.assertEquals(list.contains("BLAZIN' SADDLE XXX HOT HABANERO PEPPER SAUCE"),"Product name is incorrect");
+            Assert.assertTrue(list.contains("BLAZIN' SADDLE XXX HOT HABANERO PEPPER SAUCE"),"Product name is incorrect");
             for (int i=0;i<list.size();i++)
             {
                 removeFromCartPage.setRemoveitem();
-                Thread.sleep(500);
+                Thread.sleep(5000);
             }
             removeFromCartPage.setClickOnDropdown();
             removeFromCartPage.setClickOnLogout();
