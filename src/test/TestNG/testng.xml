@@ -81,12 +81,6 @@
                     <include name="verifyShippingPageTest"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.ProductRemoveFromCartTest">
-                <methods>
-                    <parameter name="browserName" value="chrome"></parameter>
-                    <include name="productRemoveFromCartTest"/>
-                </methods>
-            </class>
             <class name="com.broadleafcommerce.script.HotSaucePageTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
@@ -97,6 +91,12 @@
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
                     <include name="selectHotSauceTest"/>
+                </methods>
+            </class>
+            <class name="com.broadleafcommerce.script.ProductRemoveFromCartTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="productRemoveFromCartTest"/>
                 </methods>
             </class>
             <class name="com.broadleafcommerce.script.GiftCardTest">
