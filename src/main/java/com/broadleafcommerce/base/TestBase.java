@@ -39,7 +39,8 @@ public class TestBase implements IAutoConstants
 
     @Parameters("browserName")
     @BeforeMethod
-    public void setUP(String browserName) throws MalformedURLException {
+    public void setUP(String browserName) throws MalformedURLException
+    {
         if(browserName.equalsIgnoreCase("chrome"))
         {
             DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
