@@ -1,5 +1,4 @@
 package com.thoughtworks.base;
-
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;

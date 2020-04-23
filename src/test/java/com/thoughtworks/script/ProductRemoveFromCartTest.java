@@ -1,11 +1,9 @@
 package com.thoughtworks.script;
-
 import com.thoughtworks.base.TestBase;
 import com.thoughtworks.pages.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.List;
 
 public class ProductRemoveFromCartTest extends TestBase
@@ -23,7 +21,7 @@ public class ProductRemoveFromCartTest extends TestBase
 
         ProductRemoveFromCartPage removeFromCartPage=new ProductRemoveFromCartPage(driver);
         removeFromCartPage.selectProduct();
-        Thread.sleep(500);
+        Thread.sleep(5000);
         ShippingCart shippingCart=new ShippingCart(driver);
         String element=shippingCart.verifyItemIsPresentOrNot();
         if(element.equals("OUT OF STOCK"))
@@ -43,6 +41,8 @@ public class ProductRemoveFromCartTest extends TestBase
             }
             removeFromCartPage.clickOnDropdown();
             removeFromCartPage.clickOnLogout();
+            Assert.assertEquals(driver.findElement(By.xpath("//a[contains(text(),'Login')]"))
+                    .isDisplayed(), true,"Verify Logout Successful");
         }
     }
 }

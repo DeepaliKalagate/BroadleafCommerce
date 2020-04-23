@@ -1,5 +1,4 @@
 package com.thoughtworks.script;
-
 import com.thoughtworks.base.Listener;
 import com.thoughtworks.base.TestBase;
 import com.thoughtworks.pages.LoginPage;

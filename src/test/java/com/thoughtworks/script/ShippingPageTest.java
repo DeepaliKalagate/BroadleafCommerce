@@ -1,5 +1,4 @@
 package com.thoughtworks.script;
-
 import com.thoughtworks.base.Listener;
 import com.thoughtworks.base.TestBase;
 import com.thoughtworks.pages.*;
@@ -7,7 +6,6 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import java.util.List;
 
 @Listeners(Listener.class)
@@ -32,7 +30,8 @@ public class ShippingPageTest extends TestBase
         {
             hotSaucePage.productAddToCart();
             List<String> addedProducts = shippingCart.getProductsAddedInCart();
-            Assert.assertTrue(addedProducts.contains("BULL SNORT COWBOY CAYENNE PEPPER HOT SAUCE"),"Product name is incorrect");
+            System.out.println("Product Name : "+addedProducts);
+            Assert.assertTrue(addedProducts.contains("GREEN GHOST"),"Product name is incorrect");
             HomePage homePage=new HomePage(driver);
             shippingPage.VerifyShippingPage(property.getProperty("fullName"),
                     property.getProperty("address1"),property.getProperty("address2"),
@@ -40,7 +39,5 @@ public class ShippingPageTest extends TestBase
                     property.getProperty("postal"),property.getProperty("mobileno"));
             Assert.assertTrue(homePage.verifyUserName());
         }
-
-
     }
 }

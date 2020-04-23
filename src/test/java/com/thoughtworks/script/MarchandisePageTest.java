@@ -1,11 +1,7 @@
 package com.thoughtworks.script;
-
 import com.thoughtworks.base.Listener;
 import com.thoughtworks.base.TestBase;
-import com.thoughtworks.pages.HomePage;
-import com.thoughtworks.pages.HotSaucePage;
-import com.thoughtworks.pages.LoginPage;
-import com.thoughtworks.pages.MerchandisePage;
+import com.thoughtworks.pages.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -29,9 +25,11 @@ public class MarchandisePageTest extends TestBase
         Assert.assertTrue(driver.getTitle().equals("Merchandise - Test Site"));
 
         homePage.clickOnWomensMerchandise();
-        HotSaucePage hotSaucePage = new HotSaucePage(driver);
-        hotSaucePage.selectSortBy();
-        merchandisePage.selectFilterByColorAndPrice();
+        ProductListingPage productListingPage=new ProductListingPage(driver);
+        productListingPage.selectSortBy();
+
+        merchandisePage.selectFilterByPrice();
+        merchandisePage.selectFilterByColor();
         merchandisePage.selectProductImage();
         merchandisePage.selectSilverColor();
         merchandisePage.selectShirtSize("M");

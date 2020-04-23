@@ -1,5 +1,4 @@
 package com.thoughtworks.pages;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,10 +9,10 @@ public class MerchandisePage extends BasePage
     @FindBy(xpath = "//h4[contains(text(),'Color')]")
     private WebElement filter;
 
-    @FindBy(xpath = "//div[@class='panel panel-default filter-panel js-filter-panel']//div[3]//label[1]//span[1]//span[1]")
+    @FindBy(xpath = "//div[@id='collapse0']//div[@class='panel-body']//div[1]//label[1]//span[1]//span[1]")
     private WebElement silver;
 
-    @FindBy(xpath = "//div[@id='heading1']//i[@class='material-icons'][contains(text(),'keyboard_arrow_down')]")
+    @FindBy(xpath = "//h4[contains(text(),'Price')]")
     private WebElement filterByPrice;
 
     @FindBy(xpath = "//div[@id='collapse1']//div[2]//label[1]//span[1]//span[1]")
@@ -46,12 +45,15 @@ public class MerchandisePage extends BasePage
     }
 
 
-    public void selectFilterByColorAndPrice()
+    public void selectFilterByColor()
     {
         filter.click();
         silver.click();
+    }
+
+    public void selectFilterByPrice()
+    {
         filterByPrice.click();
-        wait.until(ExpectedConditions.visibilityOf(selectPrice));
         selectPrice.click();
     }
 
