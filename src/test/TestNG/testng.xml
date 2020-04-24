@@ -3,71 +3,69 @@
 <suite name="All Test Suite" parallel="methods">
     <test verbose="2" preserve-order="true" name="BroadleafCommerce">
         <classes>
-            <class name="com.broadleafcommerce.script.RegisterPageTest">
+            <class name="com.thoughtworks.script.RegisterPageTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
-                    <include name="broadleafLogoImageAndPageTitleTest"/>
-                    <include name="verifyRegisterPageTest"/>
+                    <include name="validateRegisterIsSuccessful"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.LoginTest">
+            <class name="com.thoughtworks.script.LoginTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
-                    <include name="broadleafLogoImageAndPageTitleTest"/>
-                    <include name="loginTest"/>
+                    <include name="validateLoginIsSuccessful"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.HomePageTest">
+            <class name="com.thoughtworks.script.LoginTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="validateLoginFailed"/>
+                </methods>
+            </class>
+            <class name="com.thoughtworks.script.HomePageTest">
                 <methods>
                     <parameter name="browserName" value="firefox"></parameter>
-                    <include name="verifyUserNameTest"/>
                     <include name="verifyHotSauceLinkTest"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.GiftCardTest">
+            <class name="com.thoughtworks.script.MarchandisePageTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
-                    <include name="verifyGiftCardPageLable"/>
-                    <include name="selectGiftCardTest"/>
-                </methods>
-            </class>
-            <class name="com.broadleafcommerce.script.MarchandisePageTest">
-                <methods>
-                    <parameter name="browserName" value="chrome"></parameter>
-                    <include name="verifyMerchandisePageTextAndTitle"/>
                     <include name="verifyMerchandiseTest"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.ProductRemoveFromCartTest">
+            <class name="com.thoughtworks.script.HotSauceTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
-                    <include name="productRemoveFromCartTest"/>
+                    <include name="hotSauceTest"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.ShippingPageTest">
+            <class name="com.thoughtworks.script.ShippingPageTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
                     <include name="verifyShippingPageTest"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.HotSauceTest">
+            <class name="com.thoughtworks.script.HotSaucePageTest">
                 <methods>
                     <parameter name="browserName" value="chrome"></parameter>
-                    <include name="verifyHotSaucePageLableAndTitle"/>
-                    <include name="hotSauceTest"/>
-                </methods>
-            </class>
-            <class name="com.broadleafcommerce.script.HotSaucePageTest">
-                <methods>
-                    <parameter name="browserName" value="chrome"></parameter>
-                    <include name="verifyHotSaucePageLableAndTitle"/>
                     <include name="selectHotSauceTest"/>
                 </methods>
             </class>
-            <class name="com.broadleafcommerce.script.ClearancePageTest">
+            <class name="com.thoughtworks.script.ProductRemoveFromCartTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
+                    <include name="productRemoveFromCartTest"/>
+                </methods>
+            </class>
+            <class name="com.thoughtworks.script.GiftCardTest">
                 <methods>
                     <parameter name="browserName" value="firefox"></parameter>
-                    <include name="verifyClearancePageTextAndTitle"/>
+                    <include name="selectGiftCardTest"/>
+                </methods>
+            </class>
+            <class name="com.thoughtworks.script.ClearancePageTest">
+                <methods>
+                    <parameter name="browserName" value="chrome"></parameter>
                     <include name="verifyClearancePageTest"/>
                 </methods>
             </class>
