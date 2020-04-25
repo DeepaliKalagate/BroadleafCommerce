@@ -30,6 +30,7 @@ public class MarchandisePageTest extends TestBase
 
         merchandisePage.selectFilterByPrice();
         merchandisePage.selectFilterByColor();
+        Thread.sleep(500);
         merchandisePage.selectProductImage();
         merchandisePage.selectSilverColor();
         merchandisePage.selectShirtSize("M");
@@ -41,7 +42,8 @@ public class MarchandisePageTest extends TestBase
 
         //Getting list of Items from Cart
         List<String> addedProduct =new ArrayList<>();
-        driver.findElements(By.xpath("//*[@id=\"productRow382\"]/div[2]/div[1]/div[1]/div/a")).forEach(webElement1 -> {addedProduct.add(webElement1.getText());});
+        driver.findElements(By.xpath("//*[@id=\"productRow989\"]/div[2]/div[1]/div[1]/div")).forEach(webElement1 -> {addedProduct.add(webElement1.getText());});
+        System.out.println("The product name is : " +addedProduct);
         Assert.assertTrue(addedProduct.contains("HAWT LIKE A HABANERO SHIRT (WOMEN'S) SILVER (MEDIUM)"),"Product name is incorrect");
     }
 }

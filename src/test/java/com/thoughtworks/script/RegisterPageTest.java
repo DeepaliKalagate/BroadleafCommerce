@@ -14,7 +14,9 @@ public class RegisterPageTest extends TestBase
     public void validateRegisterIsSuccessful()
     {
         RegisterPage registerPage=new RegisterPage(driver);
-        registerPage.register("email","name","lastName","password","confirmPassword");
+        registerPage.register(property.getProperty("email"),property.getProperty("name"),
+                property.getProperty("lastName"),property.getProperty("password"),
+                property.getProperty("confirmPassword"));
         Assert.assertEquals(driver.findElement(By.className("material-icons")).isDisplayed(),true,"Verify Register is Successful");
     }
 }

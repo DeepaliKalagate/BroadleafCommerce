@@ -3,14 +3,14 @@
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="BroadleafCommerce(failed)">
     <classes>
-      <class name="com.thoughtworks.script.ProductRemoveFromCartTest">
+      <class name="com.thoughtworks.script.ClearancePageTest">
         <parameter name="browserName" value="chrome"/>
         <methods>
           <include name="setUP"/>
           <include name="tearDown"/>
-          <include name="productRemoveFromCartTest"/>
+          <include name="verifyClearancePageTest"/>
         </methods>
-      </class> <!-- com.thoughtworks.script.ProductRemoveFromCartTest -->
+      </class> <!-- com.thoughtworks.script.ClearancePageTest -->
     </classes>
   </test> <!-- BroadleafCommerce(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->
