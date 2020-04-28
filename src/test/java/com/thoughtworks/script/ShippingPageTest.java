@@ -1,6 +1,6 @@
 package com.thoughtworks.script;
 import com.thoughtworks.base.Listener;
-import com.thoughtworks.base.TestBase;
+import com.thoughtworks.base.BaseTest;
 import com.thoughtworks.pages.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 @Listeners(Listener.class)
-public class ShippingPageTest extends TestBase
+public class ShippingPageTest extends BaseTest
 {
     @Test()
     public void verifyShippingPageTest()

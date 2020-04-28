@@ -9,14 +9,14 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class TestBase implements IAutoConstants
+public class BaseTest implements IAutoConstants
 {
     public static WebDriver driver;
     public static Properties property;
     public static FileInputStream fileInputStream;
     public static String filePath="src/main/java/com/thoughtworks/config/config.properties";
 
-    public TestBase()
+    public BaseTest()
     {
         property = new Properties();
         try

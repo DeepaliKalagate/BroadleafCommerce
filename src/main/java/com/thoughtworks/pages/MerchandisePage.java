@@ -84,7 +84,9 @@ public class MerchandisePage extends BasePage
     public void clickOnProfile()
     {
         clickOnProfile.click();
+        wait.until(ExpectedConditions.visibilityOf(clickOnManageWishlist));
     }
+
     public void clickOnManageWishlist()
     {
         clickOnManageWishlist.click();

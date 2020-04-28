@@ -1,6 +1,6 @@
 package com.thoughtworks.script;
 import com.thoughtworks.base.Listener;
-import com.thoughtworks.base.TestBase;
+import com.thoughtworks.base.BaseTest;
 import com.thoughtworks.pages.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Listeners(Listener.class)
-public class MarchandisePageTest extends TestBase
+public class MarchandisePageTest extends BaseTest
 {
     @Test()
     public void verifyMerchandiseTest() throws InterruptedException
@@ -42,8 +42,8 @@ public class MarchandisePageTest extends TestBase
 
         //Getting list of Items from Cart
         List<String> addedProduct =new ArrayList<>();
-        driver.findElements(By.xpath("//*[@id=\"productRow989\"]/div[2]/div[1]/div[1]/div")).forEach(webElement1 -> {addedProduct.add(webElement1.getText());});
+        driver.findElements(By.xpath("//*[@id=\"productRow1127\"]/div[2]/div[1]/div[1]/div/a")).forEach(webElement1 -> {addedProduct.add(webElement1.getText());});
         System.out.println("The product name is : " +addedProduct);
-        Assert.assertTrue(addedProduct.contains("HAWT LIKE A HABANERO SHIRT (WOMEN'S) SILVER (MEDIUM)"),"Product name is incorrect");
+        Assert.assertTrue(addedProduct.contains("HEAT CLINIC HAND-DRAWN (WOMEN'S) SILVER (MEDIUM)"),"Product name is incorrect");
     }
 }

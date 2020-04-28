@@ -1,6 +1,6 @@
 package com.thoughtworks.script;
 import com.thoughtworks.base.Listener;
-import com.thoughtworks.base.TestBase;
+import com.thoughtworks.base.BaseTest;
 import com.thoughtworks.pages.RegisterPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -8,7 +8,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(Listener.class)
-public class RegisterPageTest extends TestBase
+public class RegisterPageTest extends BaseTest
 {
     @Test()
     public void validateRegisterIsSuccessful()

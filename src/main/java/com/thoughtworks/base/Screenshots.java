@@ -5,7 +5,7 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 import java.io.IOException;
 
-public class Screenshots extends TestBase
+public class Screenshots extends BaseTest
 {
     /*
    Method for capturing screenshots

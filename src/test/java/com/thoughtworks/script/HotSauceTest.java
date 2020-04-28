@@ -1,12 +1,12 @@
 package com.thoughtworks.script;
-import com.thoughtworks.base.TestBase;
+import com.thoughtworks.base.BaseTest;
 import com.thoughtworks.pages.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.List;
 
-public class HotSauceTest extends TestBase
+public class HotSauceTest extends BaseTest
 {
     @Test()
     public void hotSauceTest() throws InterruptedException
