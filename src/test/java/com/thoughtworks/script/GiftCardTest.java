@@ -1,6 +1,6 @@
 package com.thoughtworks.script;
 import com.thoughtworks.base.Listener;
-import com.thoughtworks.base.TestBase;
+import com.thoughtworks.base.BaseTest;
 import com.thoughtworks.pages.GiftCardPage;
 import com.thoughtworks.pages.HomePage;
 import com.thoughtworks.pages.LoginPage;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 @Listeners(Listener.class)
-public class GiftCardTest extends TestBase
+public class GiftCardTest extends BaseTest
 {
     @Test()
     public void selectGiftCardTest()

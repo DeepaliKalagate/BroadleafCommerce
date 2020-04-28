@@ -1,14 +1,15 @@
 package com.thoughtworks.script;
 import com.thoughtworks.base.Listener;
-import com.thoughtworks.base.TestBase;
+import com.thoughtworks.base.BaseTest;
 import com.thoughtworks.pages.LoginPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(Listener.class)
-public class LoginTest extends TestBase
+public class LoginTest extends BaseTest
 {
     @Test(priority = 1)
     public void validateLoginIsSuccessful()

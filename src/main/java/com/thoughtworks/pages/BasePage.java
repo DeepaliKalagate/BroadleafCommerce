@@ -1,15 +1,16 @@
 package com.thoughtworks.pages;
+import com.thoughtworks.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BasePage
+public class BasePage extends BaseTest
 {
-    protected WebDriver driver =null;
-    protected WebDriverWait wait =null;
+    public WebDriver driver=null;
+    public WebDriverWait wait =null;
 
-    public BasePage(WebDriver driver)
+    public BasePage( WebDriver driver)
     {
         this.driver = driver;
         PageFactory.initElements(driver,this);

@@ -3,7 +3,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class Listener extends TestBase implements ITestListener
+public class Listener extends BaseTest implements ITestListener
 {
     Screenshots screenshots =new Screenshots();
 

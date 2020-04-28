@@ -1,12 +1,13 @@
 package com.thoughtworks.script;
-import com.thoughtworks.base.TestBase;
+import com.thoughtworks.base.BaseTest;
 import com.thoughtworks.pages.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.List;
 
-public class ProductRemoveFromCartTest extends TestBase
+public class ProductRemoveFromCartTest extends BaseTest
 {
     @Test
     public void productRemoveFromCartTest() throws InterruptedException

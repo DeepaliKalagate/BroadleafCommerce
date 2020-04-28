@@ -1,11 +1,12 @@
 package com.thoughtworks.script;
 import com.thoughtworks.base.Listener;
-import com.thoughtworks.base.TestBase;
+import com.thoughtworks.base.BaseTest;
 import com.thoughtworks.pages.HomePage;
 import com.thoughtworks.pages.LoginPage;
 import com.thoughtworks.pages.MerchandisePage;
 import com.thoughtworks.pages.ProductListingPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Listeners(Listener.class)
-public class MarchandisePageTest extends TestBase
+public class MarchandisePageTest extends BaseTest
 {
     @Test()
     public void verifyMerchandiseTest() throws InterruptedException
