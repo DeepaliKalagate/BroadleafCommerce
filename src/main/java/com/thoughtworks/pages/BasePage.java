@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage extends BaseTest
 {
-    public WebDriver driver=null;
+    public WebDriver driver;
     public WebDriverWait wait =null;
 
     public BasePage( WebDriver driver)

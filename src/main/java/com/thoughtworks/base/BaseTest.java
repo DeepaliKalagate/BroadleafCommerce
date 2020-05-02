@@ -1,9 +1,8 @@
 package com.thoughtworks.base;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import java.io.FileInputStream;
@@ -15,6 +14,7 @@ import java.util.Properties;
 public class BaseTest
 {
     public WebDriver driver;
+    DesiredCapabilities capabilities;
     public static Properties property;
     public static FileInputStream fileInputStream;
     public static String filePath="src/main/java/com/thoughtworks/config/config.properties";
@@ -33,22 +33,28 @@ public class BaseTest
         }
     }
 
+    @Parameters("browserName")
     @BeforeMethod
-    @Parameters(value={"browserName"})
-    public void setupTest (String browserName) throws MalformedURLException
+    public void setUp(String browser) throws MalformedURLException
     {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browser", browserName);
-        driver=new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), capabilities);
-        String url= property.getProperty("URL");
+        if(browser.equals("chrome"))
+        {
+            capabilities = DesiredCapabilities.chrome();
+        }
+        else if(browser.equals("firefox"))
+        {
+            capabilities = DesiredCapabilities.firefox();
+        }
+        driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), capabilities);
+        String url = property.getProperty("URL");
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.get(url);
     }
 
-    @AfterMethod
+    @AfterTest
     public void tearDown()
     {
-        driver.quit();
+        this.driver.quit();
     }
 }

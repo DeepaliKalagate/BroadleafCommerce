@@ -4,8 +4,8 @@
     <test name="BroadleafCommerceChrome">
         <parameter name="browserName" value="chrome"/>
         <classes>
-            <class name="com.thoughtworks.script.RegisterPageTest"/>
             <class name="com.thoughtworks.script.LoginTest"/>
+            <class name="com.thoughtworks.script.RegisterPageTest"/>
             <class name="com.thoughtworks.script.HomePageTest"/>
             <class name="com.thoughtworks.script.MarchandisePageTest"/>
             <class name="com.thoughtworks.script.HotSauceTest"/>
@@ -20,8 +20,8 @@
     <test name="BroadleafCommerceFirefox">
         <parameter name="browserName" value="firefox"/>
         <classes>
-            <class name="com.thoughtworks.script.RegisterPageTest"/>
             <class name="com.thoughtworks.script.LoginTest"/>
+            <class name="com.thoughtworks.script.RegisterPageTest"/>
             <class name="com.thoughtworks.script.HomePageTest"/>
             <class name="com.thoughtworks.script.MarchandisePageTest"/>
             <class name="com.thoughtworks.script.HotSauceTest"/>
