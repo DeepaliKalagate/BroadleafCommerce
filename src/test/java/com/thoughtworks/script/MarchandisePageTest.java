@@ -42,7 +42,7 @@ public class MarchandisePageTest extends BaseTest
 
         //Getting list of Items from Cart
         List<String> addedProduct =new ArrayList<>();
-        driver.findElements(By.xpath("//*[@id=\"productRow1127\"]/div[2]/div[1]/div[1]/div/a")).forEach(webElement1 -> {addedProduct.add(webElement1.getText());});
+        driver.findElements(By.xpath("//*[@id=\"productRow1137\"]/div[2]/div[1]/div[1]/div")).forEach(webElement1 -> {addedProduct.add(webElement1.getText());});
         System.out.println("The product name is : " +addedProduct);
         Assert.assertTrue(addedProduct.contains("HEAT CLINIC HAND-DRAWN (WOMEN'S) SILVER (MEDIUM)"),"Product name is incorrect");
     }
