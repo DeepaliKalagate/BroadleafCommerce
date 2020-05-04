@@ -1,17 +1,20 @@
 package com.thoughtworks.base;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 
 public class BaseTest implements IAutoConstants
 {
     public static WebDriver driver;
+    public DesiredCapabilities capabilities;
     public static Properties property;
     public static FileInputStream fileInputStream;
     public static String filePath="src/main/java/com/thoughtworks/config/config.properties";
@@ -32,26 +35,21 @@ public class BaseTest implements IAutoConstants
 
     @Parameters("browserName")
     @BeforeMethod
-    public void setUP(String browserName) throws InterruptedException
+    public void setUP(String browserName) throws MalformedURLException
     {
         if(browserName.equalsIgnoreCase("chrome"))
         {
-            System.setProperty(CHROME_KEY,CHROME_VALUE);
-            driver = new ChromeDriver();
-            String url= property.getProperty("URL");
-            driver.manage().window().maximize();
-            driver.manage().deleteAllCookies();
-            driver.get(url);
+            capabilities = DesiredCapabilities.chrome();
         }
-        else if(browserName.equalsIgnoreCase("firefox"))
+        else if(browserName.equals("firefox"))
         {
-            System.setProperty(GECKO_KEY,GECKO_VALUE);
-            driver = new FirefoxDriver();
-            String url= property.getProperty("URL");
-            driver.manage().window().maximize();
-            driver.manage().deleteAllCookies();
-            driver.get(url);
+            capabilities = DesiredCapabilities.firefox();
         }
+        driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), capabilities);
+        String url = property.getProperty("URL");
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+        driver.get(url);
     }
 
     //Method for Tear Down Browser

@@ -1,11 +1,18 @@
 package com.thoughtworks.pages;
+import com.thoughtworks.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ClearancePage extends BasePage
+public class ClearancePage
 {
+    private WebDriver driver;
+    BaseTest baseTest;
+    WebDriverWait wait=new WebDriverWait(driver,10);
+
     @FindBy(xpath = "//input[@placeholder='search']")
     private WebElement searchSauce;
 
@@ -23,7 +30,9 @@ public class ClearancePage extends BasePage
 
     public ClearancePage(WebDriver driver)
     {
-        super(driver);
+        this.driver = driver;
+        baseTest = new BaseTest();
+        PageFactory.initElements(driver, this);
     }
 
    public void searchProductByname(String serachItem)

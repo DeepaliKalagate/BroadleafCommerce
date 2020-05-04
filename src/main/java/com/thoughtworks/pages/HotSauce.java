@@ -1,11 +1,18 @@
 package com.thoughtworks.pages;
+import com.thoughtworks.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HotSauce extends BasePage
+public class HotSauce
 {
+    private WebDriver driver;
+    BaseTest baseTest;
+    WebDriverWait wait=new WebDriverWait(driver,10);
+
     @FindBy(xpath = "//div[@id='right_column']//div[@data-id='1']")
     private WebElement viewHotSauce;
 
@@ -17,7 +24,9 @@ public class HotSauce extends BasePage
 
     public HotSauce(WebDriver driver)
     {
-        super(driver);
+        this.driver = driver;
+        baseTest = new BaseTest();
+        PageFactory.initElements(driver, this);
     }
 
     public void viewHotSuaceProduct()

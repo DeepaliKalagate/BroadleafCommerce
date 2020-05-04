@@ -1,12 +1,19 @@
 package com.thoughtworks.pages;
+import com.thoughtworks.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ShippingPage extends BasePage
+public class ShippingPage
 {
+    private WebDriver driver;
+    BaseTest  baseTest;
+    WebDriverWait wait=new WebDriverWait(driver,10);
+
     @FindBy(xpath = "//span[contains(text(),'Checkout')]")
     private WebElement clickOnCheckout;
 
@@ -48,7 +55,9 @@ public class ShippingPage extends BasePage
 
     public ShippingPage(WebDriver driver)
     {
-        super(driver);
+        this.driver = driver;
+        baseTest = new BaseTest();
+        PageFactory.initElements(driver, this);
     }
 
     public HomePage VerifyShippingPage(String name,String addressFirst,String addressTwo,String cityName,String selectState,String postalCode,String phoneNo)

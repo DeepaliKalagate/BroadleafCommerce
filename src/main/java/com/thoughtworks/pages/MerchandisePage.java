@@ -1,12 +1,19 @@
 package com.thoughtworks.pages;
+import com.thoughtworks.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MerchandisePage extends BasePage
+public class MerchandisePage
 {
+    private WebDriver driver;
+    BaseTest baseTest;
+    WebDriverWait wait=new WebDriverWait(driver,10);
+
     @FindBy(xpath = "//h4[contains(text(),'Color')]")
     private WebElement filter;
 
@@ -42,7 +49,9 @@ public class MerchandisePage extends BasePage
 
     public MerchandisePage(WebDriver driver)
     {
-        super(driver);
+        this.driver = driver;
+        baseTest = new BaseTest();
+        PageFactory.initElements(driver, this);
     }
 
 

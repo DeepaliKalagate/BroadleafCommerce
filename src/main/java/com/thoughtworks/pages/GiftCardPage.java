@@ -1,11 +1,18 @@
 package com.thoughtworks.pages;
+import com.thoughtworks.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class GiftCardPage extends BasePage
+public class GiftCardPage
 {
+    private WebDriver driver;
+    BaseTest baseTest;
+    WebDriverWait wait=new WebDriverWait(driver,10);
+
     @FindBy(xpath = "//div[@data-id='-15000']")
     private WebElement selectGiftCard;
 
@@ -35,7 +42,9 @@ public class GiftCardPage extends BasePage
 
     public GiftCardPage(WebDriver driver)
     {
-        super(driver);
+        this.driver = driver;
+        baseTest = new BaseTest();
+        PageFactory.initElements(driver, this);
     }
 
     public void setSelectGiftCard()

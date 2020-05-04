@@ -1,10 +1,15 @@
 package com.thoughtworks.pages;
+import com.thoughtworks.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends BasePage
+public class LoginPage
 {
+    private WebDriver driver;
+    BaseTest baseTest;
+
     //PageFactory-Object Repository
     @FindBy(id="username")
     private WebElement email;
@@ -18,7 +23,9 @@ public class LoginPage extends BasePage
     //Initializing the page Objects
     public LoginPage(WebDriver driver)
     {
-        super(driver);
+        this.driver = driver;
+        baseTest = new BaseTest();
+        PageFactory.initElements(driver, this);
     }
 
     //Actions
