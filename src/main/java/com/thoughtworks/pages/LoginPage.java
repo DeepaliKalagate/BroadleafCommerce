@@ -1,10 +1,12 @@
 package com.thoughtworks.pages;
+import com.thoughtworks.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage
 {
+    BaseTest baseTest;
 
     //PageFactory-Object Repository
     @FindBy(id="username")
@@ -20,6 +22,7 @@ public class LoginPage extends BasePage
     public LoginPage(WebDriver driver)
     {
         super(driver);
+        baseTest=new BaseTest();
     }
 
     //Actions

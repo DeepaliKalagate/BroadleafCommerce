@@ -2,6 +2,7 @@ package com.thoughtworks.base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -52,9 +53,10 @@ public class BaseTest
         driver.get(url);
     }
 
-    @AfterTest
+    //Method for Tear Down Browser
+    @AfterMethod(description = "close driver after test")
     public void tearDown()
     {
-        this.driver.quit();
+        driver.close();
     }
 }

@@ -1,10 +1,12 @@
 package com.thoughtworks.pages;
+import com.thoughtworks.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class RegisterPage extends BasePage
 {
+    BaseTest baseTest;
     //Page Factory-Object Repository
     @FindBy(id="customer.emailAddress")
     private WebElement email;
@@ -27,6 +29,7 @@ public class RegisterPage extends BasePage
     public RegisterPage(WebDriver driver)
     {
         super(driver);
+        baseTest=new BaseTest();
     }
 
     //Actions

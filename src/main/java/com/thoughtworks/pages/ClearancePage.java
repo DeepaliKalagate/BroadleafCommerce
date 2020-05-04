@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ClearancePage extends BasePage
 {
+
     @FindBy(xpath = "//input[@placeholder='search']")
     private WebElement searchSauce;
 
