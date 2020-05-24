@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Broadleaf Commerce Test" parallel="tests" thread-count="2">
-    <test name="BroadleafCommerceChrome">
-        <parameter name="browserName" value="chrome"/>
+<suite  name="Suite" parallel="tests" thread-count="2">
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.thoughtworks.script.LoginTest"/>
             <class name="com.thoughtworks.script.RegisterPageTest"/>
+            <class name="com.thoughtworks.script.MerchandisePageTest"/>
             <class name="com.thoughtworks.script.HomePageTest"/>
-            <class name="com.thoughtworks.script.MarchandisePageTest"/>
+            <class name="com.thoughtworks.script.ClearancePageTest"/>
             <class name="com.thoughtworks.script.HotSauceTest"/>
             <class name="com.thoughtworks.script.ShippingPageTest"/>
             <class name="com.thoughtworks.script.HotSaucePageTest"/>
             <class name="com.thoughtworks.script.ProductRemoveFromCartTest"/>
-            <class name="com.thoughtworks.script.GiftCardTest"/>
-            <class name="com.thoughtworks.script.ClearancePageTest"/>
         </classes>
     </test>
-
-    <test name="BroadleafCommerceFirefox">
-        <parameter name="browserName" value="firefox"/>
+    <test name="FirefoxTest">
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="com.thoughtworks.script.LoginTest"/>
             <class name="com.thoughtworks.script.RegisterPageTest"/>
             <class name="com.thoughtworks.script.HomePageTest"/>
-            <class name="com.thoughtworks.script.MarchandisePageTest"/>
-            <class name="com.thoughtworks.script.HotSauceTest"/>
-            <class name="com.thoughtworks.script.ShippingPageTest"/>
-            <class name="com.thoughtworks.script.HotSaucePageTest"/>
-            <class name="com.thoughtworks.script.ProductRemoveFromCartTest"/>
             <class name="com.thoughtworks.script.GiftCardTest"/>
-            <class name="com.thoughtworks.script.ClearancePageTest"/>
         </classes>
     </test>
 </suite>

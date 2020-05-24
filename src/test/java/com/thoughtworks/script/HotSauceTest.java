@@ -1,5 +1,4 @@
 package com.thoughtworks.script;
-import com.thoughtworks.base.BaseTest;
 import com.thoughtworks.pages.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -11,23 +10,22 @@ public class HotSauceTest extends BaseTest
     @Test()
     public void hotSauceTest() throws InterruptedException
     {
-        LoginPage loginPage= new LoginPage(driver);
+        LoginPage loginPage= new LoginPage(getDriver());
         loginPage.login(property.getProperty("email"),property.getProperty("password"));
-        Assert.assertEquals(driver.findElement(By.className("material-icons")).isDisplayed(),true,"Verify Login is Successful");
+        Assert.assertEquals(getDriver().findElement(By.className("material-icons")).isDisplayed(),true,"Verify Login is Successful");
 
-        HotSaucePage hotSausPage=new HotSaucePage(driver);
-        HomePage homePage=new HomePage(driver);
+        HotSaucePage hotSausPage=new HotSaucePage(getDriver());
+        HomePage homePage=new HomePage(getDriver());
         hotSausPage=homePage.clickOnHotsauce();
-        Assert.assertTrue(driver.getTitle().equals("Hot Sauces - Test Site"));
 
-        HotSauce hotSauce=new HotSauce(driver);
+        HotSauce hotSauce=new HotSauce(getDriver());
         hotSauce.viewHotSuaceProduct();
         Thread.sleep(500);
-        ShippingCart shippingCart=new ShippingCart(driver);
+        ShippingCart shippingCart=new ShippingCart(getDriver());
         String element=shippingCart.verifyItemIsPresentOrNot();
         if(element.equals("OUT OF STOCK"))
         {
-            driver.navigate().back();
+            getDriver().navigate().back();
         }
         else
         {

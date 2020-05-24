@@ -1,6 +1,5 @@
 package com.thoughtworks.script;
 import com.thoughtworks.base.Listener;
-import com.thoughtworks.base.BaseTest;
 import com.thoughtworks.pages.ClearancePage;
 import com.thoughtworks.pages.HomePage;
 import com.thoughtworks.pages.LoginPage;
@@ -11,29 +10,27 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.util.List;
 
-@Listeners(Listener.class)
 public class ClearancePageTest extends BaseTest
 {
     @Test()
     public void verifyClearancePageTest()
     {
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
         loginPage.login(property.getProperty("email"), property.getProperty("password"));
-        Assert.assertEquals(driver.findElement(By.className("material-icons")).isDisplayed(), true, "Verify Login is Successful");
+        Assert.assertEquals(getDriver().findElement(By.className("material-icons")).isDisplayed(), true, "Verify Login is Successful");
 
         ClearancePage clearancePage;
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         clearancePage = homePage.clickOnClearance();
-        Assert.assertTrue(driver.getTitle().equals("Clearance - Test Site"));
 
         clearancePage.searchProductByname("Blazin");
         clearancePage.selectSearchedProduct();
         clearancePage.selectProductImage();
-        ShippingCart shippingCart = new ShippingCart(driver);
+        ShippingCart shippingCart = new ShippingCart(getDriver());
         String element = shippingCart.verifyItemIsPresentOrNot();
         if (element.equals("OUT OF STOCK"))
         {
-            driver.navigate().back();
+            getDriver().navigate().back();
         }
         else
         {

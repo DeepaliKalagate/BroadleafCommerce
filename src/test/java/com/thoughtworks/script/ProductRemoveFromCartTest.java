@@ -1,5 +1,4 @@
 package com.thoughtworks.script;
-import com.thoughtworks.base.BaseTest;
 import com.thoughtworks.pages.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -11,22 +10,22 @@ public class ProductRemoveFromCartTest extends BaseTest
     @Test
     public void productRemoveFromCartTest() throws InterruptedException
     {
-        LoginPage loginPage= new LoginPage(driver);
+        LoginPage loginPage= new LoginPage(getDriver());
         loginPage.login(property.getProperty("email"),property.getProperty("password"));
-        Assert.assertEquals(driver.findElement(By.className("material-icons")).isDisplayed(),true,"Verify Login is Successful");
-        ClearancePage clearancePage=new ClearancePage(driver);
-        HomePage homePage=new HomePage(driver);
+        Assert.assertEquals(getDriver().findElement(By.className("material-icons")).isDisplayed(),true,"Verify Login is Successful");
+        ClearancePage clearancePage=new ClearancePage(getDriver());
+        HomePage homePage=new HomePage(getDriver());
         clearancePage=homePage.clickOnClearance();
-        Assert.assertTrue(driver.getTitle().equals("Clearance - Test Site"));
 
-        ProductRemoveFromCartPage removeFromCartPage=new ProductRemoveFromCartPage(driver);
+
+        ProductRemoveFromCartPage removeFromCartPage=new ProductRemoveFromCartPage(getDriver());
         removeFromCartPage.selectProduct();
         Thread.sleep(5000);
-        ShippingCart shippingCart=new ShippingCart(driver);
+        ShippingCart shippingCart=new ShippingCart(getDriver());
         String element=shippingCart.verifyItemIsPresentOrNot();
         if(element.equals("OUT OF STOCK"))
         {
-            driver.navigate().back();
+            getDriver().navigate().back();
         }
         else
         {
@@ -41,7 +40,7 @@ public class ProductRemoveFromCartTest extends BaseTest
             }
             removeFromCartPage.clickOnDropdown();
             removeFromCartPage.clickOnLogout();
-            Assert.assertEquals(driver.findElement(By.xpath("//a[contains(text(),'Login')]"))
+            Assert.assertEquals(getDriver().findElement(By.xpath("//a[contains(text(),'Login')]"))
                     .isDisplayed(), true,"Verify Logout Successful");
         }
     }
